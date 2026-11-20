@@ -7,9 +7,9 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Scan LJK Ujian — Sistem Koreksi Lembar Jawaban Otomatis</title>
-<link rel="manifest" id="pwaManifest" href="data:application/manifest+json,%7B%22name%22%3A%22Scan%20LJK%20Ujian%22%2C%22short_name%22%3A%22Scan%20LJK%22%2C%22start_url%22%3A%22.%22%2C%22scope%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22any%22%2C%22background_color%22%3A%22%23F8FAFC%22%2C%22theme_color%22%3A%22%231D74F5%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520xmlns%253D%2522http%253A//www.w3.org/2000/svg%2522%2520viewBox%253D%25220%25200%2520512%2520512%2522%253E%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520rx%253D%2522110%2522%2520fill%253D%2522%25231D74F5%2522/%253E%253Crect%2520x%253D%2522140%2522%2520y%253D%252290%2522%2520width%253D%2522232%2522%2520height%253D%2522332%2522%2520rx%253D%252228%2522%2520fill%253D%2522%2523fff%2522/%253E%253Cg%2520fill%253D%2522%25231D74F5%2522%253E%253Ccircle%2520cx%253D%2522200%2522%2520cy%253D%2522170%2522%2520r%253D%252220%2522/%253E%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522170%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253Ccircle%2520cx%253D%2522312%2522%2520cy%253D%2522170%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253Ccircle%2520cx%253D%2522200%2522%2520cy%253D%2522250%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522250%2522%2520r%253D%252220%2522/%253E%253Ccircle%2520cx%253D%2522312%2522%2520cy%253D%2522250%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253C/g%253E%253Crect%2520x%253D%2522120%2522%2520y%253D%2522330%2522%2520width%253D%2522272%2522%2520height%253D%252214%2522%2520rx%253D%25227%2522%2520fill%253D%2522%2523F59E0B%2522/%253E%253C/svg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image/svg%2Bxml%22%2C%22purpose%22%3A%22any%22%7D%5D%7D">
+<link rel="manifest" id="pwaManifest" href="data:application/manifest+json,%7B%22name%22%3A%22Scan%20LJK%20Ujian%22%2C%22short_name%22%3A%22Scan%20LJK%22%2C%22start_url%22%3A%22.%22%2C%22scope%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22orientation%22%3A%22any%22%2C%22background_color%22%3A%22%23F8FAFC%22%2C%22theme_color%22%3A%22%231D74F5%22%2C%22icons%22%3A%5B%7B%22src%22%3A%22data%3Aimage/svg%2Bxml%2C%253Csvg%2520xmlns%253D%2522http%253A//www.w3.org/2522%2520viewBox%253D%25220%25200%2520512%2520512%2522%253E%253Crect%2520width%253D%2522512%2522%2520height%253D%2522512%2522%2520rx%253D%2522110%2522%2520fill%253D%2522%25231D74F5%2522/%253E%253Crect%2520x%253D%2522140%2522%2520y%253D%252290%2522%2520width%253D%2522232%2522%2520height%253D%2522332%2522%2520rx%253D%252228%2522%2520fill%253D%2522%2523fff%2522/%253E%253Cg%2520fill%253D%2522%25231D74F5%2522%253E%253Ccircle%2520cx%253D%2522200%2522%2520cy%253D%2522170%2522%2520r%253D%252220%2522/%253E%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522170%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253Ccircle%2520cx%253D%2522312%2522%2520cy%253D%2522170%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253Ccircle%2520cx%253D%2522200%2522%2520cy%253D%2522250%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253Ccircle%2520cx%253D%2522256%2522%2520cy%253D%2522250%2522%2520r%253D%252220%2522/%253E%253Ccircle%2520cx%253D%2522312%2522%2520cy%253D%2522250%2522%2520r%253D%252220%2522%2520fill%253D%2522none%2522%2520stroke%253D%2522%25231D74F5%2522%2520stroke-width%253D%25228%2522/%253E%253C/g%253E%253Crect%2520x%253D%2522120%2522%2520y%253D%2522330%2522%2520width%253D%2522272%2522%2520height%253D%252214%2522%2520rx%253D%25227%2522%2520fill%253D%2522%2523F59E0B%2522/%253E%253C/svg%253E%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image/svg%2Bxml%22%2C%22purpose%22%3A%22any%22%7D%5D%7D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <meta name="theme-color" content="#1D74F5">
@@ -35,6 +35,8 @@
   --shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   z-index: 2147483000;
   background: var(--bg);
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, Segoe UI, sans-serif;
@@ -53,6 +55,8 @@
 #ljkApp .shell {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   background: var(--bg);
   overflow: hidden;
@@ -91,11 +95,8 @@
   width: 40px;
   height: 40px;
   border-radius: 13px;
-  background: linear-gradient(135deg, var(--pri), #38BDF8);
-  color: #fff;
   display: grid;
   place-items: center;
-  box-shadow: 0 6px 16px rgba(29, 116, 245, 0.22);
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -103,7 +104,6 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background: #fff;
   padding: 3px;
 }
 #ljkApp .brand-txt { min-width: 0; flex: 1; }
@@ -206,14 +206,14 @@
   width: 34px;
   height: 34px;
   border-radius: 11px;
-  background: var(--pri-soft);
-  color: var(--pri);
   display: grid;
   place-items: center;
   font-weight: 800;
   font-size: 12px;
   flex-shrink: 0;
+  overflow: hidden;
 }
+#ljkApp .av img { width: 100%; height: 100%; object-fit: contain; padding: 2px; }
 #ljkApp .side-user-info { min-width: 0; flex: 1; }
 #ljkApp .side-user-info b {
   display: block;
@@ -254,6 +254,8 @@
   flex: 1;
   min-width: 0;
   overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
   padding: 18px 24px 36px;
   scroll-behavior: smooth;
 }
@@ -265,6 +267,7 @@
 }
 #ljkApp .search {
   flex: 1;
+  min-width: 160px;
   max-width: 440px;
   position: relative;
 }
@@ -293,14 +296,15 @@
   margin-left: auto;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 #ljkApp .status-chip {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   height: 36px;
-  padding: 0 14px;
+  padding: 0 13px;
   border-radius: 999px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -308,6 +312,7 @@
   font-weight: 700;
   color: var(--ink);
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  white-space: nowrap;
 }
 #ljkApp .status-chip svg { color: var(--emerald); }
 #ljkApp .ib {
@@ -321,6 +326,7 @@
   position: relative;
   color: var(--body);
   transition: 0.2s;
+  flex-shrink: 0;
 }
 #ljkApp .ib:hover { background: var(--pri-soft); color: var(--pri); }
 #ljkApp .ib .dot {
@@ -386,11 +392,11 @@
 #ljkApp .hero {
   background: linear-gradient(125deg, #93C5FD 0%, #60A5FA 48%, #3B82F6 100%);
   border-radius: 24px;
-  padding: 26px 28px;
+  padding: 24px 26px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 18px;
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
@@ -417,12 +423,13 @@
   display: inline-block;
 }
 #ljkApp .hero h2 {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.24;
   letter-spacing: -0.02em;
   color: #0F172A;
   margin-bottom: 8px;
+  word-break: break-word;
 }
 #ljkApp .hero p {
   max-width: 460px;
@@ -436,8 +443,8 @@
   flex-wrap: wrap;
 }
 #ljkApp .hero-icon-box {
-  width: 84px;
-  height: 84px;
+  width: 82px;
+  height: 82px;
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.42);
   backdrop-filter: blur(10px);
@@ -454,6 +461,7 @@
   align-items: center;
   margin: 0 0 12px;
   gap: 10px;
+  flex-wrap: wrap;
 }
 #ljkApp .sec h2, #ljkApp .sec h3 { font-size: 15.5px; font-weight: 700; }
 #ljkApp .link { font-size: 12px; font-weight: 700; color: var(--pri); }
@@ -518,6 +526,7 @@
   gap: 10px;
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid rgba(15, 23, 42, 0.04);
+  min-width: 0;
 }
 #ljkApp .pcard:hover {
   transform: translateY(-2px);
@@ -597,7 +606,7 @@
   z-index: 2;
 }
 #ljkApp .wm-card b {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   line-height: 1.2;
   margin-top: 2px;
@@ -664,6 +673,7 @@
 }
 #ljkApp .btn.ghost:hover { background: var(--pill); color: var(--ink); }
 #ljkApp .btn.danger { background: var(--rose); color: #fff; }
+#ljkApp .btn.danger:hover { background: #E11D48; }
 #ljkApp .btn.sm { height: 34px; padding: 0 14px; font-size: 12px; }
 #ljkApp .btn.xs { height: 28px; padding: 0 10px; font-size: 11px; }
 #ljkApp .btn[disabled] { opacity: 0.45; pointer-events: none; }
@@ -729,6 +739,100 @@
 }
 #ljkApp .pw-eye:hover { background: var(--pill); color: var(--ink); }
 
+/* Custom Icon Picker Cards in Settings */
+#ljkApp .ico-cfg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+#ljkApp .ico-cfg-card {
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+}
+#ljkApp .ico-cfg-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+#ljkApp .ico-prev-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+#ljkApp .ico-prev-box img { width: 100%; height: 100%; object-fit: contain; padding: 3px; }
+#ljkApp .ico-choices {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-top: 8px;
+}
+#ljkApp .ico-opt {
+  height: 34px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--surface);
+  color: var(--body);
+  display: grid;
+  place-items: center;
+  transition: 0.14s;
+}
+#ljkApp .ico-opt:hover { border-color: var(--pri); color: var(--pri); }
+#ljkApp .ico-opt.on { background: var(--pri); border-color: var(--pri); color: #fff; }
+
+/* Toggle Switch (for Reset System) */
+#ljkApp .sw-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  margin-bottom: 8px;
+  transition: 0.15s;
+}
+#ljkApp .sw-row.on { border-color: #FDA4AF; background: #FFF1F2; }
+#ljkApp .switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+  flex-shrink: 0;
+}
+#ljkApp .switch input { opacity: 0; width: 0; height: 0; }
+#ljkApp .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #CBD5E1;
+  transition: 0.2s;
+  border-radius: 999px;
+}
+#ljkApp .slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.2s;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+#ljkApp .switch input:checked + .slider { background-color: var(--rose); }
+#ljkApp .switch input:checked + .slider::before { transform: translateX(20px); }
+
 /* Multi-select Class Toggle Buttons */
 #ljkApp .cls-grid {
   display: flex;
@@ -759,12 +863,13 @@
 
 #ljkApp .tw {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border-radius: 20px;
   background: var(--surface);
   border: 1px solid var(--line2);
   box-shadow: var(--shadow);
 }
-#ljkApp table { width: 100%; border-collapse: collapse; min-width: 580px; }
+#ljkApp table { width: 100%; border-collapse: collapse; min-width: 560px; }
 #ljkApp th {
   text-align: left;
   font-size: 11px;
@@ -799,35 +904,37 @@
   border-top: 1px solid var(--line2);
 }
 
-#ljkApp .jg { display: grid; grid-template-columns: repeat(auto-fill, minmax(305px, 1fr)); gap: 16px; }
+#ljkApp .jg { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 16px; }
 #ljkApp .jc h3 { font-size: 16px; margin: 8px 0 4px; }
 #ljkApp .jc .m { color: var(--muted); font-size: 12px; display: grid; gap: 4px; margin: 8px 0 12px; }
 #ljkApp .jc .ba { display: flex; gap: 7px; margin-top: 14px; flex-wrap: wrap; }
 
 /* ===================== MODALS, TABS, BUBBLE GRID & SCANNER ===================== */
 #ljkApp .ovl {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 23, 42, 0.52);
   backdrop-filter: blur(4px);
   display: grid;
   place-items: center;
-  z-index: 50;
+  z-index: 60;
   padding: 14px;
-  overflow: auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 #ljkApp .modal {
   background: var(--surface);
   border-radius: 24px;
-  padding: 24px;
+  padding: 22px;
   width: 100%;
   max-width: 640px;
-  max-height: 92vh;
-  overflow: auto;
+  max-height: 90dvh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25);
 }
 #ljkApp .modal.lg { max-width: 1080px; }
-#ljkApp .modal.sm { max-width: 400px; }
+#ljkApp .modal.sm { max-width: 420px; }
 #ljkApp .modal h3 { font-size: 18px; font-weight: 800; margin-bottom: 14px; }
 #ljkApp .mh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; gap: 10px; }
 #ljkApp .macts { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
@@ -839,10 +946,12 @@
   padding: 4px;
   gap: 3px;
   margin-bottom: 14px;
-  flex-wrap: wrap;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 #ljkApp .tabs2 button {
-  padding: 7px 16px;
+  padding: 7px 15px;
   border-radius: 11px;
   font-weight: 700;
   font-size: 12.5px;
@@ -851,6 +960,8 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 #ljkApp .tabs2 button.on {
   background: var(--surface);
@@ -867,6 +978,7 @@
   gap: 6px 10px;
   margin: 12px 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   padding-bottom: 8px;
 }
 #ljkApp .kq {
@@ -931,12 +1043,12 @@
 #ljkApp .sg b { font-size: 20px; font-weight: 800; }
 
 /* Scan LJK 2-Column Split (Left: Image Preview / Upload, Right: Results & Correction) */
-#ljkApp .scangrid { display: grid; grid-template-columns: minmax(320px, 0.92fr) minmax(0, 1.15fr); gap: 20px; align-items: start; }
+#ljkApp .scangrid { display: grid; grid-template-columns: minmax(310px, 0.92fr) minmax(0, 1.15fr); gap: 20px; align-items: start; }
 #ljkApp .dropzone {
   border: 2px dashed #CBD5E1;
   border-radius: 20px;
   background: #F8FAFC;
-  padding: 44px 20px;
+  padding: 40px 18px;
   text-align: center;
   color: var(--muted);
   transition: 0.2s;
@@ -995,13 +1107,17 @@
 
 /* ===================== CENTERED SPLIT-CARD LOGIN VIEW ===================== */
 #ljkApp .login-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   background: #F1F5F9;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 #ljkApp .login-card-split {
   width: 100%;
@@ -1013,6 +1129,7 @@
   grid-template-columns: 1fr 1.05fr;
   overflow: hidden;
   border: 1px solid var(--line);
+  margin: auto;
 }
 #ljkApp .login-left {
   background: linear-gradient(155deg, #8EC5FC 0%, #529FF8 45%, #2563EB 100%);
@@ -1035,16 +1152,15 @@
   margin-bottom: 24px;
 }
 #ljkApp .login-school-pill .sp-ico {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 10px;
-  background: var(--pri);
-  color: #fff;
   display: grid;
   place-items: center;
   overflow: hidden;
+  flex-shrink: 0;
 }
-#ljkApp .login-school-pill img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+#ljkApp .login-school-pill img { width: 100%; height: 100%; object-fit: contain; }
 #ljkApp .login-left h1 {
   font-size: 28px;
   font-weight: 800;
@@ -1119,8 +1235,10 @@
 
 /* ===================== STUDIO CETAK LJK UNIVERSAL (FULL SCREEN MODAL) ===================== */
 #ljkApp .studio-ovl {
-  position: absolute;
+  position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
   background: #E2E8F0;
   z-index: 65;
   display: flex;
@@ -1137,6 +1255,8 @@
   flex-wrap: wrap;
   border-bottom: 1px solid #1E293B;
   flex-shrink: 0;
+  max-height: 38vh;
+  overflow-y: auto;
 }
 #ljkApp .studio-bar b.st-title { font-size: 13.5px; font-weight: 800; margin-right: 4px; }
 #ljkApp .st-grp {
@@ -1178,7 +1298,8 @@
 #ljkApp .studio-canvas-area {
   flex: 1;
   overflow: auto;
-  padding: 24px 16px;
+  -webkit-overflow-scrolling: touch;
+  padding: 20px 14px 40px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -1211,7 +1332,7 @@
 }
 #ljkApp .kop-row {
   display: grid;
-  grid-template-columns: 1fr 74px auto auto;
+  grid-template-columns: 1fr 70px auto auto;
   gap: 8px;
   align-items: center;
   padding: 10px 12px;
@@ -1220,7 +1341,7 @@
   border: 1px solid var(--line);
   margin-bottom: 8px;
 }
-#ljkApp .fmt-grp { display: inline-flex; gap: 4px; }
+#ljkApp .fmt-grp { display: inline-flex; gap: 4px; flex-wrap: wrap; }
 #ljkApp .fmt-btn {
   width: 30px;
   height: 30px;
@@ -1238,7 +1359,7 @@
 /* Essay Manual Input Card */
 #ljkApp .esai-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 10px;
   margin-top: 10px;
 }
@@ -1259,15 +1380,15 @@
 
 /* Toast & Busy Loader */
 #ljkApp .toast {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  bottom: 26px;
+  bottom: 84px;
   transform: translateX(-50%);
   background: var(--ink);
   color: #fff;
   padding: 11px 22px;
   border-radius: 999px;
-  z-index: 90;
+  z-index: 95;
   font-weight: 600;
   font-size: 13px;
   box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
@@ -1276,11 +1397,11 @@
 }
 #ljkApp .toast.err { background: var(--rose); }
 #ljkApp .busy {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(248, 250, 252, 0.82);
   backdrop-filter: blur(3px);
-  z-index: 80;
+  z-index: 90;
   display: grid;
   place-items: center;
   font-weight: 600;
@@ -1299,17 +1420,17 @@
 /* Floating Mobile Bottom Navigation */
 #ljkApp .bnav {
   display: none;
-  position: absolute;
+  position: fixed;
   left: 12px;
   right: 12px;
   bottom: 12px;
   height: 62px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(16px);
   border: 1px solid var(--line);
   border-radius: 26px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
-  z-index: 30;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+  z-index: 40;
   align-items: center;
   justify-content: space-around;
   padding: 0 8px;
@@ -1318,37 +1439,63 @@
 #ljkApp .bnav button.on { background: var(--pri-soft); color: var(--pri); }
 #ljkApp .bnav button.cen { background: var(--pri); color: #fff; width: 54px; height: 54px; margin-top: -20px; box-shadow: 0 8px 20px rgba(29, 116, 245, 0.4); }
 #ljkApp .more { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-#ljkApp .more button { display: flex; gap: 10px; align-items: center; padding: 13px; border-radius: 16px; background: var(--bg); font-weight: 600; font-size: 13px; }
+#ljkApp .more button { display: flex; gap: 10px; align-items: center; padding: 13px; border-radius: 16px; background: var(--bg); font-weight: 600; font-size: 13px; text-align: left; }
 #ljkApp .rb { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
 #ljkApp .rb .bar { flex: 1; height: 8px; background: var(--pill); border-radius: 999px; overflow: hidden; }
 #ljkApp .rb .bar i { display: block; height: 100%; }
 #ljkApp .rb small { width: 36px; color: var(--muted); font-size: 11px; }
 #ljkApp .rb span { width: 42px; font-size: 11px; font-weight: 700; text-align: right; }
-#ljkApp .swatch { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1.5px var(--line); cursor: pointer; }
+#ljkApp .swatch { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1.5px var(--line); cursor: pointer; flex-shrink: 0; }
 
 /* ===================== RESPONSIVE MEDIA QUERIES ===================== */
 @media (max-width: 1240px) {
   #ljkApp .rail { width: 256px; }
   #ljkApp .g4, #ljkApp .wm-grid { grid-template-columns: repeat(2, 1fr); }
+  #ljkApp .ico-cfg-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 960px) {
-  #ljkApp .login-card-split { grid-template-columns: 1fr; max-width: 460px; }
-  #ljkApp .login-left { padding: 26px 24px; }
+  #ljkApp .login-bg { align-items: flex-start; padding: 14px; }
+  #ljkApp .login-card-split { grid-template-columns: 1fr; max-width: 480px; border-radius: 22px; }
+  #ljkApp .login-left { padding: 24px 22px; }
   #ljkApp .login-art, #ljkApp .login-left-foot { display: none; }
-  #ljkApp .login-right { padding: 28px 24px; }
-  #ljkApp .shell { flex-direction: column; overflow-y: auto; }
-  #ljkApp .side { display: none; }
-  #ljkApp .main { overflow: visible; padding: 16px 14px 18px; }
-  #ljkApp .rail { width: 100%; border-left: 0; border-top: 1px solid var(--line); overflow: visible; padding-bottom: 96px; }
-  #ljkApp .bnav { display: flex; position: fixed; }
-  #ljkApp .scangrid, #ljkApp .fg, #ljkApp .fg3 { grid-template-columns: 1fr; }
+  #ljkApp .login-right { padding: 24px 22px; }
+
+  #ljkApp .shell {
+    display: block;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  #ljkApp .side { display: none !important; }
+  #ljkApp .main {
+    width: 100%;
+    overflow: visible;
+    padding: 14px 14px 108px 14px;
+  }
+  #ljkApp .rail {
+    width: 100%;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    overflow: visible;
+    padding: 16px 14px 108px 14px;
+  }
+  #ljkApp .bnav { display: flex; }
+  #ljkApp .scangrid, #ljkApp .fg, #ljkApp .fg3, #ljkApp .ico-cfg-grid { grid-template-columns: 1fr; }
   #ljkApp .kop-row { grid-template-columns: 1fr; }
-  #ljkApp .hero h2 { font-size: 21px; }
+  #ljkApp .hero { padding: 20px 18px; }
+  #ljkApp .hero h2 { font-size: 20px; }
+  #ljkApp .card { padding: 16px; border-radius: 18px; }
+  #ljkApp .modal { padding: 18px 16px; border-radius: 20px; max-height: 88dvh; }
 }
-@media (max-width: 520px) {
-  #ljkApp .g4, #ljkApp .wm-grid { gap: 10px; }
+@media (max-width: 560px) {
+  #ljkApp .top { flex-wrap: wrap; }
+  #ljkApp .search { max-width: 100%; order: 2; flex-basis: 100%; }
+  #ljkApp .tr { order: 1; width: 100%; justify-content: space-between; margin-left: 0; }
+  #ljkApp .g4 { grid-template-columns: 1fr 1fr; gap: 10px; }
+  #ljkApp .wm-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   #ljkApp .hero-icon-box { display: none; }
   #ljkApp .active-row { flex-wrap: wrap; }
+  #ljkApp .more { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -1370,7 +1517,7 @@ const firebaseConfig = {
 };
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
 import { getFirestore, collection, doc, getDocs, addDoc, updateDoc, deleteDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 /* ===================== UTILITAS & IKON SVG ===================== */
@@ -1403,7 +1550,6 @@ const ICONS = {
   "eye-off": "<path d=\"M9.88 9.88a3 3 0 1 0 4.24 4.24\"/><path d=\"M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68\"/><path d=\"M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61\"/><line x1=\"2\" x2=\"22\" y1=\"2\" y2=\"22\"/>",
   "file-edit": "<path d=\"M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z\"/>",
   "file-spreadsheet": "<path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M8 13h2\"/><path d=\"M14 13h2\"/><path d=\"M8 17h2\"/><path d=\"M14 17h2\"/>",
-  "flask-conical": "<path d=\"M10 2v7.5L4.5 19a2 2 0 0 0 1.7 3h11.6a2 2 0 0 0 1.7-3L14 9.5V2\"/><path d=\"M8.5 2h7\"/><path d=\"M7 16h10\"/>",
   "home": "<path d=\"m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><polyline points=\"9 22 9 12 15 12 15 22\"/>",
   "image-up": "<path d=\"M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.8 0L6 21\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M14 19.5l3-3 3 3\"/><path d=\"M17 22v-5.5\"/>",
   "inbox": "<path d=\"M22 12h-6l-2 3h-4l-2-3H2\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11\"/>",
@@ -1412,7 +1558,6 @@ const ICONS = {
   "layout-grid": "<rect width=\"7\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"14\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\"/>",
   "log-out": "<path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/><path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/>",
   "mail": "<rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/>",
-  "minus-circle": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M8 12h8\"/>",
   "pencil": "<path d=\"M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z\"/><path d=\"m15 5 4 4\"/>",
   "plus": "<path d=\"M5 12h14\"/><path d=\"M12 5v14\"/>",
   "printer": "<path d=\"M6 9V2h12v7\"/><path d=\"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\"/><rect width=\"12\" height=\"8\" x=\"6\" y=\"14\"/>",
@@ -1433,11 +1578,42 @@ const ICONS = {
   "x": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>",
   "x-circle": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m15 9-6 6\"/><path d=\"m9 9 6 6\"/>"
 };
-const ic = (n, s = 18) => `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICONS[n] || ''}</svg>`;
+const PRESET_ICON_KEYS = [
+  'scan-line', 'clipboard-check', 'book-open', 'award',
+  'sparkles', 'layout-dashboard', 'user', 'user-check',
+  'user-cog', 'users', 'shield-check', 'key-round',
+  'camera', 'file-edit', 'bar-chart-3', 'settings'
+];
+const ic = (n, s = 18) => `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICONS[n] || ICONS['sparkles'] || ''}</svg>`;
+
+function isImageUrl(val) {
+  const s = String(val || '').trim();
+  return /^(https?:\/\/|data:image\/)/i.test(s);
+}
+
+function renderConfiguredIcon(kind, clsName = 'logo', icoSz = 20) {
+  const set = D().settings;
+  const fallback = kind === 'system' ? 'scan-line' : (kind === 'admin' ? 'shield-check' : 'user');
+  const rawVal = (set['icon_' + kind] || fallback).trim();
+  const color = set['icon_' + kind + '_color'] || (kind === 'system' ? '#FFFFFF' : '#1D74F5');
+  const isTrans = Boolean(set['icon_' + kind + '_transparent']);
+  const bg = isTrans ? 'transparent' : (set['icon_' + kind + '_bg'] || (kind === 'system' ? '#1D74F5' : '#EFF6FF'));
+  const borderStyle = isTrans ? 'border:1px solid var(--line);' : '';
+  const inner = isImageUrl(rawVal)
+    ? `<img src="${esc(rawVal)}" alt="${kind}">`
+    : `<span style="color:${esc(color)};display:grid;place-items:center">${ic(ICONS[rawVal] ? rawVal : fallback, icoSz)}</span>`;
+  return `<div class="${clsName}" style="background:${esc(bg)};${borderStyle}">${inner}</div>`;
+}
 
 const LET = 'ABCDE';
+const BULAN_ID = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 const todayISO = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); };
-const fmtDate = d => d ? new Date(d + 'T00:00:00').toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric' }) : '-';
+const fmtDate = d => {
+  if (!d) return '-';
+  const dt = new Date(d + 'T00:00:00');
+  if (isNaN(dt)) return '-';
+  return `${dt.getDate()} ${BULAN_ID[dt.getMonth()]} ${dt.getFullYear()}`;
+};
 const num = (v, d = 1) => (v === null || v === undefined || isNaN(v)) ? '-' : (Math.round(v * 10 ** d) / 10 ** d).toString().replace('.', ',');
 
 function getWaktuID() {
@@ -1532,7 +1708,7 @@ function confirmBox(msg, okText = 'Hapus') {
   return new Promise(res => {
     const el = document.createElement('div');
     el.className = 'ovl';
-    el.style.zIndex = 70;
+    el.style.zIndex = 80;
     el.innerHTML = `<div class="modal sm"><h3>Konfirmasi</h3><p style="color:var(--body);font-size:13px">${esc(msg)}</p><div class="macts"><button class="btn ghost" data-r="0">Batal</button><button class="btn danger" data-r="1">${esc(okText)}</button></div></div>`;
     el.addEventListener('click', e => {
       const b = e.target.closest('[data-r]');
@@ -1586,6 +1762,16 @@ const DEFAULT_KOP_LINES = [
   { text: 'Pos-El: smpn4cibadak417@gmail.com', size: 9, bold: false, italic: true, underline: false, show: true }
 ];
 
+const DEFAULT_LJK_TITLE_LINES = [
+  { text: 'LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)', size: 11, bold: true, italic: false, underline: false, show: true },
+  { text: 'TAHUN PELAJARAN 2026 / 2027', size: 9, bold: false, italic: false, underline: false, show: true }
+];
+
+const DEFAULT_PG_HEADER_LINES = [
+  { text: 'AREA JAWABAN PILIHAN GANDA', size: 9, bold: true, italic: false, underline: false, show: true },
+  { text: 'Hitamkan salah satu bulatan pilihan jawaban (A, B, C, D, atau E) secara penuh', size: 8, bold: false, italic: true, underline: false, show: true }
+];
+
 const DEFAULT_SETTINGS = {
   app_name: 'Scan LJK Ujian',
   app_subtitle: 'Koreksi • Scan • Manual',
@@ -1595,9 +1781,25 @@ const DEFAULT_SETTINGS = {
   hero_desc: 'Kelola pemindaian LJK Pilihan Ganda dan koreksi manual soal uraian dengan cepat dan akurat.',
   hero_cta: 'Mulai Scan LJK',
   theme_color: '#1D74F5',
+  icon_system: 'scan-line',
+  icon_system_color: '#FFFFFF',
+  icon_system_bg: '#1D74F5',
+  icon_system_transparent: false,
+  icon_user: 'user',
+  icon_user_color: '#1D74F5',
+  icon_user_bg: '#EFF6FF',
+  icon_user_transparent: false,
+  icon_admin: 'shield-check',
+  icon_admin_color: '#1D74F5',
+  icon_admin_bg: '#EFF6FF',
+  icon_admin_transparent: false,
   logo_kiri: '',
   logo_kanan: '',
   kop_lines: clone(DEFAULT_KOP_LINES),
+  ljk_title_lines: clone(DEFAULT_LJK_TITLE_LINES),
+  pg_header_lines: clone(DEFAULT_PG_HEADER_LINES),
+  show_ttd_siswa: true,
+  show_nilai_guru: true,
   kota: 'Sukabumi',
   kepala_sekolah: 'Drs. H. Ahmad Fauzi, M.Pd.',
   nip_kepala: '196801011994031002',
@@ -1608,6 +1810,7 @@ const S = {
   user: null,
   page: 'dashboard',
   q: '',
+  dirty: false,
   setupError: '',
   scanR: null,
   cam: null,
@@ -1629,7 +1832,6 @@ const S = {
     manual: { j: '', kelas: '', siswa: '', answers: [], esaiScores: [] },
     studio: {
       open: false,
-      judul: 'LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)',
       perSheet: 1,
       pgOn: true,
       pgOrder: 'col',
@@ -1643,6 +1845,10 @@ const S = {
     },
     setTab: 'tampilan',
     kopDraft: null,
+    ljkTitleDraft: null,
+    pgHeaderDraft: null,
+    iconDraft: null,
+    resetSel: { hasil: true, jadwal: true, siswa: false, guru: false, mapel: false },
     jd: null,
     formKelasSel: [],
     bulk: null
@@ -1658,6 +1864,22 @@ const S = {
 };
 
 let app = null, auth = null, db = null;
+
+function markDirty() { S.dirty = true; }
+function clearDirty() {
+  S.dirty = false;
+  S.ui.kopDraft = null;
+  S.ui.ljkTitleDraft = null;
+  S.ui.pgHeaderDraft = null;
+  S.ui.iconDraft = null;
+}
+
+async function guardLeave() {
+  if (!S.dirty) return true;
+  const ok = await confirmBox('Terdapat perubahan data yang belum disimpan. Yakin ingin berpindah halaman dan mengabaikan perubahan?', 'Ya, Pindah Halaman');
+  if (ok) clearDirty();
+  return ok;
+}
 
 function applyTheme() {
   const rootEl = $('#ljkApp');
@@ -1822,6 +2044,20 @@ async function dbDelete(key, id) {
   await deleteDoc(doc(db, t, id));
 }
 
+async function dbClearCollection(key) {
+  const t = COL[key];
+  if (IS_PREVIEW) {
+    MEM[t] = [];
+    return;
+  }
+  const snap = await getDocs(collection(db, t));
+  const docs = snap.docs;
+  const chunkSize = 25;
+  for (let i = 0; i < docs.length; i += chunkSize) {
+    await Promise.all(docs.slice(i, i + chunkSize).map(d => deleteDoc(doc(db, t, d.id))));
+  }
+}
+
 function decorate() {
   S.data.mapel.forEach(m => {
     if (!m.nama && m.mapel) m.nama = m.mapel;
@@ -1865,7 +2101,9 @@ async function reload(keys) {
       S.data.settings = {
         ...clone(DEFAULT_SETTINGS),
         ...def,
-        kop_lines: Array.isArray(def.kop_lines) && def.kop_lines.length ? def.kop_lines : clone(DEFAULT_KOP_LINES)
+        kop_lines: Array.isArray(def.kop_lines) && def.kop_lines.length ? def.kop_lines : clone(DEFAULT_KOP_LINES),
+        ljk_title_lines: Array.isArray(def.ljk_title_lines) && def.ljk_title_lines.length ? def.ljk_title_lines : clone(DEFAULT_LJK_TITLE_LINES),
+        pg_header_lines: Array.isArray(def.pg_header_lines) && def.pg_header_lines.length ? def.pg_header_lines : clone(DEFAULT_PG_HEADER_LINES)
       };
       applyTheme();
     } else {
@@ -1895,6 +2133,19 @@ async function loginAdmin(email, pass) {
   S.user = { role: 'admin', id: cred.user.uid, nama: formatAdminName(cred.user.email), email: cred.user.email };
 }
 
+async function verifyAdminPassword(pass) {
+  if (!pass) throw new Error('Masukkan password Admin untuk konfirmasi.');
+  if (IS_PREVIEW) {
+    if (pass !== MEM.adminAuth.password) throw new Error('Password Admin salah.');
+    return true;
+  }
+  const user = auth?.currentUser;
+  if (!user || !user.email) throw new Error('Sesi Admin Firebase tidak ditemukan. Silakan masuk ulang.');
+  const cred = EmailAuthProvider.credential(user.email, pass);
+  await reauthenticateWithCredential(user, cred);
+  return true;
+}
+
 async function loginGuru(username, pass) {
   if (IS_PREVIEW) {
     const g = MEM.users.find(x => x.username === username.trim() && x.password === pass && x.aktif !== false);
@@ -1909,12 +2160,14 @@ async function loginGuru(username, pass) {
 }
 
 async function logout() {
+  if (!(await guardLeave())) return;
   stopCam();
   S.scanR = null;
   try { if (!IS_PREVIEW && auth?.currentUser) await signOut(auth); } catch (e) { }
   S.user = null;
   S.page = 'dashboard';
   S.q = '';
+  clearDirty();
   closeModal();
   render();
 }
@@ -2014,6 +2267,22 @@ const G = { S: 4, W: 840, H: 1188, x0: 16, colW: 37, px: 5.6, py: 9, y0: 122, pe
 const bx = (q, j) => G.x0 + G.colW * Math.floor(q / G.per) + 9.5 + G.px * j;
 const by = q => G.y0 + G.py * (q % G.per);
 
+function renderMultiLinesSVG(linesArr, cx, startY, defaultMaxY, sizeScale = 0.30, lineGap = 1.15) {
+  const lines = (linesArr || []).filter(l => l.show !== false && (l.text || '').trim() !== '');
+  let svg = '';
+  let y = startY;
+  lines.forEach(l => {
+    const sz = Math.max(1.9, Math.min(4.8, (Number(l.size) || 10) * sizeScale));
+    if (y + sz > defaultMaxY) return;
+    const fw = l.bold ? 'bold' : 'normal';
+    const fs = l.italic ? 'italic' : 'normal';
+    const td = l.underline ? 'underline' : 'none';
+    svg += `<text x="${cx}" y="${y.toFixed(2)}" font-size="${sz.toFixed(2)}" font-weight="${fw}" font-style="${fs}" text-decoration="${td}" text-anchor="middle" fill="#000" font-family="Arial,Helvetica,sans-serif">${esc(l.text)}</text>`;
+    y += sz + lineGap;
+  });
+  return { svg, endY: y, count: lines.length };
+}
+
 function renderKopMiniSVG(set, offX, topY, width) {
   const lines = (set.kop_lines || DEFAULT_KOP_LINES).filter(l => l.show !== false && (l.text || '').trim() !== '');
   const cx = offX + width / 2;
@@ -2021,27 +2290,27 @@ function renderKopMiniSVG(set, offX, topY, width) {
   let g = '';
   const hasL = Boolean((set.logo_kiri || '').trim());
   const hasR = Boolean((set.logo_kanan || '').trim());
-  const logoSz = 19 * scale;
+  const logoSz = 17 * scale;
   if (hasL) g += `<image href="${esc(set.logo_kiri)}" x="${offX}" y="${topY}" width="${logoSz}" height="${logoSz}" preserveAspectRatio="xMidYMid meet"/>`;
   if (hasR) g += `<image href="${esc(set.logo_kanan)}" x="${offX + width - logoSz}" y="${topY}" width="${logoSz}" height="${logoSz}" preserveAspectRatio="xMidYMid meet"/>`;
 
-  let y = topY + 4 * scale;
+  let y = topY + 3.4 * scale;
   lines.forEach(l => {
-    const sz = Math.max(2.0, Math.min(5.5, (Number(l.size) || 11) * 0.31 * scale));
+    const sz = Math.max(1.9, Math.min(4.6, (Number(l.size) || 11) * 0.28 * scale));
     const fw = l.bold ? 'bold' : 'normal';
     const fs = l.italic ? 'italic' : 'normal';
     const td = l.underline ? 'underline' : 'none';
     g += `<text x="${cx}" y="${y.toFixed(2)}" font-size="${sz.toFixed(2)}" font-weight="${fw}" font-style="${fs}" text-decoration="${td}" text-anchor="middle" fill="#000" font-family="Arial,Helvetica,sans-serif">${esc(l.text)}</text>`;
-    y += sz + 1.25 * scale;
+    y += sz + 1.0 * scale;
   });
 
-  const lineY = Math.max(topY + 21 * scale, y + 0.6);
+  const lineY = Math.max(topY + 18 * scale, Math.min(35.5, y + 0.4));
   g += `<line x1="${offX}" y1="${lineY.toFixed(2)}" x2="${offX + width}" y2="${lineY.toFixed(2)}" stroke="#000" stroke-width="0.6"/>`;
-  g += `<line x1="${offX}" y1="${(lineY + 1.0).toFixed(2)}" x2="${offX + width}" y2="${(lineY + 1.0).toFixed(2)}" stroke="#000" stroke-width="0.25"/>`;
-  return { svg: g, endY: lineY + 2 };
+  g += `<line x1="${offX}" y1="${(lineY + 0.9).toFixed(2)}" x2="${offX + width}" y2="${(lineY + 0.9).toFixed(2)}" stroke="#000" stroke-width="0.25"/>`;
+  return { svg: g, endY: lineY + 1.8 };
 }
 
-/* Bangun 1 Lembar LJK Standar (210 x 297 mm) agar 100% kompatibel dengan OMR Scanner */
+/* Bangun 1 Lembar LJK Standar (210 x 297 mm) — Koordinat Bulatan PG tetap terkunci di y0 = 122 agar 100% terbaca OMR Scanner */
 function buildSingleLJKSvgInner(cfg) {
   const set = D().settings;
   const pgOn = cfg.pgOn !== false;
@@ -2053,7 +2322,6 @@ function buildSingleLJKSvgInner(cfg) {
   const zoom = Math.max(70, Math.min(130, Number(cfg.zoom) || 100)) / 100;
   const esaiOn = Boolean(cfg.esaiOn);
   const esaiCount = Math.max(1, Math.min(15, Number(cfg.esaiCount) || 5));
-  const judul = (cfg.judul || 'LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)').toUpperCase();
 
   const R = (x, y, w, h, f = '#000') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}"/>`;
   const T = (x, y, t, sz = 3.0, w = 'normal', a = 'start', f = '#000') => `<text x="${x}" y="${y}" font-size="${sz}" font-weight="${w}" text-anchor="${a}" fill="${f}" font-family="Arial,Helvetica,sans-serif">${esc(t)}</text>`;
@@ -2065,34 +2333,45 @@ function buildSingleLJKSvgInner(cfg) {
     + R(8, 281, 8, 8)
     + R(192, 279, 12, 12);
 
-  const kop = renderKopMiniSVG(set, 20, 12, 170);
+  // 1. Kop Surat (y = 11 .. ~36)
+  const kop = renderKopMiniSVG(set, 20, 11, 170);
   g += kop.svg;
 
-  const bannerY = Math.max(46, kop.endY + 2);
-  g += `<rect x="20" y="${bannerY}" width="170" height="7" rx="1.2" fill="none" stroke="#000" stroke-width="0.4"/>`;
-  g += T(105, bannerY + 4.8, judul, 3.4, 'bold', 'middle', '#000');
+  // 2. Keterangan Judul LJK Multi-Baris (y = ~38 .. ~52)
+  const bannerY = Math.min(42, kop.endY + 1.2);
+  const titleLines = cfg.customTitleLines || set.ljk_title_lines || DEFAULT_LJK_TITLE_LINES;
+  const renderedTitle = renderMultiLinesSVG(titleLines, 105, bannerY + 3.6, bannerY + 14.5, 0.28, 0.9);
+  const boxH = Math.max(6.2, renderedTitle.count > 0 ? (renderedTitle.endY - bannerY + 0.6) : 6.2);
+  g += `<rect x="20" y="${bannerY.toFixed(2)}" width="170" height="${boxH.toFixed(2)}" rx="1.2" fill="none" stroke="#000" stroke-width="0.4"/>`;
+  g += renderedTitle.svg;
 
-  const boxY = bannerY + 9.2;
-  g += `<rect x="20" y="${boxY}" width="112" height="10.5" rx="1.4" fill="none" stroke="#000" stroke-width="0.35"/>`;
-  g += T(22.5, boxY + 4, 'NAMA LENGKAP PESERTA', 2.2, 'bold');
-  g += T(22.5, boxY + 8.5, '..................................................................................', 2.6);
+  // 3. Kotak Identitas Peserta (y = ~54 .. ~76)
+  const boxY = Math.min(56, bannerY + boxH + 1.6);
+  g += `<rect x="20" y="${boxY.toFixed(2)}" width="112" height="9.5" rx="1.2" fill="none" stroke="#000" stroke-width="0.35"/>`;
+  g += T(22.5, boxY + 3.6, 'NAMA LENGKAP PESERTA', 2.1, 'bold');
+  g += T(22.5, boxY + 7.8, '..................................................................................', 2.5);
 
-  g += `<rect x="135" y="${boxY}" width="55" height="10.5" rx="1.4" fill="none" stroke="#000" stroke-width="0.35"/>`;
-  g += T(137.5, boxY + 4, 'NO. PESERTA / NIS', 2.2, 'bold');
-  g += T(137.5, boxY + 8.5, '......................................', 2.6);
+  g += `<rect x="135" y="${boxY.toFixed(2)}" width="55" height="9.5" rx="1.2" fill="none" stroke="#000" stroke-width="0.35"/>`;
+  g += T(137.5, boxY + 3.6, 'NO. PESERTA / NIS', 2.1, 'bold');
+  g += T(137.5, boxY + 7.8, '......................................', 2.5);
 
-  const boxY2 = boxY + 12.2;
-  g += `<rect x="20" y="${boxY2}" width="112" height="10.5" rx="1.4" fill="none" stroke="#000" stroke-width="0.35"/>`;
-  g += T(22.5, boxY2 + 4, 'MATA PELAJARAN', 2.2, 'bold');
-  g += T(22.5, boxY2 + 8.5, '..................................................................................', 2.6);
+  const boxY2 = boxY + 11.0;
+  g += `<rect x="20" y="${boxY2.toFixed(2)}" width="112" height="9.5" rx="1.2" fill="none" stroke="#000" stroke-width="0.35"/>`;
+  g += T(22.5, boxY2 + 3.6, 'MATA PELAJARAN', 2.1, 'bold');
+  g += T(22.5, boxY2 + 7.8, '..................................................................................', 2.5);
 
-  g += `<rect x="135" y="${boxY2}" width="55" height="10.5" rx="1.4" fill="none" stroke="#000" stroke-width="0.35"/>`;
-  g += T(137.5, boxY2 + 4, 'KELAS / RUANG', 2.2, 'bold');
-  g += T(137.5, boxY2 + 8.5, '......................................', 2.6);
+  g += `<rect x="135" y="${boxY2.toFixed(2)}" width="55" height="9.5" rx="1.2" fill="none" stroke="#000" stroke-width="0.35"/>`;
+  g += T(137.5, boxY2 + 3.6, 'KELAS / RUANG', 2.1, 'bold');
+  g += T(137.5, boxY2 + 7.8, '......................................', 2.5);
 
+  // 4. Area Pilihan Ganda (Keterangan Multi-Baris di atas y=116, lalu Bulatan PG terkunci di y0 = 122)
   let afterPgY = 122;
   if (pgOn) {
-    g += T(105, 108, 'AREA JAWABAN PILIHAN GANDA', 2.8, 'bold', 'middle');
+    const pgHdrStart = Math.max(94, boxY2 + 13.5);
+    const pgHdrLines = set.pg_header_lines || DEFAULT_PG_HEADER_LINES;
+    const renderedPgHdr = renderMultiLinesSVG(pgHdrLines, 105, pgHdrStart, 117.5, 0.28, 0.9);
+    g += renderedPgHdr.svg;
+
     const totalSlots = Math.min(maxPg, cols * rows);
     const colW = 185 / cols;
     const rad = G.r * zoom;
@@ -2111,27 +2390,67 @@ function buildSingleLJKSvgInner(cfg) {
         g += `<circle cx="${cx.toFixed(2)}" cy="${cy.toFixed(2)}" r="${rad.toFixed(2)}" fill="none" stroke="#000" stroke-width="0.32"/>`;
         g += T(cx, cy + 0.85, LET[jj], 2.1 * zoom, 'bold', 'middle', '#222');
       }
-      afterPgY = Math.max(afterPgY, cy + 8);
+      afterPgY = Math.max(afterPgY, cy + 6.5);
     }
-    g += T(105, afterPgY + 2, 'Pastikan keempat kotak hitam sudut terlihat jelas saat difoto / discan', 2.3, 'normal', 'middle', '#444');
+    g += T(105, afterPgY + 2, 'Pastikan keempat kotak hitam sudut terlihat jelas saat difoto / discan', 2.2, 'normal', 'middle', '#444');
   }
 
+  const showTtd = set.show_ttd_siswa !== false;
+  const showNilai = set.show_nilai_guru !== false;
+  const hasFooterBoxes = showTtd || showNilai;
+  const footerBoxH = 24;
+  const footerBoxY = 276 - footerBoxH; // y = 252 .. 276
+
+  // 5. Area Uraian / Esai (Opsional)
   if (esaiOn) {
-    let ey = pgOn ? Math.max(216, afterPgY + 7) : 106;
-    g += T(105, ey, 'AREA JAWABAN URAIAN / ESAI', 2.8, 'bold', 'middle');
-    ey += 4;
-    const availH = 266 - ey;
-    const lineGap = Math.max(5.5, Math.min(11, availH / esaiCount));
+    let ey = pgOn ? Math.max(213, afterPgY + 5.5) : 102;
+    g += T(105, ey, 'AREA JAWABAN URAIAN / ESAI', 2.7, 'bold', 'middle');
+    ey += 3.2;
+    const maxEsaiY = hasFooterBoxes ? (footerBoxY - 3) : 274;
+    const availH = Math.max(20, maxEsaiY - ey);
+    const lineGap = Math.max(5.0, Math.min(10.5, availH / esaiCount));
     for (let i = 0; i < esaiCount; i++) {
       const yLine = ey + (i + 1) * lineGap;
-      if (yLine < 268) {
-        g += T(20, yLine - 1.2, `${i + 1}.`, 2.6, 'bold');
+      if (yLine <= maxEsaiY) {
+        g += T(20, yLine - 1.1, `${i + 1}.`, 2.5, 'bold');
         g += `<line x1="26" y1="${yLine.toFixed(1)}" x2="190" y2="${yLine.toFixed(1)}" stroke="#64748B" stroke-width="0.3" stroke-dasharray="1,0.8"/>`;
       }
     }
   }
 
-  g += T(105, 290, `Template LJK Universal — ${set.app_name || 'Sistem Koreksi Hasil Sumatif Akhir Semester'}`, 2.2, 'normal', 'middle', '#64748B');
+  // 6. Kotak Tanda Tangan Siswa & Tempat Pengisian Nilai oleh Guru di Bagian Bawah
+  if (hasFooterBoxes) {
+    if (showTtd) {
+      const xTtd = 20;
+      const wTtd = showNilai ? 76 : 170;
+      g += `<rect x="${xTtd}" y="${footerBoxY}" width="${wTtd}" height="${footerBoxH}" rx="1.4" fill="none" stroke="#000" stroke-width="0.35"/>`;
+      g += T(xTtd + wTtd / 2, footerBoxY + 4.2, 'TANDA TANGAN PESERTA UJIAN', 2.2, 'bold', 'middle');
+      g += `<line x1="${xTtd + 10}" y1="${footerBoxY + 18.5}" x2="${xTtd + wTtd - 10}" y2="${footerBoxY + 18.5}" stroke="#000" stroke-width="0.3" stroke-dasharray="1,0.8"/>`;
+      g += T(xTtd + wTtd / 2, footerBoxY + 22.0, 'Nama Terang & Tanda Tangan Siswa', 1.9, 'normal', 'middle', '#444');
+    }
+    if (showNilai) {
+      const xNil = showTtd ? 100 : 20;
+      const wNil = showTtd ? 88 : 170;
+      g += `<rect x="${xNil}" y="${footerBoxY}" width="${wNil}" height="${footerBoxH}" rx="1.4" fill="none" stroke="#000" stroke-width="0.35"/>`;
+      g += `<line x1="${xNil}" y1="${footerBoxY + 5.5}" x2="${xNil + wNil}" y2="${footerBoxY + 5.5}" stroke="#000" stroke-width="0.3"/>`;
+      g += T(xNil + wNil / 2, footerBoxY + 3.9, 'KOLOM PENILAIAN (DIISI MANUAL OLEH GURU)', 2.1, 'bold', 'middle');
+
+      const c1 = xNil + wNil * 0.28;
+      const c2 = xNil + wNil * 0.56;
+      const c3 = xNil + wNil * 0.80;
+      g += `<line x1="${c1}" y1="${footerBoxY + 5.5}" x2="${c1}" y2="${footerBoxY + footerBoxH}" stroke="#000" stroke-width="0.3"/>`;
+      g += `<line x1="${c2}" y1="${footerBoxY + 5.5}" x2="${c2}" y2="${footerBoxY + footerBoxH}" stroke="#000" stroke-width="0.3"/>`;
+      g += `<line x1="${c3}" y1="${footerBoxY + 5.5}" x2="${c3}" y2="${footerBoxY + footerBoxH}" stroke="#000" stroke-width="0.3"/>`;
+      g += `<line x1="${xNil}" y1="${footerBoxY + 10.5}" x2="${xNil + wNil}" y2="${footerBoxY + 10.5}" stroke="#000" stroke-width="0.25"/>`;
+
+      g += T((xNil + c1) / 2, footerBoxY + 8.8, 'NILAI PG', 2.0, 'bold', 'middle');
+      g += T((c1 + c2) / 2, footerBoxY + 8.8, 'NILAI ESAI', 2.0, 'bold', 'middle');
+      g += T((c2 + c3) / 2, footerBoxY + 8.8, 'NILAI AKHIR', 2.0, 'bold', 'middle');
+      g += T((c3 + xNil + wNil) / 2, footerBoxY + 8.8, 'PARAF', 2.0, 'bold', 'middle');
+    }
+  }
+
+  g += T(105, 291, `Template LJK Universal — ${set.app_name || 'Sistem Koreksi Hasil Sumatif Akhir Semester'}`, 2.2, 'normal', 'middle', '#64748B');
   return g;
 }
 
@@ -2139,13 +2458,10 @@ function buildStudioLJKSVG(cfg) {
   const perSheet = Number(cfg.perSheet) === 2 ? 2 : 1;
   const singleInner = buildSingleLJKSvgInner(cfg);
 
-  // Mode 1 LJK / Lembar (A4 Portrait 210 x 297 mm)
   if (perSheet === 1) {
     return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 297" width="210mm" height="297mm">${singleInner}</svg>`;
   }
 
-  // Mode 2 LJK / Lembar (A4 Landscape 297 x 210 mm):
-  // Menggunakan 2 salinan LJK 1-lembar (rasio 210:297 = 148.5:210) berdampingan sehingga setelah dipotong tengah 100% terbaca oleh scanner OMR!
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 297 210" width="297mm" height="210mm">
     <rect width="297" height="210" fill="#fff"/>
     <svg x="0" y="0" width="148.5" height="210" viewBox="0 0 210 297" preserveAspectRatio="xMidYMid meet">${singleInner}</svg>
@@ -2216,7 +2532,7 @@ function executeStudioPrint() {
 function printHTML(title, body, css = '') {
   const w = window.open('', '_blank');
   if (!w) return toast('Popup diblokir browser. Izinkan popup untuk mencetak.', 'err', 4500);
-  w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${esc(title)}</title><style>@page{size:A4;margin:12mm}html,body{margin:0;font-family:Arial,sans-serif;font-size:12px}table{border-collapse:collapse;width:100%}th,td{border:1px solid #444;padding:5px 7px;text-align:left}th{background:#f1f5f9}${css}</style></head><body>${body}<script>window.onload=function(){setTimeout(function(){window.print()},500)}<\/script></body></html>`);
+  w.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>${esc(title)}</title><style>@page{size:A4;margin:12mm}html,body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#000}table{border-collapse:collapse;width:100%}th,td{border:1px solid #333;padding:6px 8px}th{background:#f1f5f9;text-align:center;font-weight:bold}${css}</style></head><body>${body}<script>window.onload=function(){setTimeout(function(){window.print()},500)}<\/script></body></html>`);
   w.document.close();
 }
 
@@ -2238,7 +2554,6 @@ function pgDashboard() {
   const d = D(), js = visJadwal(), ids = new Set(js.map(j => j.id));
   const set = d.settings;
 
-  // Ucapan selamat datang menyesuaikan waktu perangkat + nama lengkap user yang login
   const waktuStr = getWaktuID();
   const tplGreet = (set.hero_greeting || 'Selamat {waktu} {nama}').trim();
   let rawGreet = tplGreet.replace(/\{waktu\}/gi, waktuStr);
@@ -2325,7 +2640,7 @@ function pgDashboard() {
       <button class="link" data-act="go" data-p="rekap">Lihat Semua</button>
     </div>
     <div class="tw" style="box-shadow:none;border:0">
-      <table style="min-width:460px">
+      <table style="min-width:440px">
         <thead><tr><th>Siswa</th><th>Mapel</th><th>Nilai</th><th style="text-align:right">Status</th></tr></thead>
         <tbody>
           ${recentScores.map(h => {
@@ -2684,6 +2999,7 @@ function setResult(r) {
   const j = scanJ();
   r.key = kunciOf(j.id);
   S.scanR = r;
+  markDirty();
   renderScanLeft();
   renderResult();
 }
@@ -2902,6 +3218,7 @@ async function saveResult() {
     return true;
   }, 'Menyimpan hasil scan…');
   if (ok) {
+    clearDirty();
     toast(`Tersimpan: ${sw?.nama} — nilai ${num(sc.nilai)}`);
     S.scanR = null; LIVE.cool = Date.now() + 2500; LIVE.stable = 0;
     const keep = S.ui.scanMode === 'cam' && S.cam;
@@ -3046,7 +3363,7 @@ function pgManual() {
     <div class="wm-grid" id="manScoreCards">
       <div class="wm-card">
         <small>PG Benar / Salah / Kosong</small>
-        <b style="font-size:20px;color:#047857">${sc.benar}B • ${sc.salah}S • ${sc.kosong}K</b>
+        <b style="font-size:19px;color:#047857">${sc.benar}B • ${sc.salah}S • ${sc.kosong}K</b>
         <div class="wm-ico" style="color:#10B981">${ic('check-circle', 56)}</div>
       </div>
       <div class="wm-card">
@@ -3136,7 +3453,7 @@ function refreshManualCards() {
     box.innerHTML = `
       <div class="wm-card">
         <small>PG Benar / Salah / Kosong</small>
-        <b style="font-size:20px;color:#047857">${sc.benar}B • ${sc.salah}S • ${sc.kosong}K</b>
+        <b style="font-size:19px;color:#047857">${sc.benar}B • ${sc.salah}S • ${sc.kosong}K</b>
         <div class="wm-ico" style="color:#10B981">${ic('check-circle', 56)}</div>
       </div>
       <div class="wm-card">
@@ -3201,6 +3518,7 @@ async function saveManualResult() {
     return true;
   }, 'Menyimpan hasil koreksi manual…');
   if (ok) {
+    clearDirty();
     toast(`Tersimpan: ${sw?.nama} — Nilai Akhir ${num(sc.nilai)}`);
     const pool = pesertaJadwal(j).filter(s => !M.kelas || s.kelas === M.kelas).sort((a, b) => a.nama.localeCompare(b.nama));
     const nextSiswa = pool.find(s => !D().hasil.some(h => h.jadwal_id === j.id && h.siswa_id === s.id));
@@ -3320,25 +3638,77 @@ async function rkExport(kind) {
   const R = S.ui.rekap, rows = rekapRows(j).filter(x => !R.kelas || x.s.kelas === R.kelas), kkm = kkmOf(j), set = D().settings;
   const kopTitle = (set.kop_lines || DEFAULT_KOP_LINES).filter(l => l.show !== false).map(l => l.text).join(' — ');
   const hd = j.jumlah_esai > 0
-    ? ['No', 'NIS', 'Nama', 'Kelas', 'Benar', 'Salah', 'Kosong', 'Nilai PG', 'Nilai Esai', 'Nilai Akhir', 'Keterangan']
-    : ['No', 'NIS', 'Nama', 'Kelas', 'Benar', 'Salah', 'Kosong', 'Nilai', 'Keterangan'];
+    ? ['No', 'NIS', 'Nama Peserta', 'Kelas', 'Benar', 'Salah', 'Kosong', 'Nilai PG', 'Nilai Esai', 'Nilai Akhir', 'Keterangan']
+    : ['No', 'NIS', 'Nama Peserta', 'Kelas', 'Benar', 'Salah', 'Kosong', 'Nilai', 'Keterangan'];
   const data = rows.map((x, i) => j.jumlah_esai > 0
     ? [i + 1, x.s.nis, x.s.nama, x.s.kelas, x.h?.benar ?? '', x.h?.salah ?? '', x.h?.kosong ?? '', x.h ? Number(x.h.nilai_pg ?? x.h.nilai) : '', x.h ? Number(x.h.nilai_esai ?? 0) : '', x.h ? Number(x.h.nilai) : '', x.h ? (x.h.nilai >= kkm ? 'Tuntas' : 'Remedial') : 'Belum dinilai']
     : [i + 1, x.s.nis, x.s.nama, x.s.kelas, x.h?.benar ?? '', x.h?.salah ?? '', x.h?.kosong ?? '', x.h ? Number(x.h.nilai) : '', x.h ? (x.h.nilai >= kkm ? 'Tuntas' : 'Remedial') : 'Belum dinilai']
   );
+
   if (kind === 'xlsx') {
     await guard(async () => {
       await loadScript(LIBS.xlsx);
-      const ws = XLSX.utils.aoa_to_sheet([[kopTitle], [`Rekap Nilai ${examLabel(j)} — Kelas ${R.kelas || j.kelas}`], [`KKM ${kkm}`], [], hd, ...data]);
+      const ws = XLSX.utils.aoa_to_sheet([[kopTitle], [`REKAP NILAI — ${examLabel(j).toUpperCase()}`], [`Kelas: ${R.kelas || j.kelas} • KKM: ${kkm}`], [], hd, ...data]);
       const wb = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(wb, ws, 'Rekap');
       XLSX.writeFile(wb, `Rekap_${j.nama_ujian.replace(/[^\w]+/g, '_')}.xlsx`);
     }, 'Membuat Excel…');
   } else {
-    const kopHTML = (set.kop_lines || DEFAULT_KOP_LINES).filter(l => l.show !== false).map(l =>
-      `<div style="font-size:${l.size}pt;font-weight:${l.bold ? 'bold' : 'normal'};font-style:${l.italic ? 'italic' : 'normal'};text-decoration:${l.underline ? 'underline' : 'none'}">${esc(l.text)}</div>`
+    const jmlTotal = rows.length;
+    const jmlTuntas = rows.filter(x => x.h && Number(x.h.nilai) >= kkm).length;
+    const jmlRemedial = rows.filter(x => x.h && Number(x.h.nilai) < kkm).length;
+    const jmlMenunggu = rows.filter(x => !x.h).length;
+    const jmlDinilai = jmlTuntas + jmlRemedial;
+    const pctTuntas = jmlDinilai ? Math.round((jmlTuntas / jmlDinilai) * 100) : 0;
+
+    const kopHTML = (set.kop_lines || DEFAULT_KOP_LINES).filter(l => l.show !== false && (l.text || '').trim() !== '').map(l =>
+      `<div style="font-size:${l.size}pt;font-weight:${l.bold ? 'bold' : 'normal'};font-style:${l.italic ? 'italic' : 'normal'};text-decoration:${l.underline ? 'underline' : 'none'};line-height:1.25">${esc(l.text)}</div>`
     ).join('');
-    printHTML('Rekap ' + j.nama_ujian, `<div style="text-align:center;border-bottom:2px solid #000;padding-bottom:8px;margin-bottom:12px">${kopHTML}</div><h3 style="margin:6px 0">Rekap Nilai — ${esc(examLabel(j))}</h3><p>Kelas: ${esc(R.kelas || j.kelas)} • KKM: ${kkm}</p><table><thead><tr>${hd.map(h => `<th>${h}</th>`).join('')}</tr></thead><tbody>${data.map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('')}</tbody></table><p style="margin-top:30px;text-align:right">${esc(set.kota || '')}, ${fmtDate(todayISO())}<br>Kepala Sekolah<br><br><br><br><b>${esc(set.kepala_sekolah || '')}</b><br>NIP. ${esc(set.nip_kepala || '-')}</p>`);
+
+    const hasL = Boolean((set.logo_kiri || '').trim());
+    const hasR = Boolean((set.logo_kanan || '').trim());
+
+    const headerKopHTML = `
+      <div style="display:grid;grid-template-columns:68px 1fr 68px;align-items:center;gap:10px;border-bottom:3px double #000;padding-bottom:8px;margin-bottom:14px">
+        <div style="text-align:center">${hasL ? `<img src="${esc(set.logo_kiri)}" style="max-height:60px;max-width:60px;object-fit:contain">` : ''}</div>
+        <div style="text-align:center">${kopHTML}</div>
+        <div style="text-align:center">${hasR ? `<img src="${esc(set.logo_kanan)}" style="max-height:60px;max-width:60px;object-fit:contain">` : ''}</div>
+      </div>
+      <div style="text-align:center;margin-bottom:14px">
+        <h3 style="margin:0 0 4px 0;font-size:14pt;text-transform:uppercase;letter-spacing:0.02em">REKAP NILAI — ${esc(examLabel(j))}</h3>
+        <p style="margin:0;font-size:10.5pt;color:#222">Kelas: <b>${esc(R.kelas || j.kelas)}</b> &bull; KKM: <b>${kkm}</b></p>
+      </div>`;
+
+    const tableRowsHTML = data.map(r => `<tr>${r.map((c, colIdx) => {
+      // Kolom index 2 adalah Nama Peserta -> rata kiri; kolom lain -> rata tengah
+      const align = colIdx === 2 ? 'left' : 'center';
+      return `<td style="text-align:${align}">${esc(c)}</td>`;
+    }).join('')}</tr>`).join('');
+
+    const footerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-top:24px;page-break-inside:avoid">
+        <div style="border:1px solid #333;border-radius:6px;padding:10px 14px;min-width:250px;font-size:10.5pt">
+          <div style="font-weight:bold;border-bottom:1px solid #999;padding-bottom:4px;margin-bottom:6px;text-transform:uppercase;font-size:9.5pt">Ringkasan Keterangan Peserta</div>
+          <table style="border:0;width:100%">
+            <tr><td style="border:0;padding:2px 0;text-align:left">Jumlah Peserta Terdaftar</td><td style="border:0;padding:2px 0;text-align:right;font-weight:bold">: ${jmlTotal} siswa</td></tr>
+            <tr><td style="border:0;padding:2px 0;text-align:left">Tuntas (&ge; KKM ${kkm})</td><td style="border:0;padding:2px 0;text-align:right;font-weight:bold">: ${jmlTuntas} siswa (${pctTuntas}%)</td></tr>
+            <tr><td style="border:0;padding:2px 0;text-align:left">Remedial (&lt; KKM ${kkm})</td><td style="border:0;padding:2px 0;text-align:right;font-weight:bold">: ${jmlRemedial} siswa</td></tr>
+            <tr><td style="border:0;padding:2px 0;text-align:left">Belum Dinilai (Menunggu)</td><td style="border:0;padding:2px 0;text-align:right;font-weight:bold">: ${jmlMenunggu} siswa</td></tr>
+          </table>
+        </div>
+        <div style="min-width:235px;text-align:left;font-size:11pt;line-height:1.45">
+          <div>${esc(set.kota || 'Sukabumi')}, ${fmtDate(todayISO())}</div>
+          <div>Kepala Sekolah,</div>
+          <div style="height:58px"></div>
+          <div style="font-weight:bold;text-decoration:underline">${esc(set.kepala_sekolah || '')}</div>
+          <div>NIP. ${esc(set.nip_kepala || '-')}</div>
+        </div>
+      </div>`;
+
+    printHTML(
+      'Rekap ' + j.nama_ujian,
+      `${headerKopHTML}<table><thead><tr>${hd.map(h => `<th style="text-align:center">${h}</th>`).join('')}</tr></thead><tbody>${tableRowsHTML}</tbody></table>${footerHTML}`
+    );
   }
 }
 
@@ -3618,7 +3988,6 @@ function parseSiswaRow(cols) {
   if (!r.length) return null;
   const h0 = r[0].toLowerCase();
   if (h0 === 'nis' || h0 === 'no' || h0 === 'nomor') return null;
-  // Jika kolom pertama hanya nomor urut 1..3 digit dan kolom >= 5
   if (r.length >= 5 && /^\d{1,3}$/.test(r[0]) && r[1].length >= 4) {
     r = r.slice(1);
   }
@@ -3634,21 +4003,18 @@ function parseSiswaRow(cols) {
     jk = normGender(r[4]);
   } else if (r.length === 4) {
     if (isGender(r[3])) {
-      // Format 4 kolom: NIS ; Nama ; Kelas ; L/P
       nis = r[0];
       nisn = '';
       nama = r[1];
       kelas = r[2];
       jk = normGender(r[3]);
     } else {
-      // Format 4 kolom: NIS ; NISN ; Nama ; Kelas
       nis = r[0];
       nisn = r[1];
       nama = r[2];
       kelas = r[3];
     }
   } else if (r.length === 3) {
-    // Format 3 kolom: NIS ; Nama ; Kelas
     nis = r[0];
     nisn = '';
     nama = r[1];
@@ -3750,7 +4116,7 @@ async function saveBulkRows() {
   }
 }
 
-/* ---------- 8. Pengaturan (Kop Surat, Tampilan, Firebase Rules, Backup) ---------- */
+/* ---------- 8. Pengaturan (Tampilan + Ikon, Kop + Multi-baris LJK, Info Skema Firestore, Backup & Reset) ---------- */
 const FIRESTORE_RULES_SNIPPET = `rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -3779,10 +4145,175 @@ service cloud.firestore {
   }
 }`;
 
+const FIRESTORE_SCHEMA_TEXT = `RINGKASAN SKEMA KOLEKSI DATABASE FIRESTORE (PROJECT: koreksi-v2)
+====================================================================
+
+1. Koleksi: settings (Dokumen utama: settings/default)
+   - app_name (string)               : Judul aplikasi
+   - app_subtitle (string)           : Subjudul aplikasi
+   - login_title (string)            : Judul utama halaman login & hero
+   - login_subtitle (string)         : Subjudul halaman login
+   - hero_greeting (string)          : Template sapaan beranda ({waktu}, {nama})
+   - hero_desc (string)              : Deskripsi banner beranda
+   - hero_cta (string)               : Teks tombol utama beranda
+   - theme_color (string)            : Kode warna hex aksen utama (#1D74F5)
+   - icon_system, icon_user, icon_admin (string) : Kode ikon atau URL gambar logo
+   - icon_*_color, icon_*_bg (string), icon_*_transparent (boolean) : Styling ikon
+   - logo_kiri, logo_kanan (string)  : URL logo instansi/kabupaten & sekolah
+   - kop_lines (array<map>)          : Baris teks kop surat {text, size, bold, italic, underline, show}
+   - ljk_title_lines (array<map>)    : Baris keterangan judul LJK multi-baris
+   - pg_header_lines (array<map>)    : Baris keterangan area PG multi-baris
+   - show_ttd_siswa (boolean)        : Tampilkan kotak TTD siswa di bawah LJK
+   - show_nilai_guru (boolean)       : Tampilkan kotak pengisian nilai manual guru di bawah LJK
+   - kota, kepala_sekolah, nip_kepala (string), kkm_default (number)
+
+2. Koleksi: users (Akun Guru / Korektor)
+   - nip (string)                    : NIP guru/korektor
+   - nama (string)                   : Nama lengkap & gelar
+   - username (string)               : Username login guru
+   - password (string)               : Kata sandi login guru
+   - aktif (boolean)                 : Status aktif akun
+   - created_at (string ISO)         : Waktu pembuatan data
+
+3. Koleksi: mata_pelajaran (Daftar Mata Pelajaran & KKM)
+   - nama (string)                   : Nama mata pelajaran
+   - kkm (number)                    : Kriteria Ketuntasan Minimal (0-100)
+   - created_at (string ISO)         : Waktu pembuatan data
+
+4. Koleksi: peserta_ujian (Data Siswa & Kelas)
+   - nis (string)                    : Nomor Induk Siswa (unik)
+   - nisn (string)                   : Nomor Induk Siswa Nasional
+   - nama (string)                   : Nama lengkap peserta didik
+   - kelas (string)                  : Kode kelas (mis. 9A, 8C)
+   - jenis_kelamin (string)          : 'L' atau 'P'
+   - aktif (boolean)                 : Status keikutsertaan ujian
+   - created_at (string ISO)         : Waktu pembuatan data
+
+5. Koleksi: ujian_sas (Paket Soal & Kunci Jawaban)
+   - kode_paket (string)             : Kode paket soal (mis. SAS-PP-9)
+   - nama_ujian (string)             : Nama mata pelajaran / ujian
+   - kkm (number)                    : KKM paket ujian
+   - guru_id (string|null)           : ID dokumen users pengampu
+   - kelas_list (array<string>)      : Daftar kelas peserta (mis. ['9A', '9B'])
+   - kelas (string)                  : Gabungan teks kelas
+   - jumlah_soal (number)            : Jumlah soal PG (1-50)
+   - jumlah_opsi (number)            : Jumlah pilihan jawaban (4 atau 5)
+   - bobot_pg (number)               : Persentase bobot nilai PG (0-100)
+   - jumlah_esai (number)            : Jumlah butir soal uraian/esai (0-20)
+   - bobot_esai (number)             : Persentase bobot nilai esai (0-100)
+   - skor_maks_esai (array<number>)  : Skor maksimal per nomor soal esai
+   - kunci (array<string>)           : Kunci jawaban PG ['A','B',...]
+   - status (string)                 : 'aktif' atau 'selesai'
+   - created_at (string ISO)         : Waktu pembuatan data
+
+6. Koleksi: hasil_koreksi (Hasil Scan LJK & Penilaian Manual)
+   - jadwal_id (string)              : ID dokumen ujian_sas
+   - siswa_id (string)               : ID dokumen peserta_ujian
+   - kelas (string)                  : Kelas peserta saat ujian
+   - jawaban (array<string>)         : Jawaban PG siswa ['A','C','',...]
+   - skor_esai (array<number>)       : Perolehan skor per butir soal esai
+   - benar, salah, kosong (number)   : Rekap jumlah jawaban PG
+   - nilai_pg (number)               : Nilai PG skala 0-100
+   - nilai_esai (number)             : Nilai Esai skala 0-100
+   - nilai (number)                  : Nilai Akhir gabungan PG + Esai (0-100)
+   - scanned_by (string)             : Nama korektor yang menyimpan
+   - scanned_at (string ISO)         : Waktu koreksi disimpan`;
+
+function renderDynamicLinesEditor(draftKey, listArr, placeholderText) {
+  return `<div class="dyn-lines-wrap" data-draft-key="${draftKey}">
+    ${listArr.map((l, idx) => `
+      <div class="kop-row">
+        <input class="inp" style="height:36px" data-dyn-key="${draftKey}" data-dyn-f="text" data-i="${idx}" value="${esc(l.text)}" placeholder="${esc(placeholderText)}">
+        <input class="inp" style="height:36px;text-align:center" type="number" min="7" max="24" data-dyn-key="${draftKey}" data-dyn-f="size" data-i="${idx}" value="${l.size}" title="Ukuran Font (pt)">
+        <div class="fmt-grp">
+          <button type="button" class="fmt-btn ${l.bold ? 'on' : ''}" data-act="dynToggle" data-dk="${draftKey}" data-f="bold" data-i="${idx}" title="Tebal">B</button>
+          <button type="button" class="fmt-btn ${l.italic ? 'on' : ''}" data-act="dynToggle" data-dk="${draftKey}" data-f="italic" data-i="${idx}" title="Miring"><i>I</i></button>
+          <button type="button" class="fmt-btn ${l.underline ? 'on' : ''}" data-act="dynToggle" data-dk="${draftKey}" data-f="underline" data-i="${idx}" title="Garis Bawah"><u>U</u></button>
+          <button type="button" class="fmt-btn ${l.show !== false ? 'on' : ''}" data-act="dynToggle" data-dk="${draftKey}" data-f="show" data-i="${idx}" title="Tampilkan">${ic('eye', 13)}</button>
+        </div>
+        <div class="fmt-grp">
+          <button type="button" class="fmt-btn" data-act="dynMove" data-dk="${draftKey}" data-d="-1" data-i="${idx}" ${idx === 0 ? 'disabled' : ''}>${ic('arrow-up', 13)}</button>
+          <button type="button" class="fmt-btn" data-act="dynMove" data-dk="${draftKey}" data-d="1" data-i="${idx}" ${idx === listArr.length - 1 ? 'disabled' : ''}>${ic('arrow-down', 13)}</button>
+          <button type="button" class="fmt-btn" style="color:var(--rose)" data-act="dynDel" data-dk="${draftKey}" data-i="${idx}" ${listArr.length <= 1 ? 'disabled' : ''}>${ic('trash-2', 13)}</button>
+        </div>
+      </div>`).join('')}
+  </div>`;
+}
+
+function renderIconConfigCard(kind, title, desc) {
+  const icd = S.ui.iconDraft[kind];
+  const val = (icd.icon || '').trim();
+  const prevBg = icd.transparent ? 'transparent' : (icd.bg || '#1D74F5');
+  const prevInner = isImageUrl(val)
+    ? `<img src="${esc(val)}" alt="${kind}">`
+    : `<span style="color:${esc(icd.color)};display:grid;place-items:center">${ic(ICONS[val] ? val : 'scan-line', 22)}</span>`;
+
+  return `<div class="ico-cfg-card">
+    <div class="ico-cfg-head">
+      <div class="ico-prev-box" style="background:${esc(prevBg)}">${prevInner}</div>
+      <div style="min-width:0;flex:1">
+        <b style="display:block;font-size:13.5px">${esc(title)}</b>
+        <small style="display:block;font-size:11px;color:var(--muted)">${esc(desc)}</small>
+      </div>
+    </div>
+
+    <label class="f" style="margin-bottom:8px">
+      <span>Kode Ikon atau Link Gambar / Logo</span>
+      <input class="inp" style="height:36px;font-size:12px" data-ico-kind="${kind}" data-ico-f="icon" value="${esc(icd.icon)}" placeholder="scan-line atau https://.../logo.png">
+    </label>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px">
+      <div>
+        <small style="display:block;font-size:11px;font-weight:600;color:var(--body);margin-bottom:4px">Warna Ikon</small>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="color" data-ico-kind="${kind}" data-ico-f="color" value="${esc(icd.color)}" style="width:34px;height:32px;border:0;background:none;cursor:pointer">
+          <code style="font-size:11px;color:var(--muted)">${esc(icd.color)}</code>
+        </div>
+      </div>
+      <div>
+        <small style="display:block;font-size:11px;font-weight:600;color:var(--body);margin-bottom:4px">Warna Background</small>
+        <div style="display:flex;align-items:center;gap:6px">
+          <input type="color" data-ico-kind="${kind}" data-ico-f="bg" value="${esc(icd.bg)}" ${icd.transparent ? 'disabled' : ''} style="width:34px;height:32px;border:0;background:none;cursor:pointer;opacity:${icd.transparent ? 0.35 : 1}">
+          <button type="button" class="btn xs ${icd.transparent ? 'amber' : 'ghost'}" data-act="icoToggleTrans" data-kind="${kind}">${icd.transparent ? 'Transparent ✓' : 'Set Transparent'}</button>
+        </div>
+      </div>
+    </div>
+
+    <small style="display:block;font-size:11px;font-weight:600;color:var(--muted)">Pilih Ikon Cepat:</small>
+    <div class="ico-choices">
+      ${PRESET_ICON_KEYS.map(k => `<button type="button" class="ico-opt ${val === k ? 'on' : ''}" data-act="icoPick" data-kind="${kind}" data-v="${k}" title="${k}">${ic(k, 15)}</button>`).join('')}
+    </div>
+  </div>`;
+}
+
 function pgPengaturan() {
   const set = D().settings;
   const tab = S.ui.setTab;
   if (!S.ui.kopDraft) S.ui.kopDraft = clone(set.kop_lines || DEFAULT_KOP_LINES);
+  if (!S.ui.ljkTitleDraft) S.ui.ljkTitleDraft = clone(set.ljk_title_lines || DEFAULT_LJK_TITLE_LINES);
+  if (!S.ui.pgHeaderDraft) S.ui.pgHeaderDraft = clone(set.pg_header_lines || DEFAULT_PG_HEADER_LINES);
+  if (!S.ui.iconDraft) {
+    S.ui.iconDraft = {
+      system: {
+        icon: set.icon_system || 'scan-line',
+        color: set.icon_system_color || '#FFFFFF',
+        bg: set.icon_system_bg || '#1D74F5',
+        transparent: Boolean(set.icon_system_transparent)
+      },
+      user: {
+        icon: set.icon_user || 'user',
+        color: set.icon_user_color || '#1D74F5',
+        bg: set.icon_user_bg || '#EFF6FF',
+        transparent: Boolean(set.icon_user_transparent)
+      },
+      admin: {
+        icon: set.icon_admin || 'shield-check',
+        color: set.icon_admin_color || '#1D74F5',
+        bg: set.icon_admin_bg || '#EFF6FF',
+        transparent: Boolean(set.icon_admin_transparent)
+      }
+    };
+  }
 
   const tabs = `<div class="tabs2">
     <button class="${tab === 'tampilan' ? 'on' : ''}" data-act="setTab" data-t="tampilan">${ic('sparkles', 15)} Tampilan & Tulisan</button>
@@ -3811,51 +4342,81 @@ function pgPengaturan() {
         </label>
         <label class="f full"><span>Deskripsi Banner Beranda</span><textarea class="inp" name="hero_desc" rows="2">${esc(set.hero_desc)}</textarea></label>
       </div>
+
+      <h3 style="margin-top:16px">Kustomisasi Ikon System, User & Admin</h3>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Pilih ikon dari daftar di bawah, ketik kode ikon secara langsung (mis. <code>scan-line</code>, <code>award</code>, <code>user-check</code>), atau tempelkan URL gambar/logo sekolah.</p>
+      <div class="ico-cfg-grid">
+        ${renderIconConfigCard('system', 'Ikon System', 'Logo sidebar & header halaman login')}
+        ${renderIconConfigCard('user', 'Ikon User (Guru)', 'Avatar profil & role login guru')}
+        ${renderIconConfigCard('admin', 'Ikon Admin', 'Avatar profil & role login admin')}
+      </div>
+
       <div class="macts"><button class="btn">${ic('save', 15)}Simpan Pengaturan Tampilan</button></div>
     </form>`;
   } else if (tab === 'kop') {
     const lines = S.ui.kopDraft;
+    const titleLines = S.ui.ljkTitleDraft;
+    const pgHdrLines = S.ui.pgHeaderDraft;
+
     const prevHTML = lines.filter(l => l.show !== false && (l.text || '').trim() !== '').map(l =>
       `<div style="font-size:${l.size}pt;font-weight:${l.bold ? 'bold' : 'normal'};font-style:${l.italic ? 'italic' : 'normal'};text-decoration:${l.underline ? 'underline' : 'none'};line-height:1.25">${esc(l.text)}</div>`
     ).join('');
 
     body = `<form class="card" data-form="settingsKop">
-      <h3>Pengaturan Kop Surat (Cetak LJK & Rekap PDF)</h3>
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
+        <h3 style="margin:0">Pengaturan Kop Surat, Teks LJK & Opsi Bagian Bawah</h3>
+        <button type="button" class="btn sm ghost" data-act="fillLjkExample">${ic('sparkles', 14)}Isi Contoh Standar LJK</button>
+      </div>
+
       <div class="fg">
         <label class="f"><span>URL Logo Kiri (Kabupaten / Instansi)</span><input class="inp" id="inpLogoKiri" name="logo_kiri" value="${esc(set.logo_kiri || '')}" placeholder="https://.../logo-kiri.png"></label>
         <label class="f"><span>URL Logo Kanan (Logo Sekolah)</span><input class="inp" id="inpLogoKanan" name="logo_kanan" value="${esc(set.logo_kanan || '')}" placeholder="https://.../logo-sekolah.png"></label>
       </div>
 
-      <div style="display:flex;justify-content:space-between;align-items:center;margin:8px 0 10px">
-        <b style="font-size:13px">Baris Teks Kop Surat (Dinamis)</b>
-        <button type="button" class="btn sm ghost" data-act="kopAdd">${ic('plus', 14)}Tambah Baris Kop</button>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:8px 0 8px">
+        <b style="font-size:13px">1. Baris Teks Kop Surat (Dinamis)</b>
+        <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="kopDraft">${ic('plus', 14)}Tambah Baris Kop</button>
       </div>
+      ${renderDynamicLinesEditor('kopDraft', lines, 'Teks baris kop surat…')}
 
-      <div id="kopLinesWrap">
-        ${lines.map((l, idx) => `
-          <div class="kop-row" data-kidx="${idx}">
-            <input class="inp" style="height:36px" data-kop-f="text" data-i="${idx}" value="${esc(l.text)}" placeholder="Teks baris kop…">
-            <input class="inp" style="height:36px;text-align:center" type="number" min="7" max="24" data-kop-f="size" data-i="${idx}" value="${l.size}" title="Ukuran Font (pt)">
-            <div class="fmt-grp">
-              <button type="button" class="fmt-btn ${l.bold ? 'on' : ''}" data-act="kopToggle" data-f="bold" data-i="${idx}" title="Tebal">B</button>
-              <button type="button" class="fmt-btn ${l.italic ? 'on' : ''}" data-act="kopToggle" data-f="italic" data-i="${idx}" title="Miring"><i>I</i></button>
-              <button type="button" class="fmt-btn ${l.underline ? 'on' : ''}" data-act="kopToggle" data-f="underline" data-i="${idx}" title="Garis Bawah"><u>U</u></button>
-              <button type="button" class="fmt-btn ${l.show !== false ? 'on' : ''}" data-act="kopToggle" data-f="show" data-i="${idx}" title="Tampilkan">${ic('eye', 13)}</button>
-            </div>
-            <div class="fmt-grp">
-              <button type="button" class="fmt-btn" data-act="kopMove" data-d="-1" data-i="${idx}" ${idx === 0 ? 'disabled' : ''}>${ic('arrow-up', 13)}</button>
-              <button type="button" class="fmt-btn" data-act="kopMove" data-d="1" data-i="${idx}" ${idx === lines.length - 1 ? 'disabled' : ''}>${ic('arrow-down', 13)}</button>
-              <button type="button" class="fmt-btn" style="color:var(--rose)" data-act="kopDel" data-i="${idx}" ${lines.length <= 1 ? 'disabled' : ''}>${ic('trash-2', 13)}</button>
-            </div>
-          </div>`).join('')}
-      </div>
-
-      <div style="margin:14px 0;padding:16px;border:1.5px dashed var(--line);border-radius:16px;background:#fff;color:#000">
-        <div style="font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:700">PRATINJAU KOP SURAT:</div>
-        <div style="display:grid;grid-template-columns:64px 1fr 64px;align-items:center;gap:10px;border-bottom:3px double #000;padding-bottom:8px">
-          <div style="text-align:center">${set.logo_kiri ? `<img src="${esc(set.logo_kiri)}" style="max-height:56px;max-width:56px;object-fit:contain">` : ''}</div>
+      <div style="margin:12px 0 18px;padding:14px;border:1.5px dashed var(--line);border-radius:16px;background:#fff;color:#000">
+        <div style="font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:700">PRATINJAU KOP SURAT:</div>
+        <div style="display:grid;grid-template-columns:60px 1fr 60px;align-items:center;gap:10px;border-bottom:3px double #000;padding-bottom:8px">
+          <div style="text-align:center">${set.logo_kiri ? `<img src="${esc(set.logo_kiri)}" style="max-height:52px;max-width:52px;object-fit:contain">` : ''}</div>
           <div style="text-align:center">${prevHTML}</div>
-          <div style="text-align:center">${set.logo_kanan ? `<img src="${esc(set.logo_kanan)}" style="max-height:56px;max-width:56px;object-fit:contain">` : ''}</div>
+          <div style="text-align:center">${set.logo_kanan ? `<img src="${esc(set.logo_kanan)}" style="max-height:52px;max-width:52px;object-fit:contain">` : ''}</div>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px">
+        <div>
+          <b style="font-size:13px;display:block">2. Keterangan Judul LJK (Multi-Baris)</b>
+          <small style="font-size:11.5px;color:var(--muted)">Contoh: Baris 1 "LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)" (11pt Bold), Baris 2 "TAHUN PELAJARAN 2026 / 2027" (9pt).</small>
+        </div>
+        <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="ljkTitleDraft">${ic('plus', 14)}Tambah Baris</button>
+      </div>
+      ${renderDynamicLinesEditor('ljkTitleDraft', titleLines, 'Contoh: LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)')}
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px">
+        <div>
+          <b style="font-size:13px;display:block">3. Keterangan Area Jawaban Pilihan Ganda (Multi-Baris)</b>
+          <small style="font-size:11.5px;color:var(--muted)">Posisi otomatis terkunci di atas bulatan soal PG agar <b>100% tetap terbaca saat discan</b>.</small>
+        </div>
+        <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="pgHeaderDraft">${ic('plus', 14)}Tambah Baris</button>
+      </div>
+      ${renderDynamicLinesEditor('pgHeaderDraft', pgHdrLines, 'Contoh: AREA JAWABAN PILIHAN GANDA')}
+
+      <div style="background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;margin:14px 0">
+        <b style="font-size:13px;display:block;margin-bottom:8px">4. Opsi Bagian Bawah Lembar LJK</b>
+        <div style="display:grid;gap:8px">
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-weight:600">
+            <input type="checkbox" name="show_ttd_siswa" ${set.show_ttd_siswa !== false ? 'checked' : ''} style="width:17px;height:17px">
+            Tampilkan Kotak Tanda Tangan Peserta Ujian (Siswa) di bagian bawah LJK
+          </label>
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-weight:600">
+            <input type="checkbox" name="show_nilai_guru" ${set.show_nilai_guru !== false ? 'checked' : ''} style="width:17px;height:17px">
+            Tampilkan Kotak Kolom Nilai Siswa (Diisi Manual oleh Guru: Nilai PG, Esai, Nilai Akhir & Paraf)
+          </label>
         </div>
       </div>
 
@@ -3867,55 +4428,183 @@ function pgPengaturan() {
         <label class="f"><span>KKM Default</span><input class="inp" type="number" min="0" max="100" name="kkm_default" value="${set.kkm_default ?? 76}"></label>
       </div>
       <div class="macts">
-        <button type="button" class="btn ghost" data-act="studioOpen">${ic('printer', 15)}Buka Studio Cetak LJK</button>
-        <button class="btn">${ic('save', 15)}Simpan Kop & Identitas</button>
+        <button type="button" class="btn ghost" data-act="studioOpen">${ic('printer', 15)}Pratinjau & Cetak LJK</button>
+        <button class="btn">${ic('save', 15)}Simpan Kop & LJK</button>
       </div>
     </form>`;
   } else if (tab === 'firebase') {
     body = `<div class="card" style="margin-bottom:16px">
       <h3>Status Koneksi Backend</h3>
       <p style="font-size:13px;color:var(--body);margin-bottom:10px">Mode aktif saat ini: <span class="bdg ${IS_PREVIEW ? 'a' : 'g'}">${IS_PREVIEW ? 'MODE PREVIEW (In-Memory Dummy)' : 'MODE PRODUKSI (Firebase Project: ' + esc(firebaseConfig.projectId) + ')'}</span></p>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px">
         <b style="font-size:13px">Firestore Security Rules (Salin ke Firebase Console → Firestore → Rules)</b>
         <button type="button" class="btn sm ghost" data-act="copyRules">${ic('copy', 14)}Salin Rules</button>
       </div>
       <pre class="codebox" id="rulesBox">${esc(FIRESTORE_RULES_SNIPPET)}</pre>
     </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+        <div>
+          <h3 style="margin:0">Ringkasan Skema Koleksi Database Firestore</h3>
+          <small style="color:var(--muted);font-size:12px">Struktur lengkap 6 koleksi database beserta atribut dan tipe datanya</small>
+        </div>
+        <button type="button" class="btn sm" data-act="copySchema">${ic('copy', 14)}Salin Semua Skema Koleksi</button>
+      </div>
+      <pre class="codebox" id="schemaBox">${esc(FIRESTORE_SCHEMA_TEXT)}</pre>
+    </div>
+
     <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
         <h3 style="margin:0">Konfigurasi Firebase Project Aktif</h3>
         <button type="button" class="btn sm ghost" data-act="copyCfg">${ic('copy', 14)}Salin Config</button>
       </div>
       <pre class="codebox" id="cfgBox">${esc(JSON.stringify(firebaseConfig, null, 2))}</pre>
     </div>`;
   } else {
-    body = `<div class="card">
+    const resetItems = [
+      { k: 'hasil', label: 'Hasil Koreksi & Nilai', col: 'hasil_koreksi', desc: 'Seluruh data skor hasil scan LJK maupun periksa manual', count: D().hasil.length },
+      { k: 'jadwal', label: 'Paket Ujian & Kunci Jawaban', col: 'ujian_sas', desc: 'Daftar paket soal ujian beserta kunci jawaban PG & bobot', count: D().jadwal.length },
+      { k: 'siswa', label: 'Peserta Ujian & Kelas', col: 'peserta_ujian', desc: 'Seluruh biodata siswa peserta ujian dan pengelompokan kelas', count: D().siswa.length },
+      { k: 'guru', label: 'Akun Guru / Korektor', col: 'users', desc: 'Daftar akun login guru / korektor ujian', count: D().guru.length },
+      { k: 'mapel', label: 'Mata Pelajaran & KKM', col: 'mata_pelajaran', desc: 'Daftar referensi mata pelajaran dan KKM default', count: D().mapel.length }
+    ];
+    const selectedCount = resetItems.filter(x => S.ui.resetSel[x.k]).reduce((s, x) => s + x.count, 0);
+
+    body = `<div class="card" style="margin-bottom:18px">
       <h3>Backup & Restore Data Operasional (JSON)</h3>
-      <p style="color:var(--muted);font-size:13px;margin-bottom:14px">Cadangkan seluruh data guru, mata pelajaran, peserta ujian, paket soal, dan hasil koreksi. Proses restore hanya memulihkan data operasional tanpa menimpa pengaturan tampilan.</p>
+      <p style="color:var(--muted);font-size:13px;margin-bottom:14px">Cadangkan seluruh data guru, mata pelajaran, peserta ujian, paket soal, dan hasil koreksi. Proses restore hanya memulihkan data operasional tanpa menimpa pengaturan tampilan & kop surat.</p>
       <div class="acts">
         <button class="btn" data-act="backup">${ic('download', 16)}Unduh File Backup (.json)</button>
         <label class="btn ghost">${ic('upload', 16)}Pulihkan dari Backup (.json)<input type="file" accept=".json" hidden data-bind="restore"></label>
       </div>
+    </div>
+
+    <div class="card" style="border-color:#FECDD3">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+        <h3 style="margin:0;color:#BE123C">${ic('alert-triangle', 18)} Reset System (Pembersihan Data Operasional)</h3>
+        <span class="bdg r">Auto-Backup Aktif</span>
+      </div>
+      <p style="color:var(--body);font-size:13px;margin-bottom:14px">
+        Pilih kategori data yang ingin dikosongkan menggunakan saklar di bawah. Sebelum proses reset dijalankan, sistem akan <b>secara otomatis mengunduh file backup (.json)</b> dan meminta <b>konfirmasi Password Admin</b>. Data pada menu <b>Pengaturan</b> tidak akan terhapus.
+      </p>
+
+      ${resetItems.map(it => {
+        const isOn = Boolean(S.ui.resetSel[it.k]);
+        return `<div class="sw-row ${isOn ? 'on' : ''}">
+          <div style="min-width:0;flex:1">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <b style="font-size:13.5px;color:var(--ink)">${esc(it.label)}</b>
+              <span class="bdg ${it.count > 0 ? (isOn ? 'r' : 'c') : ''}">${it.count} data</span>
+            </div>
+            <small style="display:block;font-size:12px;color:var(--muted)">${esc(it.desc)} (<code>${esc(it.col)}</code>)</small>
+          </div>
+          <label class="switch" title="Pilih data untuk direset">
+            <input type="checkbox" data-reset-k="${it.k}" ${isOn ? 'checked' : ''}>
+            <span class="slider"></span>
+          </label>
+        </div>`;
+      }).join('')}
+
+      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <span style="font-size:12.5px;color:var(--muted)">Total record terpilih untuk direset: <b style="color:#BE123C">${selectedCount} data</b></span>
+        <button type="button" class="btn danger" data-act="openResetModal">${ic('trash-2', 16)}Auto-Backup & Reset Data Terpilih</button>
+      </div>
     </div>`;
   }
 
-  return head('Pengaturan Sistem', 'Konfigurasi tampilan, kop surat sekolah, integrasi Firebase, dan cadangan data', '') + tabs + body;
+  return head('Pengaturan Sistem', 'Konfigurasi tampilan, ikon, kop surat & LJK, info skema Firebase, serta reset data', '') + tabs + body;
+}
+
+function openResetConfirmModal() {
+  const keys = Object.keys(S.ui.resetSel).filter(k => S.ui.resetSel[k]);
+  if (!keys.length) return toast('Pilih minimal satu kategori data menggunakan saklar terlebih dahulu.', 'err');
+  const labels = {
+    hasil: `Hasil Koreksi & Nilai (${D().hasil.length} data)`,
+    jadwal: `Paket Ujian & Kunci Jawaban (${D().jadwal.length} data)`,
+    siswa: `Peserta Ujian & Kelas (${D().siswa.length} data)`,
+    guru: `Akun Guru / Korektor (${D().guru.length} data)`,
+    mapel: `Mata Pelajaran & KKM (${D().mapel.length} data)`
+  };
+
+  openModal(`<div class="mh"><h3 style="margin:0;color:#BE123C">Konfirmasi Reset System</h3><button class="btn sm ghost ico-b" data-act="closeModal">${ic('x', 16)}</button></div>
+    <div class="warn" style="margin-bottom:12px">
+      <b>Perhatian:</b> Sistem akan mengunduh <b>Auto-Backup JSON</b> terlebih dahulu, kemudian menghapus permanen kategori data berikut:
+      <ul style="margin:6px 0 0 18px;padding:0">
+        ${keys.map(k => `<li><b>${esc(labels[k])}</b></li>`).join('')}
+      </ul>
+    </div>
+    <form data-form="confirmReset">
+      <label class="f">
+        <span>Masukkan Password Admin untuk Verifikasi *</span>
+        <div class="inp-ico-wrap">
+          <span class="lead-ico">${ic('key-round', 16)}</span>
+          <input class="inp" type="password" name="admin_pass" required autocomplete="current-password" placeholder="Masukkan password login Admin">
+        </div>
+      </label>
+      <div class="macts">
+        <button type="button" class="btn ghost" data-act="closeModal">Batal</button>
+        <button type="submit" class="btn danger">${ic('trash-2', 15)}Verifikasi, Unduh Backup & Reset</button>
+      </div>
+    </form>`);
+}
+
+async function executeResetSystem(adminPass) {
+  const keys = Object.keys(S.ui.resetSel).filter(k => S.ui.resetSel[k]);
+  if (!keys.length) return;
+
+  const ok = await guard(async () => {
+    // 1. Verifikasi ulang Password Admin
+    await verifyAdminPassword(adminPass);
+
+    // 2. Auto-Backup JSON sebelum penghapusan data
+    const ts = new Date().toISOString().replace(/[:T]/g, '-').slice(0, 16);
+    const backupPayload = {
+      auto_backup_before_reset: true,
+      exported_at: new Date().toISOString(),
+      reset_categories: keys,
+      users: D().guru,
+      mata_pelajaran: D().mapel,
+      peserta_ujian: D().siswa,
+      ujian_sas: D().jadwal,
+      hasil_koreksi: D().hasil
+    };
+    download(`auto_backup_sebelum_reset_${ts}.json`, JSON.stringify(backupPayload, null, 2), 'application/json');
+
+    // 3. Hapus dokumen pada koleksi yang dipilih (Settings TIDAK disentuh)
+    for (const k of keys) {
+      await dbClearCollection(k);
+    }
+
+    // 4. Muat ulang data operasional
+    await reload(['guru', 'mapel', 'siswa', 'jadwal', 'hasil']);
+    return true;
+  }, 'Memverifikasi Admin, membuat Auto-Backup & mereset data…');
+
+  if (ok) {
+    S.scanR = null;
+    S.ui.dashJ = '';
+    S.ui.scanJ = '';
+    S.ui.manual.j = '';
+    S.ui.rekap.j = '';
+    clearDirty();
+    closeModal();
+    toast('Auto-backup terunduh dan data terpilih berhasil direset.');
+    renderView();
+  }
 }
 
 /* ===================== HALAMAN MASUK (SPLIT-CARD LOGIN) ===================== */
 function loginView() {
   const r = S.ui.lrole;
   const set = D().settings;
-  const hasLogo = Boolean((set.logo_kiri || '').trim());
 
   return `<div class="login-bg">
     <div class="login-card-split">
       <div class="login-left">
         <div>
           <div class="login-school-pill">
-            <div class="sp-ico">
-              ${hasLogo ? `<img src="${esc(set.logo_kiri)}" alt="Logo">` : ic('scan-line', 18)}
-            </div>
+            ${renderConfiguredIcon('system', 'sp-ico', 19)}
             <div>
               <b style="display:block;font-size:13px;line-height:1.2">${esc(set.app_name || 'Scan LJK Ujian')}</b>
               <small style="display:block;font-size:10.5px;color:var(--muted)">${esc(set.app_subtitle || 'Koreksi • Scan • Manual')}</small>
@@ -4025,10 +4714,10 @@ function render() {
   }
   const m = myMenu();
   const set = D().settings;
-  const hasLogo = Boolean((set.logo_kiri || '').trim());
   const js = visJadwal(), ids = new Set(js.map(j => j.id));
   const totalTerkoreksi = D().hasil.filter(h => ids.has(h.jadwal_id)).length;
   const roleLabel = S.user.role === 'admin' ? 'ADMINISTRATOR' : 'GURU / KOREKTOR';
+  const userIconKind = S.user.role === 'admin' ? 'admin' : 'user';
 
   let navHTML = '';
   let lastGrp = '';
@@ -4043,7 +4732,7 @@ function render() {
   $('#root').innerHTML = `<div class="shell">
     <aside class="side ${S.ui.sideMin ? 'min' : ''}">
       <div class="brand">
-        <div class="logo">${hasLogo ? `<img src="${esc(set.logo_kiri)}" alt="Logo">` : ic('scan-line', 20)}</div>
+        ${renderConfiguredIcon('system', 'logo', 20)}
         <div class="brand-txt"><b>${esc(set.app_name || 'Scan LJK Ujian')}</b><small>${esc(set.app_subtitle || 'Koreksi • Scan • Manual')}</small></div>
         <button class="col-btn" data-act="sideMin" title="Perkecil / Perluas Menu">${ic(S.ui.sideMin ? 'chevron-right' : 'chevron-left', 16)}</button>
       </div>
@@ -4052,7 +4741,7 @@ function render() {
 
       <div class="side-foot">
         <div class="side-user">
-          <div class="av">${ic(S.user.role === 'admin' ? 'shield-check' : 'user', 16)}</div>
+          ${renderConfiguredIcon(userIconKind, 'av', 17)}
           <div class="side-user-info">
             <b>${esc(S.user.nama)}</b>
             <small>${roleLabel}</small>
@@ -4100,12 +4789,18 @@ $('#ljkApp').addEventListener('click', async e => {
     if (inp) inp.type = S.ui.showLoginPw ? 'text' : 'password';
     b.innerHTML = ic(S.ui.showLoginPw ? 'eye-off' : 'eye', 16);
   }
-  else if (act === 'go') { S.page = b.dataset.p; closeModal(); renderView(); }
+  else if (act === 'go') {
+    if (b.dataset.p !== S.page && !(await guardLeave())) return;
+    S.page = b.dataset.p;
+    closeModal();
+    renderView();
+  }
   else if (act === 'sideMin') { S.ui.sideMin = !S.ui.sideMin; $('.side')?.classList.toggle('min', S.ui.sideMin); b.innerHTML = ic(S.ui.sideMin ? 'chevron-right' : 'chevron-left', 16); }
-  else if (act === 'logout') logout();
+  else if (act === 'logout') await logout();
   else if (act === 'closeModal') closeModal();
   else if (act === 'copyStr') copyText(b.dataset.v || '');
   else if (act === 'copyRules') copyText($('#rulesBox')?.textContent || FIRESTORE_RULES_SNIPPET);
+  else if (act === 'copySchema') copyText($('#schemaBox')?.textContent || FIRESTORE_SCHEMA_TEXT);
   else if (act === 'copyCfg') copyText($('#cfgBox')?.textContent || JSON.stringify(firebaseConfig, null, 2));
   else if (act === 'more') {
     openModal(`<div class="mh"><h3 style="margin:0">Semua Menu</h3><button class="btn sm ghost ico-b" data-act="closeModal">${ic('x', 16)}</button></div><div class="more">${myMenu().map(x => `<button data-act="go" data-p="${x.id}">${ic(x.icon, 18)}${x.label}</button>`).join('')}<button style="color:var(--rose)" data-act="logout">${ic('log-out', 18)}Keluar</button></div>`);
@@ -4116,6 +4811,7 @@ $('#ljkApp').addEventListener('click', async e => {
   }
   else if (act === 'pg') { S.ui.pg[b.dataset.k] = +b.dataset.p; renderView(); }
   else if (act === 'scanExam') {
+    if (!(await guardLeave())) return;
     S.ui.scanJ = b.dataset.id;
     S.ui.scanKelas = '';
     S.ui.scanSiswa = '';
@@ -4132,7 +4828,10 @@ $('#ljkApp').addEventListener('click', async e => {
   else if (act === 'studioOpenExam') {
     const j = D().jadwal.find(x => x.id === b.dataset.id);
     if (j) {
-      S.ui.studio.judul = `LJK ${j.nama_ujian.toUpperCase()}${j.kode_paket ? ' (' + j.kode_paket + ')' : ''}`;
+      S.ui.studio.customTitleLines = [
+        { text: `LJK ${j.nama_ujian.toUpperCase()}${j.kode_paket ? ' (' + j.kode_paket + ')' : ''}`, size: 11, bold: true, italic: false, underline: false, show: true },
+        { text: `KELAS ${j.kelas || '-'}`, size: 9, bold: false, italic: false, underline: false, show: true }
+      ];
       S.ui.studio.maxPg = j.jumlah_soal;
       S.ui.studio.opsi = j.jumlah_opsi;
       S.ui.studio.esaiOn = j.jumlah_esai > 0;
@@ -4143,6 +4842,7 @@ $('#ljkApp').addEventListener('click', async e => {
   }
   else if (act === 'studioClose') {
     S.ui.studio.open = false;
+    S.ui.studio.customTitleLines = null;
     $('#studioSlot').innerHTML = '';
   }
   else if (act === 'studioSet') {
@@ -4160,6 +4860,7 @@ $('#ljkApp').addEventListener('click', async e => {
   else if (act === 'scanMode') {
     S.ui.scanMode = b.dataset.m;
     S.scanR = null;
+    clearDirty();
     renderScanLeft();
     renderResult();
     if (S.ui.scanMode === 'cam') startCam();
@@ -4175,10 +4876,12 @@ $('#ljkApp').addEventListener('click', async e => {
   else if (act === 'scanBub') {
     const q = +b.dataset.q, L = b.dataset.l;
     S.scanR.answers[q] = S.scanR.answers[q] === L ? '' : L;
+    markDirty();
     refreshResult();
   }
   else if (act === 'scanCancel') {
     S.scanR = null;
+    clearDirty();
     LIVE.cool = Date.now() + 1800;
     LIVE.stable = 0;
     renderScanLeft();
@@ -4191,12 +4894,14 @@ $('#ljkApp').addEventListener('click', async e => {
   else if (act === 'manBub') {
     const q = +b.dataset.q, L = b.dataset.l;
     S.ui.manual.answers[q] = S.ui.manual.answers[q] === L ? '' : L;
+    markDirty();
     const inp = $('#manPastePG');
     if (inp) inp.value = S.ui.manual.answers.map(x => x || '-').join('').replace(/-+$/, '');
     refreshManualCards();
   }
   else if (act === 'manClearPG') {
     S.ui.manual.answers.fill('');
+    markDirty();
     const inp = $('#manPastePG');
     if (inp) inp.value = '';
     refreshManualCards();
@@ -4205,12 +4910,17 @@ $('#ljkApp').addEventListener('click', async e => {
     const j = visJadwal().find(x => x.id === S.ui.manual.j);
     if (!j) return;
     S.ui.manual.esaiScores = (j.skor_maks_esai || []).map(v => Number(v) || 10);
+    markDirty();
     renderView();
   }
   else if (act === 'manSave') await saveManualResult();
 
   /* Master & Paket & Kunci */
-  else if (act === 'masterTab') { S.ui.masterTab = b.dataset.t; renderView(); }
+  else if (act === 'masterTab') {
+    if (b.dataset.t !== S.ui.masterTab && !(await guardLeave())) return;
+    S.ui.masterTab = b.dataset.t;
+    renderView();
+  }
   else if (act === 'guruForm') guruForm(b.dataset.id);
   else if (act === 'guruBulk') guruBulkModal();
   else if (act === 'mapelForm') mapelForm(b.dataset.id);
@@ -4260,43 +4970,77 @@ $('#ljkApp').addEventListener('click', async e => {
   else if (act === 'jdSave') await jdSave();
 
   /* Rekap & Pengaturan */
-  else if (act === 'rkMode') { S.ui.rekap.mode = b.dataset.m; renderView(); }
+  else if (act === 'rkMode') {
+    if (b.dataset.m !== S.ui.rekap.mode && !(await guardLeave())) return;
+    S.ui.rekap.mode = b.dataset.m;
+    renderView();
+  }
   else if (act === 'rkDetail') rkDetail(b.dataset.id);
   else if (act === 'rkXlsx') await rkExport('xlsx');
   else if (act === 'rkPrint') await rkExport('print');
 
-  else if (act === 'setTab') { S.ui.setTab = b.dataset.t; renderView(); }
+  else if (act === 'setTab') {
+    if (b.dataset.t !== S.ui.setTab && !(await guardLeave())) return;
+    S.ui.setTab = b.dataset.t;
+    renderView();
+  }
   else if (act === 'pickColor') {
     const c = b.dataset.c;
     const inp = $('#themeColorInp');
     if (inp) inp.value = c;
+    markDirty();
   }
-  else if (act === 'kopToggle') {
-    const i = +b.dataset.i, f = b.dataset.f;
-    const cur = S.ui.kopDraft[i];
+  else if (act === 'icoPick') {
+    const { kind, v } = b.dataset;
+    S.ui.iconDraft[kind].icon = v;
+    markDirty();
+    renderView();
+  }
+  else if (act === 'icoToggleTrans') {
+    const { kind } = b.dataset;
+    S.ui.iconDraft[kind].transparent = !S.ui.iconDraft[kind].transparent;
+    markDirty();
+    renderView();
+  }
+  else if (act === 'dynToggle') {
+    const { dk, f } = b.dataset, i = +b.dataset.i;
+    const cur = S.ui[dk][i];
     cur[f] = f === 'show' ? (cur.show === false ? true : false) : !cur[f];
+    markDirty();
     renderView();
   }
-  else if (act === 'kopMove') {
-    const i = +b.dataset.i, d = +b.dataset.d, ni = i + d;
-    if (ni >= 0 && ni < S.ui.kopDraft.length) {
-      const tmp = S.ui.kopDraft[i];
-      S.ui.kopDraft[i] = S.ui.kopDraft[ni];
-      S.ui.kopDraft[ni] = tmp;
+  else if (act === 'dynMove') {
+    const { dk } = b.dataset, i = +b.dataset.i, d = +b.dataset.d, ni = i + d;
+    if (ni >= 0 && ni < S.ui[dk].length) {
+      const tmp = S.ui[dk][i];
+      S.ui[dk][i] = S.ui[dk][ni];
+      S.ui[dk][ni] = tmp;
+      markDirty();
       renderView();
     }
   }
-  else if (act === 'kopAdd') {
-    S.ui.kopDraft.push({ text: 'BARIS KOP BARU', size: 10, bold: false, italic: false, underline: false, show: true });
+  else if (act === 'dynAdd') {
+    const { dk } = b.dataset;
+    S.ui[dk].push({ text: 'BARIS TEKS BARU', size: 10, bold: false, italic: false, underline: false, show: true });
+    markDirty();
     renderView();
   }
-  else if (act === 'kopDel') {
-    const i = +b.dataset.i;
-    if (S.ui.kopDraft.length > 1) {
-      S.ui.kopDraft.splice(i, 1);
+  else if (act === 'dynDel') {
+    const { dk } = b.dataset, i = +b.dataset.i;
+    if (S.ui[dk].length > 1) {
+      S.ui[dk].splice(i, 1);
+      markDirty();
       renderView();
     }
   }
+  else if (act === 'fillLjkExample') {
+    S.ui.ljkTitleDraft = clone(DEFAULT_LJK_TITLE_LINES);
+    S.ui.pgHeaderDraft = clone(DEFAULT_PG_HEADER_LINES);
+    markDirty();
+    toast('Contoh standar keterangan LJK & Area PG diterapkan.');
+    renderView();
+  }
+  else if (act === 'openResetModal') openResetConfirmModal();
   else if (act === 'backup') {
     download('backup_scan_ljk_' + todayISO() + '.json', JSON.stringify({
       exported_at: new Date().toISOString(),
@@ -4321,33 +5065,62 @@ $('#ljkApp').addEventListener('change', async e => {
     updateBulkPreview(el.value);
     return;
   }
+  if (el.dataset.resetK) {
+    S.ui.resetSel[el.dataset.resetK] = el.checked;
+    renderView();
+    return;
+  }
+  if (el.dataset.icoKind) {
+    const kind = el.dataset.icoKind, f = el.dataset.icoF;
+    S.ui.iconDraft[kind][f] = el.value;
+    markDirty();
+    renderView();
+    return;
+  }
   if (el.dataset.esaiIdx !== undefined) {
     const idx = +el.dataset.esaiIdx;
     const j = visJadwal().find(x => x.id === S.ui.manual.j);
     const maks = Number(j?.skor_maks_esai?.[idx]) || 100;
     S.ui.manual.esaiScores[idx] = Math.max(0, Math.min(maks, Number(el.value) || 0));
     el.value = S.ui.manual.esaiScores[idx];
+    markDirty();
     refreshManualCards();
     return;
   }
-  if (el.dataset.kopF) {
-    const i = +el.dataset.i, f = el.dataset.kopF;
-    S.ui.kopDraft[i][f] = f === 'size' ? (+el.value || 10) : el.value;
+  if (el.dataset.dynKey) {
+    const dk = el.dataset.dynKey, i = +el.dataset.i, f = el.dataset.dynF;
+    S.ui[dk][i][f] = f === 'size' ? (+el.value || 10) : el.value;
+    markDirty();
     renderView();
     return;
+  }
+  if (el.closest('form[data-form^="settings"]')) {
+    markDirty();
   }
   if (!b) return;
   if (b === 'dashJ') { S.ui.dashJ = el.value; renderView(); }
   else if (b === 'kelasF') { S.ui.kelasF = el.value; S.ui.pg.siswa = 1; renderView(); }
   else if (b === 'pgSize') { S.ui.pgSize[el.dataset.k] = +el.value; S.ui.pg[el.dataset.k] = 1; renderView(); }
-  else if (b === 'scanJ') { S.ui.scanJ = el.value; S.ui.scanKelas = ''; S.ui.scanSiswa = ''; S.scanR = null; renderView(); }
+  else if (b === 'scanJ') {
+    if (!(await guardLeave())) { el.value = S.ui.scanJ; return; }
+    S.ui.scanJ = el.value; S.ui.scanKelas = ''; S.ui.scanSiswa = ''; S.scanR = null; renderView();
+  }
   else if (b === 'scanKelas') { S.ui.scanKelas = el.value; S.ui.scanSiswa = ''; renderView(); }
   else if (b === 'scanSiswa') { S.ui.scanSiswa = el.value; if (S.scanR) { S.scanR.siswaId = el.value; refreshResult(); } else renderResult(); }
   else if (b === 'scanFile') { S.ui.scanMode = 'file'; handleFile(el.files[0]); el.value = ''; }
 
-  else if (b === 'manJ') { S.ui.manual.j = el.value; S.ui.manual.kelas = ''; S.ui.manual.siswa = ''; syncManualState(true); renderView(); }
-  else if (b === 'manKelas') { S.ui.manual.kelas = el.value; S.ui.manual.siswa = ''; syncManualState(true); renderView(); }
-  else if (b === 'manSiswa') { S.ui.manual.siswa = el.value; syncManualState(true); renderView(); }
+  else if (b === 'manJ') {
+    if (!(await guardLeave())) { el.value = S.ui.manual.j; return; }
+    S.ui.manual.j = el.value; S.ui.manual.kelas = ''; S.ui.manual.siswa = ''; syncManualState(true); renderView();
+  }
+  else if (b === 'manKelas') {
+    if (!(await guardLeave())) { el.value = S.ui.manual.kelas; return; }
+    S.ui.manual.kelas = el.value; S.ui.manual.siswa = ''; syncManualState(true); renderView();
+  }
+  else if (b === 'manSiswa') {
+    if (!(await guardLeave())) { el.value = S.ui.manual.siswa; return; }
+    S.ui.manual.siswa = el.value; syncManualState(true); renderView();
+  }
 
   else if (b === 'studioPgOn') { S.ui.studio.pgOn = el.checked; $('#studioSlot').innerHTML = renderStudioOverlay(); }
   else if (b === 'studioCols') { S.ui.studio.cols = Math.max(1, Math.min(5, +el.value || 5)); $('#studioSlot').innerHTML = renderStudioOverlay(); }
@@ -4423,6 +5196,9 @@ $('#ljkApp').addEventListener('paste', e => {
 
 $('#ljkApp').addEventListener('input', e => {
   const el = e.target;
+  if (el.closest('form[data-form^="settings"]')) {
+    markDirty();
+  }
   if (el.dataset.bind === 'q') { S.q = el.value; S.ui.pg = {}; renderView(); }
   else if (el.id === 'pasteKey' && S.ui.jd) {
     const j = D().jadwal.find(x => x.id === S.ui.jd.id);
@@ -4441,6 +5217,7 @@ $('#ljkApp').addEventListener('input', e => {
     for (let i = 0; i < S.ui.manual.answers.length; i++) {
       S.ui.manual.answers[i] = normalizeKeyChar(raw[i], j.jumlah_opsi);
     }
+    markDirty();
     refreshManualCards();
   }
   else if (el.id === 'bulkText') {
@@ -4469,7 +5246,7 @@ $('#ljkApp').addEventListener('submit', async e => {
       await loadAll();
       return true;
     }, 'Memeriksa kredensial & memuat data…');
-    if (ok) render();
+    if (ok) { clearDirty(); render(); }
   }
   else if (kind === 'guru') {
     const row = { nip: v.nip.trim(), nama: v.nama.trim(), username: v.username.trim(), password: v.password, aktif: !!v.aktif };
@@ -4538,6 +5315,7 @@ $('#ljkApp').addEventListener('submit', async e => {
     if (ok) { toast('Paket ujian tersimpan'); closeModal(); renderView(); }
   }
   else if (kind === 'settingsTampilan') {
+    const icd = S.ui.iconDraft;
     const patch = {
       app_name: v.app_name.trim() || DEFAULT_SETTINGS.app_name,
       app_subtitle: v.app_subtitle.trim() || DEFAULT_SETTINGS.app_subtitle,
@@ -4546,23 +5324,42 @@ $('#ljkApp').addEventListener('submit', async e => {
       hero_greeting: v.hero_greeting.trim() || DEFAULT_SETTINGS.hero_greeting,
       hero_desc: v.hero_desc.trim() || DEFAULT_SETTINGS.hero_desc,
       hero_cta: v.hero_cta.trim() || DEFAULT_SETTINGS.hero_cta,
-      theme_color: v.theme_color || '#1D74F5'
+      theme_color: v.theme_color || '#1D74F5',
+      icon_system: icd.system.icon.trim() || 'scan-line',
+      icon_system_color: icd.system.color || '#FFFFFF',
+      icon_system_bg: icd.system.bg || '#1D74F5',
+      icon_system_transparent: Boolean(icd.system.transparent),
+      icon_user: icd.user.icon.trim() || 'user',
+      icon_user_color: icd.user.color || '#1D74F5',
+      icon_user_bg: icd.user.bg || '#EFF6FF',
+      icon_user_transparent: Boolean(icd.user.transparent),
+      icon_admin: icd.admin.icon.trim() || 'shield-check',
+      icon_admin_color: icd.admin.color || '#1D74F5',
+      icon_admin_bg: icd.admin.bg || '#EFF6FF',
+      icon_admin_transparent: Boolean(icd.admin.transparent)
     };
-    const ok = await guard(async () => { await dbSetSettings(patch); await reload(['settings']); return true; }, 'Menyimpan tampilan…');
-    if (ok) { toast('Pengaturan tampilan tersimpan'); render(); }
+    const ok = await guard(async () => { await dbSetSettings(patch); await reload(['settings']); return true; }, 'Menyimpan tampilan & ikon…');
+    if (ok) { clearDirty(); toast('Pengaturan tampilan & ikon tersimpan'); render(); }
   }
   else if (kind === 'settingsKop') {
     const patch = {
       logo_kiri: v.logo_kiri.trim(),
       logo_kanan: v.logo_kanan.trim(),
       kop_lines: clone(S.ui.kopDraft || DEFAULT_KOP_LINES),
+      ljk_title_lines: clone(S.ui.ljkTitleDraft || DEFAULT_LJK_TITLE_LINES),
+      pg_header_lines: clone(S.ui.pgHeaderDraft || DEFAULT_PG_HEADER_LINES),
+      show_ttd_siswa: !!v.show_ttd_siswa,
+      show_nilai_guru: !!v.show_nilai_guru,
       kota: v.kota.trim(),
       kepala_sekolah: v.kepala_sekolah.trim(),
       nip_kepala: v.nip_kepala.trim(),
       kkm_default: +v.kkm_default
     };
-    const ok = await guard(async () => { await dbSetSettings(patch); await reload(['settings']); return true; }, 'Menyimpan kop surat…');
-    if (ok) { toast('Pengaturan kop surat & LJK tersimpan'); S.ui.kopDraft = null; render(); }
+    const ok = await guard(async () => { await dbSetSettings(patch); await reload(['settings']); return true; }, 'Menyimpan kop surat & LJK…');
+    if (ok) { clearDirty(); toast('Pengaturan kop surat & LJK tersimpan'); render(); }
+  }
+  else if (kind === 'confirmReset') {
+    await executeResetSystem(v.admin_pass);
   }
 });
 
@@ -4570,7 +5367,7 @@ $('#ljkApp').addEventListener('submit', async e => {
 function registerDynamicSW() {
   if (!('serviceWorker' in navigator)) return;
   try {
-    const swCode = `const CACHE='scan-ljk-v4';self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(clients.claim()));self.addEventListener('fetch',e=>{e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))});`;
+    const swCode = `const CACHE='scan-ljk-v5';self.addEventListener('install',e=>self.skipWaiting());self.addEventListener('activate',e=>e.waitUntil(clients.claim()));self.addEventListener('fetch',e=>{e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))});`;
     const blob = new Blob([swCode], { type: 'application/javascript' });
     navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => { });
   } catch (e) { }
