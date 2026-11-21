@@ -829,7 +829,7 @@
 #ljkApp .ico-opt:hover { border-color: var(--pri); color: var(--pri); }
 #ljkApp .ico-opt.on { background: var(--pri); border-color: var(--pri); color: #fff; }
 
-/* Toggle Switch (for Reset System) */
+/* Toggle Switch (for Reset System & LJK options) */
 #ljkApp .sw-row {
   display: flex;
   align-items: center;
@@ -1087,10 +1087,140 @@
 #ljkApp .ks-item span { font-weight: 800; color: var(--pri); }
 #ljkApp .ks-item.empty-k span { color: var(--subtle); }
 
-#ljkApp .sg { display: grid; grid-template-columns: repeat(auto-fit, minmax(125px, 1fr)); gap: 12px; margin-bottom: 16px; }
-#ljkApp .sg .card { padding: 14px 16px; position: relative; overflow: hidden; }
-#ljkApp .sg small { color: var(--muted); font-size: 11px; display: block; }
-#ljkApp .sg b { font-size: 20px; font-weight: 800; }
+/* Essay Manual Grading Grid */
+#ljkApp .esai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 10px;
+}
+#ljkApp .esai-item {
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+}
+#ljkApp .esai-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* Item Analysis Progress Bar */
+#ljkApp .rb {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 12px;
+}
+#ljkApp .rb small { width: 46px; font-weight: 700; color: var(--muted); }
+#ljkApp .rb .bar { flex: 1; height: 8px; border-radius: 999px; background: var(--pill); overflow: hidden; }
+#ljkApp .rb .bar i { display: block; height: 100%; border-radius: 999px; transition: width 0.35s; }
+#ljkApp .rb span { width: 38px; text-align: right; font-weight: 700; }
+
+/* Dynamic Multi-line Editor (Kop Surat & LJK) */
+#ljkApp .kop-row {
+  display: grid;
+  grid-template-columns: 1fr 64px auto auto;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 7px;
+}
+#ljkApp .fmt-grp {
+  display: inline-flex;
+  gap: 3px;
+  background: var(--pill);
+  padding: 3px;
+  border-radius: 10px;
+}
+#ljkApp .fmt-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+}
+#ljkApp .fmt-btn.on { background: var(--pri); color: #fff; }
+#ljkApp .fmt-btn[disabled] { opacity: 0.35; pointer-events: none; }
+
+/* Studio Cetak LJK Fullscreen Overlay */
+#ljkApp .studio-ovl {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: #0F172A;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#ljkApp .studio-bar {
+  background: #0F172A;
+  color: #F8FAFC;
+  border-bottom: 1px solid #1E293B;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#ljkApp .st-title { font-size: 14px; font-weight: 800; margin-right: 4px; }
+#ljkApp .st-grp {
+  display: inline-flex;
+  align-items: center;
+  background: #1E293B;
+  border-radius: 999px;
+  padding: 3px;
+  gap: 2px;
+}
+#ljkApp .st-pill {
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #CBD5E1;
+}
+#ljkApp .st-pill.on { background: var(--pri); color: #fff; }
+#ljkApp .st-lbl {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #E2E8F0;
+}
+#ljkApp .st-num {
+  width: 48px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1E293B;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+#ljkApp .studio-canvas-area {
+  flex: 1;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #334155;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+#ljkApp .studio-paper {
+  background: #fff;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  max-width: 100%;
+}
+#ljkApp .studio-paper svg { width: 100%; height: auto; display: block; }
 
 /* Scan LJK 2-Column Split (Left: Image Preview / Upload, Right: Results & Correction) */
 #ljkApp .scangrid {
@@ -1274,11 +1404,12 @@
 #ljkApp .login-right p.sub { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
 #ljkApp .role-switch {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   background: var(--pill);
   padding: 4px;
   border-radius: 14px;
   margin-bottom: 18px;
+  gap: 4px;
 }
 #ljkApp .role-switch button {
   height: 38px;
@@ -1289,7 +1420,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
+  gap: 6px;
   transition: 0.18s;
 }
 #ljkApp .role-switch button.on {
@@ -1297,289 +1428,249 @@
   color: var(--pri);
   box-shadow: 0 3px 10px rgba(15, 23, 42, 0.08);
 }
-#ljkApp .login-right .btn.submit-btn {
+#ljkApp .submit-btn {
   width: 100%;
-  justify-content: center;
   height: 44px;
-  margin-top: 8px;
-  box-shadow: 0 8px 20px -4px rgba(29, 116, 245, 0.45);
+  justify-content: center;
+  font-size: 14px;
+  margin-top: 4px;
 }
-#ljkApp .hint { font-size: 11px; color: #92400E; margin-top: 14px; background: #FEF3C7; border-radius: 14px; padding: 10px 12px; }
+#ljkApp .hint {
+  margin-top: 14px;
+  background: #F8FAFC;
+  border: 1px dashed var(--line);
+  border-radius: 14px;
+  padding: 10px 12px;
+  font-size: 11.5px;
+  color: var(--muted);
+}
 
-/* ===================== STUDIO CETAK LJK UNIVERSAL (FULL SCREEN MODAL) ===================== */
-#ljkApp .studio-ovl {
-  position: fixed;
+/* Score Matrix Cells & Student Portal */
+#ljkApp .sc-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 12.5px;
+}
+#ljkApp .sc-pill.ok {
+  background: #D1FAE5;
+  color: #047857;
+  border: 1px solid #A7F3D0;
+}
+#ljkApp .sc-pill.rem {
+  background: #FFE4E6;
+  color: #BE123C;
+  border: 1px solid #FECDD3;
+}
+#ljkApp .sc-pill.na {
+  background: var(--pill);
+  color: var(--subtle);
+  font-weight: 600;
+}
+#ljkApp .student-shell {
+  position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background: #E2E8F0;
-  z-index: 65;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-#ljkApp .studio-bar {
-  background: #0F172A;
-  color: #F8FAFC;
-  padding: 10px 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #1E293B;
-  flex-shrink: 0;
-  max-height: 38vh;
   overflow-y: auto;
-}
-#ljkApp .studio-bar b.st-title { font-size: 13.5px; font-weight: 800; margin-right: 4px; }
-#ljkApp .st-grp {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: #1E293B;
-  padding: 3px;
-  border-radius: 999px;
-}
-#ljkApp .st-pill {
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #94A3B8;
-  transition: 0.15s;
-}
-#ljkApp .st-pill.on { background: var(--pri); color: #fff; }
-#ljkApp .st-num {
-  width: 48px;
-  height: 28px;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  background: #1E293B;
-  color: #fff;
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-}
-#ljkApp .st-lbl {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 11.5px;
-  color: #CBD5E1;
-  font-weight: 600;
-}
-#ljkApp .studio-canvas-area {
-  flex: 1;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 20px 14px 40px;
+  background: var(--bg);
+}
+#ljkApp .student-top {
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 20px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-#ljkApp .studio-paper {
-  background: #fff;
-  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.22);
-  border-radius: 4px;
-  overflow: hidden;
-  max-width: 100%;
-}
-#ljkApp .studio-paper svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Code Box & Kop Editor */
-#ljkApp pre.codebox {
-  background: #0F172A;
-  color: #E2E8F0;
-  padding: 14px 16px;
-  border-radius: 16px;
-  font-size: 12px;
-  line-height: 1.5;
-  overflow-x: auto;
-  max-height: 300px;
-  margin: 10px 0 0;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
-#ljkApp .kop-row {
-  display: grid;
-  grid-template-columns: 1fr 70px auto auto;
-  gap: 8px;
   align-items: center;
-  padding: 10px 12px;
-  border-radius: 14px;
-  background: var(--bg);
-  border: 1px solid var(--line);
-  margin-bottom: 8px;
-}
-#ljkApp .fmt-grp { display: inline-flex; gap: 4px; flex-wrap: wrap; }
-#ljkApp .fmt-btn {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--muted);
-  display: grid;
-  place-items: center;
-}
-#ljkApp .fmt-btn.on { background: var(--pri); border-color: var(--pri); color: #fff; }
-
-/* Essay Manual Input Card */
-#ljkApp .esai-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 10px;
-  margin-top: 10px;
-}
-#ljkApp .esai-item {
-  background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 10px 12px;
-}
-#ljkApp .esai-item-top {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 6px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#ljkApp .student-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 18px 48px;
 }
 
-/* Toast & Busy Loader */
-#ljkApp .toast {
-  position: fixed;
-  left: 50%;
-  bottom: 84px;
-  transform: translateX(-50%);
-  background: var(--ink);
-  color: #fff;
-  padding: 11px 22px;
-  border-radius: 999px;
-  z-index: 95;
-  font-weight: 600;
-  font-size: 13px;
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.25);
-  max-width: 92vw;
-  text-align: center;
-}
-#ljkApp .toast.err { background: var(--rose); }
-#ljkApp .busy {
-  position: fixed;
-  inset: 0;
-  background: rgba(248, 250, 252, 0.82);
-  backdrop-filter: blur(3px);
-  z-index: 90;
-  display: grid;
-  place-items: center;
-  font-weight: 600;
-}
-#ljkApp .spin {
-  width: 36px;
-  height: 36px;
-  border: 3.5px solid #CBD5E1;
-  border-top-color: var(--pri);
-  border-radius: 50%;
-  animation: sp 0.8s linear infinite;
-  margin: 0 auto 10px;
-}
-@keyframes sp { to { transform: rotate(360deg); } }
-
-/* Floating Mobile Bottom Navigation */
+/* Mobile Floating Bottom Nav & More Sheet */
 #ljkApp .bnav {
   display: none;
   position: fixed;
-  left: 12px;
-  right: 12px;
+  left: 14px;
+  right: 14px;
   bottom: 12px;
   height: 62px;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
   border: 1px solid var(--line);
-  border-radius: 26px;
-  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.16);
+  border-radius: 22px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.14);
   z-index: 40;
   align-items: center;
   justify-content: space-around;
   padding: 0 8px;
 }
-#ljkApp .bnav button { color: var(--muted); width: 48px; height: 46px; border-radius: 20px; display: grid; place-items: center; }
+#ljkApp .bnav button {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+}
 #ljkApp .bnav button.on { background: var(--pri-soft); color: var(--pri); }
-#ljkApp .bnav button.cen { background: var(--pri); color: #fff; width: 54px; height: 54px; margin-top: -20px; box-shadow: 0 8px 20px rgba(29, 116, 245, 0.4); }
-#ljkApp .more { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-#ljkApp .more button { display: flex; gap: 10px; align-items: center; padding: 13px; border-radius: 16px; background: var(--bg); font-weight: 600; font-size: 13px; text-align: left; }
-#ljkApp .rb { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
-#ljkApp .rb .bar { flex: 1; height: 8px; background: var(--pill); border-radius: 999px; overflow: hidden; }
-#ljkApp .rb .bar i { display: block; height: 100%; }
-#ljkApp .rb small { width: 36px; color: var(--muted); font-size: 11px; }
-#ljkApp .rb span { width: 42px; font-size: 11px; font-weight: 700; text-align: right; }
-#ljkApp .swatch { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1.5px var(--line); cursor: pointer; flex-shrink: 0; }
+#ljkApp .bnav button.cen {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: var(--pri);
+  color: #fff;
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(29, 116, 245, 0.42);
+}
+#ljkApp .more {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+#ljkApp .more button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 14px;
+  border-radius: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line2);
+  font-weight: 700;
+  font-size: 13px;
+  text-align: left;
+}
+
+/* Toasts & Busy Loader */
+#ljkApp .toast-wrap {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+  pointer-events: none;
+}
+#ljkApp .toast {
+  pointer-events: auto;
+  background: #0F172A;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#ljkApp .toast.err { background: #BE123C; }
+#ljkApp .busy-ovl {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: rgba(15, 23, 42, 0.42);
+  backdrop-filter: blur(3px);
+  display: grid;
+  place-items: center;
+}
+#ljkApp .busy-box {
+  background: #fff;
+  padding: 18px 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.22);
+}
+#ljkApp .spin {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid var(--line);
+  border-top-color: var(--pri);
+  animation: ljkSpin 0.75s linear infinite;
+}
+@keyframes ljkSpin { to { transform: rotate(360deg); } }
 
 /* ===================== RESPONSIVE MEDIA QUERIES ===================== */
-@media (max-width: 1240px) {
-  #ljkApp .rail { width: 256px; }
-  #ljkApp .g4, #ljkApp .wm-grid { grid-template-columns: repeat(2, 1fr); }
-  #ljkApp .ico-cfg-grid { grid-template-columns: 1fr 1fr; }
+@media (max-width: 1180px) {
+  #ljkApp .rail { display: none; }
+  #ljkApp .g4 { grid-template-columns: repeat(2, 1fr); }
+  #ljkApp .ico-cfg-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 960px) {
-  #ljkApp .login-bg { align-items: flex-start; padding: 14px; }
-  #ljkApp .login-card-split { grid-template-columns: 1fr; max-width: 480px; border-radius: 22px; }
-  #ljkApp .login-left { padding: 24px 22px; }
-  #ljkApp .login-art, #ljkApp .login-left-foot { display: none; }
-  #ljkApp .login-right { padding: 24px 22px; }
-
-  #ljkApp .shell {
-    display: block;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-  }
-  #ljkApp .side { display: none !important; }
-  #ljkApp .main {
-    width: 100%;
-    overflow: visible;
-    padding: 14px 14px 108px 14px;
-  }
-  #ljkApp .rail {
-    width: 100%;
-    border-left: 0;
-    border-top: 1px solid var(--line);
-    overflow: visible;
-    padding: 16px 14px 108px 14px;
-  }
+  #ljkApp .side { display: none; }
   #ljkApp .bnav { display: flex; }
-  #ljkApp .scangrid, #ljkApp .fg, #ljkApp .fg3, #ljkApp .ico-cfg-grid { grid-template-columns: 1fr; }
-  #ljkApp .kop-row { grid-template-columns: 1fr; }
+  #ljkApp .main { padding: 14px 14px 96px; }
+  #ljkApp .scangrid { grid-template-columns: 1fr; }
+  #ljkApp .wm-grid { grid-template-columns: repeat(2, 1fr); }
+  #ljkApp .fg, #ljkApp .fg3 { grid-template-columns: 1fr; }
+  #ljkApp .login-card-split { grid-template-columns: 1fr; max-width: 480px; }
+  #ljkApp .login-left { padding: 26px 24px; }
+  #ljkApp .login-art { display: none; }
+  #ljkApp .login-right { padding: 28px 24px; }
+  #ljkApp .kop-row { grid-template-columns: 1fr 62px; }
+}
+@media (max-width: 560px) {
+  #ljkApp .g4 { grid-template-columns: 1fr; }
   #ljkApp .hero { padding: 20px 18px; }
   #ljkApp .hero h2 { font-size: 20px; }
-  #ljkApp .card { padding: 16px; border-radius: 18px; }
-  #ljkApp .modal { padding: 18px 16px; border-radius: 20px; max-height: 88dvh; }
-}
-@media (max-width: 600px) {
-  #ljkApp .top { flex-wrap: wrap; gap: 10px; }
-  #ljkApp .search { max-width: 100%; order: 2; flex-basis: 100%; }
-  #ljkApp .tr { order: 1; width: 100%; justify-content: space-between; margin-left: 0; }
-  #ljkApp .g4 { grid-template-columns: 1fr 1fr; gap: 10px; }
-  #ljkApp .wm-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
   #ljkApp .hero-icon-box { display: none; }
-  #ljkApp .active-row { flex-wrap: wrap; }
-  #ljkApp .more { grid-template-columns: 1fr; }
+  #ljkApp .active-row { flex-direction: column; align-items: flex-start; }
+  #ljkApp .status-chip span { display: none; }
 }
 </style>
 </head>
 <body>
-<div id="ljkApp"><div id="root"></div></div>
+<div id="ljkApp">
+  <div id="root"></div>
+  <div id="modalSlot"></div>
+  <div id="toastSlot"></div>
+  <div id="busySlot"></div>
+</div>
 
 <script type="module">
-/* ===================== KONFIGURASI APLIKASI ===================== */
-const IS_PREVIEW = false; // Ubah menjadi true jika ingin mencoba dengan data dummy lokal tanpa Firebase
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  EmailAuthProvider,
+  reauthenticateWithCredential
+} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+import {
+  getFirestore,
+  collection,
+  doc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  setDoc,
+  deleteDoc
+} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
-// KONFIGURASI FIREBASE PROJECT: koreksi-v2
+// KONFIGURASI APLIKASI
+const IS_PREVIEW = false; // Ubah menjadi false SAAT DEPLOY / PUBLISH agar terhubung murni ke Firebase tanpa data dummy
+
+// PASTE FIREBASE CONFIG ANDA DI SINI
 const firebaseConfig = {
   apiKey: "AIzaSyDbEEJ1-N0dhTa34h0N3BptMsjCgzThVno",
   authDomain: "koreksi-v2.firebaseapp.com",
@@ -1589,250 +1680,246 @@ const firebaseConfig = {
   appId: "1:964177527418:web:193ab9e0296c923bfdb1c3"
 };
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { getFirestore, collection, doc, getDocs, addDoc, updateDoc, deleteDoc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
-
-/* ===================== UTILITAS & IKON SVG ===================== */
+/* ===================== UTILITAS DOM, FORMAT & UI ===================== */
 const $ = (s, r = document) => r.querySelector(s);
-const $$ = (s, r = document) => [...r.querySelectorAll(s)];
-const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const uid = () => (crypto.randomUUID ? crypto.randomUUID() : 'id-' + Math.random().toString(36).slice(2, 11));
-const clone = o => JSON.parse(JSON.stringify(o));
-
-const ICONS = {
-  "alert-triangle": "<path d=\"m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3\"/><path d=\"M12 9v4\"/><path d=\"M12 17h.01\"/>",
-  "arrow-down": "<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>",
-  "arrow-right": "<path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/>",
-  "arrow-up": "<path d=\"m5 12 7-7 7 7\"/><path d=\"M12 19V5\"/>",
-  "award": "<circle cx=\"12\" cy=\"8\" r=\"6\"/><path d=\"M15.477 12.89 17 22l-5-3-5 3 1.523-9.11\"/>",
-  "bar-chart-3": "<path d=\"M3 3v18h18\"/><path d=\"M18 17V9\"/><path d=\"M13 17V5\"/><path d=\"M8 17v-3\"/>",
-  "bell": "<path d=\"M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9\"/><path d=\"M10.3 21a1.94 1.94 0 0 0 3.4 0\"/>",
-  "book-open": "<path d=\"M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z\"/><path d=\"M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z\"/>",
-  "calendar-days": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/><path d=\"M16 2v4\"/><path d=\"M8 2v4\"/><path d=\"M3 10h18\"/><path d=\"M8 14h.01\"/><path d=\"M12 14h.01\"/><path d=\"M16 14h.01\"/><path d=\"M8 18h.01\"/><path d=\"M12 18h.01\"/><path d=\"M16 18h.01\"/>",
-  "camera": "<path d=\"M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z\"/><circle cx=\"12\" cy=\"13\" r=\"3\"/>",
-  "check-circle": "<path d=\"M22 11.08V12a10 10 0 1 1-5.93-9.14\"/><path d=\"m9 11 3 3L22 4\"/>",
-  "chevron-left": "<path d=\"m15 18-6-6 6-6\"/>",
-  "chevron-right": "<path d=\"m9 18 6-6-6-6\"/>",
-  "clipboard-check": "<rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"/><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"/><path d=\"m9 14 2 2 4-4\"/>",
-  "clipboard-paste": "<path d=\"M15 2H9a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1Z\"/><path d=\"M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2\"/><path d=\"M16 4h2a2 2 0 0 1 2 2v2\"/><path d=\"M11 14h10\"/><path d=\"m17 10 4 4-4 4\"/>",
-  "copy": "<rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"/><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"/>",
-  "database": "<ellipse cx=\"12\" cy=\"5\" rx=\"9\" ry=\"3\"/><path d=\"M3 5V19A9 3 0 0 0 21 19V5\"/><path d=\"M3 12A9 3 0 0 0 21 12\"/>",
-  "download": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/><path d=\"M12 15V3\"/>",
-  "eye": "<path d=\"M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
-  "eye-off": "<path d=\"M9.88 9.88a3 3 0 1 0 4.24 4.24\"/><path d=\"M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68\"/><path d=\"M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61\"/><line x1=\"2\" x2=\"22\" y1=\"2\" y2=\"22\"/>",
-  "file-edit": "<path d=\"M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v10\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M10.4 12.6a2 2 0 1 1 3 3L8 21l-4 1 1-4Z\"/>",
-  "file-spreadsheet": "<path d=\"M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z\"/><path d=\"M14 2v4a2 2 0 0 0 2 2h4\"/><path d=\"M8 13h2\"/><path d=\"M14 13h2\"/><path d=\"M8 17h2\"/><path d=\"M14 17h2\"/>",
-  "home": "<path d=\"m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/><polyline points=\"9 22 9 12 15 12 15 22\"/>",
-  "image-up": "<path d=\"M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.8 0L6 21\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M14 19.5l3-3 3 3\"/><path d=\"M17 22v-5.5\"/>",
-  "inbox": "<path d=\"M22 12h-6l-2 3h-4l-2-3H2\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11\"/>",
-  "key-round": "<path d=\"M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z\"/><circle cx=\"16.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/>",
-  "layout-dashboard": "<rect width=\"7\" height=\"9\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"9\" x=\"14\" y=\"12\" rx=\"1\"/><rect width=\"7\" height=\"5\" x=\"3\" y=\"16\" rx=\"1\"/>",
-  "layout-grid": "<rect width=\"7\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"3\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"14\" y=\"14\" rx=\"1\"/><rect width=\"7\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\"/>",
-  "log-out": "<path d=\"M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4\"/><path d=\"m16 17 5-5-5-5\"/><path d=\"M21 12H9\"/>",
-  "mail": "<rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/><path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/>",
-  "pencil": "<path d=\"M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z\"/><path d=\"m15 5 4 4\"/>",
-  "plus": "<path d=\"M5 12h14\"/><path d=\"M12 5v14\"/>",
-  "printer": "<path d=\"M6 9V2h12v7\"/><path d=\"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\"/><rect width=\"12\" height=\"8\" x=\"6\" y=\"14\"/>",
-  "rotate-ccw": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/>",
-  "save": "<path d=\"M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2\"/><path d=\"M17 21v-8H7v8\"/><path d=\"M7 3v5h8\"/>",
-  "scan-line": "<path d=\"M3 7V5a2 2 0 0 1 2-2h2\"/><path d=\"M17 3h2a2 2 0 0 1 2 2v2\"/><path d=\"M21 17v2a2 2 0 0 1-2 2h-2\"/><path d=\"M7 21H5a2 2 0 0 1-2-2v-2\"/><path d=\"M7 12h10\"/>",
-  "search": "<circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/>",
-  "settings": "<path d=\"M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
-  "shield-check": "<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/><path d=\"m9 12 2 2 4-4\"/>",
-  "sparkles": "<path d=\"m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z\"/>",
-  "trash-2": "<path d=\"M3 6h18\"/><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\"/><path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/><path d=\"M10 11v6\"/><path d=\"M14 11v6\"/>",
-  "upload": "<path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m17 8-5-5-5 5\"/><path d=\"M12 3v12\"/>",
-  "user": "<path d=\"M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>",
-  "user-check": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><polyline points=\"16 11 18 13 22 9\"/>",
-  "user-cog": "<circle cx=\"18\" cy=\"15\" r=\"3\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M10 15H6a4 4 0 0 0-4 4v2\"/><path d=\"m21.7 16.4-.9-.3\"/><path d=\"m15.2 13.9-.9-.3\"/><path d=\"m16.6 18.7.3-.9\"/><path d=\"m19.1 12.2.3-.9\"/><path d=\"m19.6 18.7-.4-1\"/><path d=\"m16.8 12.3-.4-1\"/><path d=\"m14.3 16.6 1-.4\"/><path d=\"m20.7 13.8 1-.4\"/>",
-  "users": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/><circle cx=\"9\" cy=\"7\" r=\"4\"/><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/><path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/>",
-  "video": "<path d=\"m22 8-6 4 6 4z\"/><rect width=\"14\" height=\"12\" x=\"2\" y=\"6\" rx=\"2\"/>",
-  "x": "<path d=\"M18 6 6 18\"/><path d=\"m6 6 12 12\"/>",
-  "x-circle": "<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m15 9-6 6\"/><path d=\"m9 9 6 6\"/>"
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = v => String(v ?? '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+const uid = () => 'id_' + Math.random().toString(36).slice(2, 10) + Date.now().toString(36);
+const clone = v => JSON.parse(JSON.stringify(v));
+const num = (v, d = 1) => {
+  if (v === null || v === undefined || v === '' || isNaN(Number(v))) return '-';
+  const n = Number(v);
+  return Number.isInteger(n) ? String(n) : n.toFixed(d).replace(/\.0$/, '');
 };
-const PRESET_ICON_KEYS = [
-  'scan-line', 'clipboard-check', 'book-open', 'award',
-  'sparkles', 'layout-dashboard', 'user', 'user-check',
-  'user-cog', 'users', 'shield-check', 'key-round',
-  'camera', 'file-edit', 'bar-chart-3', 'settings'
-];
-const ic = (n, s = 18) => `<svg xmlns="http://www.w3.org/2000/svg" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${ICONS[n] || ICONS['sparkles'] || ''}</svg>`;
-
-function isImageUrl(val) {
-  const s = String(val || '').trim();
-  return /^(https?:\/\/|data:image\/)/i.test(s);
-}
-
-function renderConfiguredIcon(kind, clsName = 'logo', icoSz = 20) {
-  const set = D().settings;
-  const fallback = kind === 'system' ? 'scan-line' : (kind === 'admin' ? 'shield-check' : 'user');
-  const rawVal = (set['icon_' + kind] || fallback).trim();
-  const color = set['icon_' + kind + '_color'] || (kind === 'system' ? '#FFFFFF' : '#1D74F5');
-  const isTrans = Boolean(set['icon_' + kind + '_transparent']);
-  const bg = isTrans ? 'transparent' : (set['icon_' + kind + '_bg'] || (kind === 'system' ? '#1D74F5' : '#EFF6FF'));
-  const borderStyle = isTrans ? 'border:1px solid var(--line);' : '';
-  const inner = isImageUrl(rawVal)
-    ? `<img src="${esc(rawVal)}" alt="${kind}">`
-    : `<span style="color:${esc(color)};display:grid;place-items:center">${ic(ICONS[rawVal] ? rawVal : fallback, icoSz)}</span>`;
-  return `<div class="${clsName}" style="background:${esc(bg)};${borderStyle}">${inner}</div>`;
-}
-
-const LET = 'ABCDE';
-const BULAN_ID = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-const todayISO = () => { const d = new Date(); return new Date(d - d.getTimezoneOffset() * 6e4).toISOString().slice(0, 10); };
-const fmtDate = d => {
-  if (!d) return '-';
-  const dt = new Date(d + 'T00:00:00');
-  if (isNaN(dt)) return '-';
-  return `${dt.getDate()} ${BULAN_ID[dt.getMonth()]} ${dt.getFullYear()}`;
+const todayISO = () => new Date().toISOString().slice(0, 10);
+const fmtDate = iso => {
+  const bulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  const d = iso ? new Date(iso) : new Date();
+  if (isNaN(d.getTime())) return '';
+  return `${d.getDate()} ${bulan[d.getMonth()]} ${d.getFullYear()}`;
 };
-const num = (v, d = 1) => (v === null || v === undefined || isNaN(v)) ? '-' : (Math.round(v * 10 ** d) / 10 ** d).toString().replace('.', ',');
-
-function getWaktuID() {
+const getWaktuID = () => {
   const h = new Date().getHours();
   if (h >= 4 && h < 11) return 'pagi';
   if (h >= 11 && h < 15) return 'siang';
   if (h >= 15 && h < 18) return 'sore';
   return 'malam';
+};
+const isImageUrl = s => /^(https?:\/\/|data:image\/)/i.test(String(s || '').trim());
+
+const LET = 'ABCDE';
+const LIBS = { xlsx: 'https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js' };
+const loadedScripts = {};
+function loadScript(url) {
+  if (loadedScripts[url]) return loadedScripts[url];
+  loadedScripts[url] = new Promise((res, rej) => {
+    const s = document.createElement('script');
+    s.src = url;
+    s.onload = () => res();
+    s.onerror = () => { delete loadedScripts[url]; rej(new Error('Gagal memuat pustaka eksternal.')); };
+    document.head.appendChild(s);
+  });
+  return loadedScripts[url];
 }
 
-const LIBS = {
-  xlsx: 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js'
-};
-const _ls = {};
-const loadScript = u => _ls[u] || (_ls[u] = new Promise((res, rej) => {
-  const s = document.createElement('script');
-  s.src = u;
-  s.onload = res;
-  s.onerror = () => { delete _ls[u]; rej(new Error('Gagal memuat library pendukung dari internet')); };
-  document.head.appendChild(s);
-}));
+function download(filename, content, mime = 'text/csv;charset=utf-8;') {
+  const blob = new Blob([content], { type: mime });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+}
 
-function copyText(text) {
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed';
-  ta.style.left = '-9999px';
-  document.body.appendChild(ta);
-  ta.select();
+function parseDelimitedText(text) {
+  const lines = String(text || '').replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(l => l.trim() !== '');
+  return lines.map(line => {
+    const sep = line.includes('\t') ? '\t' : (line.includes(';') ? ';' : ',');
+    return line.split(sep).map(c => c.replace(/^["']|["']$/g, '').trim());
+  });
+}
+
+function copyText(str) {
   try {
+    const ta = document.createElement('textarea');
+    ta.value = str;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
     document.execCommand('copy');
-    toast('Berhasil disalin ke clipboard');
+    ta.remove();
+    toast('Teks berhasil disalin ke clipboard');
   } catch (e) {
     toast('Gagal menyalin teks', 'err');
   }
-  ta.remove();
 }
 
-function toast(msg, type = 'ok', ms = 2800) {
-  $('#ljkApp .toast')?.remove();
-  const t = document.createElement('div');
-  t.className = 'toast ' + (type === 'err' ? 'err' : '');
-  t.textContent = msg;
-  $('#ljkApp').appendChild(t);
-  setTimeout(() => t.remove(), ms);
+function toast(msg, type = 'ok', ms = 3200) {
+  const slot = $('#toastSlot');
+  if (!slot) return;
+  let wrap = $('.toast-wrap', slot);
+  if (!wrap) {
+    wrap = document.createElement('div');
+    wrap.className = 'toast-wrap';
+    slot.appendChild(wrap);
+  }
+  const el = document.createElement('div');
+  el.className = 'toast' + (type === 'err' ? ' err' : '');
+  el.innerHTML = `${ic(type === 'err' ? 'alert-triangle' : 'check-circle', 16)}<span>${esc(msg)}</span>`;
+  wrap.appendChild(el);
+  setTimeout(() => { el.style.opacity = '0'; el.style.transition = '0.25s'; setTimeout(() => el.remove(), 260); }, ms);
 }
-function setBusy(on, msg = 'Memproses…') {
-  $('#ljkApp .busy')?.remove();
-  if (!on) return;
-  const b = document.createElement('div');
-  b.className = 'busy';
-  b.innerHTML = `<div style="text-align:center"><div class="spin"></div>${esc(msg)}</div>`;
-  $('#ljkApp').appendChild(b);
+
+function setBusy(on, text = 'Memproses…') {
+  const slot = $('#busySlot');
+  if (!slot) return;
+  slot.innerHTML = on ? `<div class="busy-ovl"><div class="busy-box"><div class="spin"></div><span>${esc(text)}</span></div></div>` : '';
 }
+
 function errMsg(e) {
-  if (!e) return 'Terjadi kesalahan';
-  if (e.code === 'permission-denied') return 'Akses ditolak oleh Firestore Security Rules. Pastikan aturan Firestore telah diperbarui.';
-  if (e.code === 'auth/invalid-credential' || e.code === 'auth/wrong-password' || e.code === 'auth/user-not-found') return 'Email atau password admin salah.';
+  if (!e) return 'Terjadi kesalahan sistem.';
+  const code = e.code || '';
+  if (code === 'auth/invalid-credential' || code === 'auth/wrong-password' || code === 'auth/user-not-found') return 'Email atau password Admin tidak sesuai.';
+  if (code === 'auth/too-many-requests') return 'Terlalu banyak percobaan masuk. Coba beberapa saat lagi.';
+  if (code === 'permission-denied') return 'Akses Firestore ditolak. Periksa Firestore Security Rules Anda.';
   return e.message || String(e);
 }
-async function guard(fn, busyMsg) {
+
+async function guard(fn, busyText = 'Memproses…') {
   try {
-    if (busyMsg) setBusy(true, busyMsg);
+    setBusy(true, busyText);
     return await fn();
   } catch (e) {
     console.error(e);
-    toast(errMsg(e), 'err', 4500);
-    return false;
+    toast(errMsg(e), 'err', 5000);
+    return null;
   } finally {
-    if (busyMsg) setBusy(false);
+    setBusy(false);
   }
 }
-function openModal(html, lg = false) {
-  closeModal();
-  const el = document.createElement('div');
-  el.className = 'ovl';
-  el.id = 'modal';
-  el.innerHTML = `<div class="modal ${lg ? 'lg' : ''}">${html}</div>`;
-  el.addEventListener('mousedown', e => { if (e.target === el) closeModal(); });
-  $('#ljkApp').appendChild(el);
+
+function openModal(html, lg = false, sm = false) {
+  const slot = $('#modalSlot');
+  if (!slot) return;
+  slot.innerHTML = `<div class="ovl" id="modalOvl"><div class="modal ${lg ? 'lg' : ''} ${sm ? 'sm' : ''}" id="modalBox">${html}</div></div>`;
 }
 function setModal(html) {
-  const m = $('#modal .modal');
-  if (m) m.innerHTML = html;
-  else openModal(html, true);
+  const box = $('#modalBox');
+  if (box) box.innerHTML = html;
 }
 function closeModal() {
-  $('#modal')?.remove();
-  if (S.ui.jd) S.ui.jd = null;
+  const slot = $('#modalSlot');
+  if (slot) slot.innerHTML = '';
 }
-function confirmBox(msg, okText = 'Hapus') {
+function confirmBox(msg, okText = 'Ya, Lanjutkan') {
   return new Promise(res => {
-    const el = document.createElement('div');
-    el.className = 'ovl';
-    el.style.zIndex = 80;
-    el.innerHTML = `<div class="modal sm"><h3>Konfirmasi</h3><p style="color:var(--body);font-size:13px">${esc(msg)}</p><div class="macts"><button class="btn ghost" data-r="0">Batal</button><button class="btn danger" data-r="1">${esc(okText)}</button></div></div>`;
-    el.addEventListener('click', e => {
-      const b = e.target.closest('[data-r]');
-      if (b || e.target === el) { el.remove(); res(b?.dataset.r === '1'); }
-    });
-    $('#ljkApp').appendChild(el);
-  });
-}
-function download(name, text, type = 'text/csv') {
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([text], { type }));
-  a.download = name;
-  a.click();
-  setTimeout(() => URL.revokeObjectURL(a.href), 3000);
-}
-
-/* ===================== PARSER INPUT MASSAL (; & TAB & KOMA) ===================== */
-function parseDelimitedText(text) {
-  const lines = String(text || '').split(/\r?\n/).filter(l => l.trim() !== '');
-  return lines.map(line => {
-    const sep = line.includes('\t') ? '\t' : (line.includes(';') ? ';' : ',');
-    const out = [];
-    let cur = '', q = false;
-    for (let i = 0; i < line.length; i++) {
-      const c = line[i];
-      if (q) {
-        if (c === '"') {
-          if (line[i + 1] === '"') { cur += '"'; i++; }
-          else q = false;
-        } else cur += c;
-      } else if (c === '"') {
-        q = true;
-      } else if (c === sep) {
-        out.push(cur.trim());
-        cur = '';
-      } else {
-        cur += c;
-      }
-    }
-    out.push(cur.trim());
-    return out;
+    const slot = $('#modalSlot');
+    const prev = slot.innerHTML;
+    const done = val => { slot.innerHTML = prev; res(val); };
+    slot.innerHTML = `<div class="ovl" style="z-index:85"><div class="modal sm">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
+        <div style="width:38px;height:38px;border-radius:12px;background:#FEF3C7;color:#D97706;display:grid;place-items:center">${ic('alert-triangle', 20)}</div>
+        <h3 style="margin:0;font-size:16px">Konfirmasi</h3>
+      </div>
+      <p style="font-size:13px;color:var(--body);line-height:1.55">${esc(msg)}</p>
+      <div class="macts">
+        <button type="button" class="btn ghost" id="cfmNo">Batal</button>
+        <button type="button" class="btn danger" id="cfmYes">${esc(okText)}</button>
+      </div>
+    </div></div>`;
+    $('#cfmNo').onclick = () => done(false);
+    $('#cfmYes').onclick = () => done(true);
   });
 }
 
-/* ===================== STATE GLOBAL & DEFAULT SETTINGS ===================== */
+/* ===================== IKON VEKTOR & KONFIGURASI IKON KUSTOM ===================== */
+const ICONS = {
+  'home': '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  'user-cog': '<circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/>',
+  'users': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  'key-round': '<path d="M2 18v3c0 .6.4 1 1 1h4v-3h3v-3h2l1.4-1.4a6.5 6.5 0 1 0-4-4Z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/>',
+  'scan-line': '<path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/>',
+  'file-edit': '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+  'bar-chart-3': '<path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>',
+  'settings': '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  'chevron-left': '<polyline points="15 18 9 12 15 6"/>',
+  'chevron-right': '<polyline points="9 18 15 12 9 6"/>',
+  'log-out': '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/>',
+  'search': '<circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>',
+  'x': '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>',
+  'check-circle': '<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>',
+  'bell': '<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/>',
+  'layout-grid': '<rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/>',
+  'arrow-right': '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>',
+  'clipboard-check': '<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/>',
+  'book-open': '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+  'inbox': '<polyline points="22 12 16 12 14 15 10 15 8 12 2 12"/><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"/>',
+  'printer': '<polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/>',
+  'camera': '<path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/>',
+  'image-up': '<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
+  'video': '<polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/>',
+  'sparkles': '<path d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"/>',
+  'rotate-ccw': '<polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>',
+  'user-check': '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/>',
+  'alert-triangle': '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>',
+  'save': '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/>',
+  'plus': '<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>',
+  'award': '<circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>',
+  'file-spreadsheet': '<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/>',
+  'eye': '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+  'eye-off': '<path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/><path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/><path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/><line x1="2" y1="2" x2="22" y2="22"/>',
+  'user': '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  'pencil': '<path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/>',
+  'trash-2': '<path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>',
+  'copy': '<rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>',
+  'clipboard-paste': '<path d="M15 2H9a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1Z"/><path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M16 4h2a2 2 0 0 1 2 2v2"/><path d="M11 14h10"/><path d="m17 10 4 4-4 4"/>',
+  'upload': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>',
+  'download': '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>',
+  'arrow-up': '<line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>',
+  'arrow-down': '<line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/>',
+  'shield-check': '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/>',
+  'mail': '<rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
+  'database': '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/>'
+};
+
+function ic(name, size = 18) {
+  const body = ICONS[name] || ICONS['scan-line'];
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${body}</svg>`;
+}
+
+const ICON_PRESETS = {
+  system: ['scan-line', 'clipboard-check', 'book-open', 'award', 'sparkles', 'layout-grid', 'shield-check', 'check-circle'],
+  user: ['user', 'user-check', 'user-cog', 'book-open', 'file-edit', 'award', 'users', 'sparkles'],
+  admin: ['shield-check', 'user-cog', 'settings', 'key-round', 'database', 'award', 'clipboard-check', 'user-check']
+};
+
+function renderConfiguredIcon(kind, cls, size = 18) {
+  const set = D().settings;
+  const defMap = {
+    system: { icon: 'scan-line', color: '#FFFFFF', bg: '#1D74F5', trans: false },
+    user: { icon: 'user', color: '#1D74F5', bg: '#EFF6FF', trans: false },
+    admin: { icon: 'shield-check', color: '#1D74F5', bg: '#EFF6FF', trans: false }
+  };
+  const d = defMap[kind] || defMap.system;
+  const val = (set[`icon_${kind}`] || d.icon).trim();
+  const color = set[`icon_${kind}_color`] || d.color;
+  const trans = Boolean(set[`icon_${kind}_transparent`]);
+  const bg = trans ? 'transparent' : (set[`icon_${kind}_bg`] || d.bg);
+  const inner = isImageUrl(val)
+    ? `<img src="${esc(val)}" alt="${kind}">`
+    : ic(ICONS[val] ? val : d.icon, size);
+  return `<div class="${cls}" style="background:${esc(bg)};color:${esc(color)}">${inner}</div>`;
+}
+
+/* ===================== PENGATURAN BAWAAN & STATE APLIKASI ===================== */
 const DEFAULT_KOP_LINES = [
   { text: 'PEMERINTAH KABUPATEN SUKABUMI', size: 11, bold: true, italic: false, underline: false, show: true },
-  { text: 'DINAS PENDIDIKAN', size: 11, bold: false, italic: false, underline: false, show: true },
-  { text: 'SMP NEGERI 4 CIBADAK', size: 15, bold: true, italic: false, underline: false, show: true },
-  { text: 'Jl. PTP Nusantara VIII KM.17 Kp. Bintang Rt. 003 / 007 Desa Neglasari Kec. Cibadak', size: 9, bold: false, italic: false, underline: false, show: true },
-  { text: 'Pos-El: smpn4cibadak417@gmail.com', size: 9, bold: false, italic: true, underline: false, show: true }
+  { text: 'DINAS PENDIDIKAN', size: 12, bold: true, italic: false, underline: false, show: true },
+  { text: 'SMP NEGERI 1 SIMPENAN', size: 14, bold: true, italic: false, underline: false, show: true },
+  { text: 'Jl. Raya Simpenan No. 12, Kab. Sukabumi • Website: smpn1simpenan.sch.id', size: 9, bold: false, italic: true, underline: false, show: true }
 ];
 
 const DEFAULT_LJK_TITLE_LINES = [
@@ -1842,16 +1929,16 @@ const DEFAULT_LJK_TITLE_LINES = [
 
 const DEFAULT_PG_HEADER_LINES = [
   { text: 'AREA JAWABAN PILIHAN GANDA', size: 9, bold: true, italic: false, underline: false, show: true },
-  { text: 'Hitamkan salah satu bulatan pilihan jawaban (A, B, C, D, atau E) secara penuh', size: 8, bold: false, italic: true, underline: false, show: true }
+  { text: 'Hitamkan salah satu bulatan A, B, C, D, atau E dengan pensil 2B secara penuh', size: 8, bold: false, italic: true, underline: false, show: true }
 ];
 
 const DEFAULT_SETTINGS = {
   app_name: 'Scan LJK Ujian',
   app_subtitle: 'Koreksi • Scan • Manual',
   login_title: 'Sistem Sumatif Akhir Semester',
-  login_subtitle: 'Pindai lembar jawaban pilihan ganda secara otomatis dan kelola penilaian esai manual dalam satu ruang kerja terpadu.',
+  login_subtitle: 'Koreksi lembar jawaban pilihan ganda otomatis berbasis pemindai dan penilaian manual terpadu.',
   hero_greeting: 'Selamat {waktu} {nama}',
-  hero_desc: 'Kelola pemindaian LJK Pilihan Ganda dan koreksi manual soal uraian dengan cepat dan akurat.',
+  hero_desc: 'Siap memindai dan memeriksa hasil ujian peserta didik secara cepat, akurat, dan terstruktur.',
   hero_cta: 'Mulai Scan LJK',
   theme_color: '#1D74F5',
   icon_system: 'scan-line',
@@ -1874,8 +1961,8 @@ const DEFAULT_SETTINGS = {
   show_ttd_siswa: true,
   show_nilai_guru: true,
   kota: 'Sukabumi',
-  kepala_sekolah: 'Drs. H. Ahmad Fauzi, M.Pd.',
-  nip_kepala: '196801011994031002',
+  kepala_sekolah: 'H. Drs. Ahmad Suryana, M.Pd.',
+  nip_kepala: '196805141994121002',
   kkm_default: 76
 };
 
@@ -1883,20 +1970,22 @@ const S = {
   user: null,
   page: 'dashboard',
   q: '',
+  cam: null,
+  scanR: null,
   dirty: false,
   setupError: '',
-  scanR: null,
-  cam: null,
   ui: {
     pg: {},
     pgSize: { siswa: 15 },
     lrole: 'guru',
+    lkelas: '',
+    lsiswa: '',
     showLoginPw: false,
     sideMin: false,
     kelasF: '',
     masterTab: 'guru',
     dashJ: '',
-    rekap: { mode: 'ujian', j: '', kelas: '', siswa: '' },
+    rekap: { mode: 'ujian', j: '', kelas: '', siswa: '', kkmCustom: '' },
     scanJ: '',
     scanKelas: '',
     scanSiswa: '',
@@ -2233,6 +2322,24 @@ async function loginGuru(username, pass) {
   const g = snap.docs.map(d => ({ id: d.id, ...d.data() })).find(x => x.username === username.trim() && x.password === pass && x.aktif !== false);
   if (!g) throw new Error('Username atau password guru salah');
   S.user = { role: 'guru', id: g.id, nama: g.nama, nip: g.nip, username: g.username };
+}
+
+async function loginSiswa(siswaId) {
+  if (!siswaId) throw new Error('Silakan pilih nama siswa terlebih dahulu');
+  if (!IS_PREVIEW && D().siswa.length === 0) {
+    await reload(['settings', 'siswa', 'jadwal', 'hasil', 'mapel']);
+  }
+  const sw = D().siswa.find(x => x.id === siswaId && x.aktif !== false);
+  if (!sw) throw new Error('Data peserta ujian tidak ditemukan atau tidak aktif');
+  S.user = {
+    role: 'siswa',
+    id: sw.id,
+    nama: sw.nama,
+    nis: sw.nis,
+    nisn: sw.nisn || '',
+    kelas: sw.kelas || '',
+    jenis_kelamin: sw.jenis_kelamin || 'L'
+  };
 }
 
 async function logout() {
@@ -3098,7 +3205,7 @@ function calcScanR() {
   return scoreCombined(r.answers, r.key, ex?.skor_esai || [], j);
 }
 
-/* Panel Kiri Scan LJK: Menampilkan Tombol Ambil Foto, Pilih Galeri/File, Kamera Live, & Scan Ulang */
+/* Panel Kiri Scan LJK */
 function renderScanLeft() {
   const leftBox = $('#scanLeftPanel');
   if (!leftBox) return;
@@ -3160,7 +3267,7 @@ function renderScanLeft() {
     </div>`;
 }
 
-/* Panel Kanan Scan LJK: Biodata Siswa Aktif, Jumlah Jawaban & Nilai, dan Koreksi Butir PG */
+/* Panel Kanan Scan LJK */
 function renderResult() {
   const box = $('#scanDeteksiPanel');
   if (!box) return;
@@ -3636,7 +3743,7 @@ async function saveManualResult() {
   }
 }
 
-/* ---------- 4. Rekap Hasil (dengan Tombol Reset Nilai Siswa) ---------- */
+/* ---------- 4. Rekap Hasil ---------- */
 function rekapRows(j) {
   return pesertaJadwal(j).map(s => {
     const h = D().hasil.find(x => x.jadwal_id === j.id && x.siswa_id === s.id);
@@ -3683,7 +3790,146 @@ async function resetHasilBulk(hasilIds, descLabel) {
 function pgRekap() {
   const R = S.ui.rekap, js = visJadwal();
   if ((!R.j || !js.some(x => x.id === R.j)) && js.length) R.j = js[0].id;
-  const modeTabs = `<div class="tabs2"><button class="${R.mode === 'ujian' ? 'on' : ''}" data-act="rkMode" data-m="ujian">Rekap Per Paket Ujian</button><button class="${R.mode === 'siswa' ? 'on' : ''}" data-act="rkMode" data-m="siswa">Riwayat Per Siswa</button></div>`;
+  const modeTabs = `<div class="tabs2">
+    <button class="${R.mode === 'ujian' ? 'on' : ''}" data-act="rkMode" data-m="ujian">Rekap Per Paket Ujian</button>
+    <button class="${R.mode === 'akhir' ? 'on' : ''}" data-act="rkMode" data-m="akhir">Rekap Nilai Akhir Siswa</button>
+    <button class="${R.mode === 'siswa' ? 'on' : ''}" data-act="rkMode" data-m="siswa">Riwayat Per Siswa</button>
+  </div>`;
+
+  if (R.mode === 'akhir') {
+    const defKkm = Number(D().settings.kkm_default ?? 76);
+    const activeKkm = (R.kkmCustom !== '' && R.kkmCustom !== null && !isNaN(Number(R.kkmCustom)))
+      ? Math.max(0, Math.min(100, Number(R.kkmCustom)))
+      : defKkm;
+
+    const availClasses = kelasList();
+    const selKelas = R.kelas && availClasses.includes(R.kelas) ? R.kelas : '';
+    const students = D().siswa
+      .filter(s => s.aktif !== false && (!selKelas || s.kelas === selKelas) && matchQ([s.nama, s.nis, s.nisn, s.kelas]))
+      .sort((a, b) => (a.kelas || '').localeCompare(b.kelas || '', 'id', { numeric: true }) || (a.nama || '').localeCompare(b.nama || ''));
+
+    const exams = js
+      .filter(j => !selKelas || (j.kelas_list || []).some(k => String(k).trim().toUpperCase() === selKelas.toUpperCase()))
+      .slice()
+      .sort((a, b) => (a.nama_ujian || '').localeCompare(b.nama_ujian || '', 'id', { numeric: true }) || (a.kode_paket || '').localeCompare(b.kode_paket || ''));
+
+    const pg = paginate(students, 'rekapAkhir', 25, true);
+
+    let totalScores = 0, countScores = 0, totalTuntasCells = 0, totalRemedialCells = 0;
+    students.forEach(s => {
+      exams.forEach(j => {
+        const h = D().hasil.find(x => x.jadwal_id === j.id && x.siswa_id === s.id);
+        if (h) {
+          const val = Number(h.nilai);
+          totalScores += val;
+          countScores++;
+          if (val >= activeKkm) totalTuntasCells++;
+          else totalRemedialCells++;
+        }
+      });
+    });
+    const avgAll = countScores ? totalScores / countScores : null;
+
+    return head('Rekap Hasil Penilaian', `Matriks Nilai Akhir Siswa per Mata Pelajaran • Ambang KKM Penyesuaian: ${activeKkm}`,
+      `<button class="btn" data-act="rkAkhirXlsx">${ic('file-spreadsheet', 16)}Ekspor Excel (.xlsx)</button>`) + modeTabs +
+      `<div class="card" style="margin-bottom:18px">
+        <div class="fg3">
+          <label class="f" style="margin:0"><span>Filter Kelas</span>
+            <select class="inp" data-bind="rkKelas">
+              <option value="">Semua Kelas (${availClasses.length})</option>
+              ${availClasses.map(k => `<option value="${esc(k)}" ${k === selKelas ? 'selected' : ''}>Kelas ${esc(k)}</option>`).join('')}
+            </select>
+          </label>
+          <label class="f" style="margin:0"><span>Sesuaikan KKM (0–100)</span>
+            <div style="display:flex;gap:6px;align-items:center">
+              <input class="inp" id="rkKkmInput" type="number" min="0" max="100" step="1" value="${activeKkm}" placeholder="KKM">
+              <button type="button" class="btn sm ghost" data-act="rkResetKkm" title="Kembalikan ke KKM Default (${defKkm})">Default (${defKkm})</button>
+            </div>
+          </label>
+          <div class="f" style="margin:0"><span>Keterangan Warna Nilai</span>
+            <div style="display:flex;align-items:center;gap:8px;height:42px;flex-wrap:wrap">
+              <span class="sc-pill ok">≥ ${activeKkm} Tuntas</span>
+              <span class="sc-pill rem">&lt; ${activeKkm} Remedial</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wm-grid">
+        <div class="wm-card">
+          <small>Jumlah Peserta</small>
+          <b>${students.length} <span style="font-size:13px;color:var(--muted);font-weight:600">Siswa</span></b>
+          <div class="wm-ico" style="color:var(--pri)">${ic('users', 56)}</div>
+        </div>
+        <div class="wm-card">
+          <small>Rata-rata Nilai Akhir</small>
+          <b style="color:var(--pri)">${num(avgAll)}</b>
+          <div class="wm-ico" style="color:var(--pri)">${ic('bar-chart-3', 56)}</div>
+        </div>
+        <div class="wm-card">
+          <small>Nilai Tuntas (≥ ${activeKkm})</small>
+          <b style="color:#047857">${totalTuntasCells} <span style="font-size:13px;color:var(--muted);font-weight:600">Mapel</span></b>
+          <div class="wm-ico" style="color:#10B981">${ic('check-circle', 56)}</div>
+        </div>
+        <div class="wm-card">
+          <small>Nilai Remedial (&lt; ${activeKkm})</small>
+          <b style="color:#BE123C">${totalRemedialCells} <span style="font-size:13px;color:var(--muted);font-weight:600">Mapel</span></b>
+          <div class="wm-ico" style="color:#F43F5E">${ic('alert-triangle', 56)}</div>
+        </div>
+      </div>
+
+      <div class="tw">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>NIS</th>
+              <th>Nama Peserta</th>
+              <th>Kelas</th>
+              ${exams.map(j => `<th style="text-align:center;min-width:110px" title="${esc(examLabel(j))}">
+                <div>${esc(j.nama_ujian)}</div>
+                ${j.kode_paket ? `<div style="font-size:9.5px;font-weight:600;color:var(--subtle)">${esc(j.kode_paket)}</div>` : ''}
+              </th>`).join('')}
+              <th style="text-align:center">Rata-rata</th>
+              <th style="text-align:center">Tuntas / Rem</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${pg.rows.map((s, idx) => {
+              const clsUp = String(s.kelas || '').trim().toUpperCase();
+              let sumN = 0, cntN = 0, cntOk = 0, cntRem = 0;
+              const cells = exams.map(j => {
+                const isAssigned = (j.kelas_list || []).some(k => String(k).trim().toUpperCase() === clsUp);
+                const h = D().hasil.find(x => x.jadwal_id === j.id && x.siswa_id === s.id);
+                if (!h) {
+                  return `<td style="text-align:center"><span class="sc-pill na">${isAssigned ? '–' : 'N/A'}</span></td>`;
+                }
+                const val = Number(h.nilai);
+                const isOk = val >= activeKkm;
+                sumN += val;
+                cntN++;
+                if (isOk) cntOk++; else cntRem++;
+                return `<td style="text-align:center"><span class="sc-pill ${isOk ? 'ok' : 'rem'}">${num(val)}</span></td>`;
+              }).join('');
+              const avgS = cntN ? sumN / cntN : null;
+              return `<tr>
+                <td>${pg.start + idx + 1}</td>
+                <td><b>${esc(s.nis)}</b></td>
+                <td><b>${esc(s.nama)}</b></td>
+                <td><span class="bdg c">${esc(s.kelas)}</span></td>
+                ${cells}
+                <td style="text-align:center">${avgS !== null ? `<b style="font-size:13.5px;color:${avgS >= activeKkm ? '#047857' : '#BE123C'}">${num(avgS)}</b>` : '-'}</td>
+                <td style="text-align:center;white-space:nowrap">
+                  <span class="bdg g">${cntOk}</span> / <span class="bdg ${cntRem > 0 ? 'r' : ''}">${cntRem}</span>
+                </td>
+              </tr>`;
+            }).join('')}
+          </tbody>
+        </table>
+        ${students.length ? '' : empty('Belum ada data peserta ujian pada filter kelas ini')}
+        ${pg.html}
+      </div>`;
+  }
 
   if (R.mode === 'siswa') {
     const sis = D().siswa.filter(s => !R.kelas || s.kelas === R.kelas).sort((a, b) => a.nama.localeCompare(b.nama));
@@ -3871,6 +4117,61 @@ async function rkExport(kind) {
   }
 }
 
+async function rkExportAkhirXlsx() {
+  const R = S.ui.rekap, js = visJadwal(), set = D().settings;
+  const defKkm = Number(set.kkm_default ?? 76);
+  const activeKkm = (R.kkmCustom !== '' && R.kkmCustom !== null && !isNaN(Number(R.kkmCustom)))
+    ? Math.max(0, Math.min(100, Number(R.kkmCustom)))
+    : defKkm;
+
+  const availClasses = kelasList();
+  const selKelas = R.kelas && availClasses.includes(R.kelas) ? R.kelas : '';
+  const students = D().siswa
+    .filter(s => s.aktif !== false && (!selKelas || s.kelas === selKelas) && matchQ([s.nama, s.nis, s.nisn, s.kelas]))
+    .sort((a, b) => (a.kelas || '').localeCompare(b.kelas || '', 'id', { numeric: true }) || (a.nama || '').localeCompare(b.nama || ''));
+
+  const exams = js
+    .filter(j => !selKelas || (j.kelas_list || []).some(k => String(k).trim().toUpperCase() === selKelas.toUpperCase()))
+    .slice()
+    .sort((a, b) => (a.nama_ujian || '').localeCompare(b.nama_ujian || '', 'id', { numeric: true }) || (a.kode_paket || '').localeCompare(b.kode_paket || ''));
+
+  if (!students.length) return toast('Tidak ada data peserta untuk diekspor', 'err');
+
+  await guard(async () => {
+    await loadScript(LIBS.xlsx);
+    const kopTitle = (set.kop_lines || DEFAULT_KOP_LINES).filter(l => l.show !== false).map(l => l.text).join(' — ');
+    const hd = ['No', 'NIS', 'Nama Peserta', 'Kelas', ...exams.map(j => examLabel(j)), 'Rata-rata', 'Jml Tuntas', 'Jml Remedial'];
+    const rowsData = students.map((s, idx) => {
+      let sumN = 0, cntN = 0, cntOk = 0, cntRem = 0;
+      const examVals = exams.map(j => {
+        const h = D().hasil.find(x => x.jadwal_id === j.id && x.siswa_id === s.id);
+        if (!h) return '';
+        const val = Number(h.nilai);
+        sumN += val;
+        cntN++;
+        if (val >= activeKkm) cntOk++; else cntRem++;
+        return val;
+      });
+      const avgS = cntN ? Math.round((sumN / cntN) * 100) / 100 : '';
+      return [idx + 1, s.nis, s.nama, s.kelas, ...examVals, avgS, cntOk, cntRem];
+    });
+
+    const aoa = [
+      [kopTitle],
+      ['REKAP NILAI AKHIR SISWA SEMUA MATA PELAJARAN'],
+      [`Kelas: ${selKelas || 'Semua Kelas'} • KKM Penyesuaian: ${activeKkm} • Tanggal Ekspor: ${fmtDate(todayISO())}`],
+      [],
+      hd,
+      ...rowsData
+    ];
+    const ws = XLSX.utils.aoa_to_sheet(aoa);
+    const wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Nilai Akhir Siswa');
+    const fname = `Rekap_Nilai_Akhir_${selKelas ? 'Kelas_' + selKelas : 'Semua_Kelas'}_KKM_${activeKkm}.xlsx`;
+    XLSX.writeFile(wb, fname);
+  }, 'Mengekspor Rekap Nilai Akhir ke Excel…');
+}
+
 /* ---------- 5. Paket & Kunci (Jadwal & LJK) ---------- */
 function pgJadwal() {
   const rows = visJadwal().filter(j => matchQ([j.nama_ujian, j.kode_paket, j.kelas])), pg = paginate(rows, 'jadwal', 12);
@@ -4020,7 +4321,7 @@ async function jdSave() {
   }
 }
 
-/* ---------- 6. Peserta & Kelas (dengan Kolom Progres & Nilai Siswa) ---------- */
+/* ---------- 6. Peserta & Kelas ---------- */
 function pgSiswa() {
   const f = S.ui.kelasF;
   const rows = D().siswa.filter(s => (!f || s.kelas === f) && matchQ([s.nama, s.nis, s.nisn, s.kelas]))
@@ -4087,7 +4388,7 @@ function siswaBulkModal() {
   setTimeout(() => $('#bulkText')?.focus(), 50);
 }
 
-/* ---------- 7. Korektor & Mapel (dengan Kolom Progres Koreksi) ---------- */
+/* ---------- 7. Korektor & Mapel ---------- */
 function pgMaster() {
   const tab = S.ui.masterTab;
   const tabs = `<div class="tabs2">
@@ -4443,6 +4744,7 @@ function renderIconConfigCard(kind, title, desc) {
   const prevInner = isImageUrl(val)
     ? `<img src="${esc(val)}" alt="${kind}">`
     : `<span style="color:${esc(icd.color)};display:grid;place-items:center">${ic(ICONS[val] ? val : 'scan-line', 22)}</span>`;
+  const presets = ICON_PRESETS[kind] || ICON_PRESETS.system;
 
   return `<div class="ico-cfg-card">
     <div class="ico-cfg-head">
@@ -4470,326 +4772,601 @@ function renderIconConfigCard(kind, title, desc) {
         <small style="display:block;font-size:11px;font-weight:600;color:var(--body);margin-bottom:4px">Warna Background</small>
         <div style="display:flex;align-items:center;gap:6px">
           <input type="color" data-ico-kind="${kind}" data-ico-f="bg" value="${esc(icd.bg)}" ${icd.transparent ? 'disabled' : ''} style="width:34px;height:32px;border:0;background:none;cursor:pointer;opacity:${icd.transparent ? 0.35 : 1}">
-          <button type="button" class="btn xs ${icd.transparent ? 'amber' : 'ghost'}" data-act="icoToggleTrans" data-kind="${kind}">${icd.transparent ? 'Transparent ✓' : 'Set Transparent'}</button>
+          <button type="button" class="btn xs ${icd.transparent ? 'amber' : 'ghost'}" data-act="icoToggleTrans" data-kind="${kind}">${icd.transparent ? 'Transparent ✓' : 'Transparent'}</button>
         </div>
       </div>
     </div>
 
-    <small style="display:block;font-size:11px;font-weight:600;color:var(--muted)">Pilih Ikon Cepat:</small>
     <div class="ico-choices">
-      ${PRESET_ICON_KEYS.map(k => `<button type="button" class="ico-opt ${val === k ? 'on' : ''}" data-act="icoPick" data-kind="${kind}" data-v="${k}" title="${k}">${ic(k, 15)}</button>`).join('')}
+      ${presets.map(p => `<button type="button" class="ico-opt ${val === p ? 'on' : ''}" data-act="icoPick" data-kind="${kind}" data-v="${p}" title="${p}">${ic(p, 15)}</button>`).join('')}
     </div>
   </div>`;
 }
 
 function pgPengaturan() {
   const set = D().settings;
-  const tab = S.ui.setTab;
+  const tab = S.ui.setTab || 'tampilan';
+
+  if (!S.ui.iconDraft) {
+    S.ui.iconDraft = {
+      system: { icon: set.icon_system || 'scan-line', color: set.icon_system_color || '#FFFFFF', bg: set.icon_system_bg || '#1D74F5', transparent: Boolean(set.icon_system_transparent) },
+      user: { icon: set.icon_user || 'user', color: set.icon_user_color || '#1D74F5', bg: set.icon_user_bg || '#EFF6FF', transparent: Boolean(set.icon_user_transparent) },
+      admin: { icon: set.icon_admin || 'shield-check', color: set.icon_admin_color || '#1D74F5', bg: set.icon_admin_bg || '#EFF6FF', transparent: Boolean(set.icon_admin_transparent) }
+    };
+  }
   if (!S.ui.kopDraft) S.ui.kopDraft = clone(set.kop_lines || DEFAULT_KOP_LINES);
   if (!S.ui.ljkTitleDraft) S.ui.ljkTitleDraft = clone(set.ljk_title_lines || DEFAULT_LJK_TITLE_LINES);
   if (!S.ui.pgHeaderDraft) S.ui.pgHeaderDraft = clone(set.pg_header_lines || DEFAULT_PG_HEADER_LINES);
-  if (!S.ui.iconDraft) {
-    S.ui.iconDraft = {
-      system: {
-        icon: set.icon_system || 'scan-line',
-        color: set.icon_system_color || '#FFFFFF',
-        bg: set.icon_system_bg || '#1D74F5',
-        transparent: Boolean(set.icon_system_transparent)
-      },
-      user: {
-        icon: set.icon_user || 'user',
-        color: set.icon_user_color || '#1D74F5',
-        bg: set.icon_user_bg || '#EFF6FF',
-        transparent: Boolean(set.icon_user_transparent)
-      },
-      admin: {
-        icon: set.icon_admin || 'shield-check',
-        color: set.icon_admin_color || '#1D74F5',
-        bg: set.icon_admin_bg || '#EFF6FF',
-        transparent: Boolean(set.icon_admin_transparent)
-      }
-    };
-  }
 
   const tabs = `<div class="tabs2">
-    <button class="${tab === 'tampilan' ? 'on' : ''}" data-act="setTab" data-t="tampilan">${ic('sparkles', 15)} Tampilan & Tulisan</button>
+    <button class="${tab === 'tampilan' ? 'on' : ''}" data-act="setTab" data-t="tampilan">${ic('sparkles', 15)} Tampilan & Ikon</button>
     <button class="${tab === 'kop' ? 'on' : ''}" data-act="setTab" data-t="kop">${ic('printer', 15)} Kop Surat & LJK</button>
-    <button class="${tab === 'firebase' ? 'on' : ''}" data-act="setTab" data-t="firebase">${ic('database', 15)} Info Sistem & Firebase</button>
-    <button class="${tab === 'backup' ? 'on' : ''}" data-act="setTab" data-t="backup">${ic('download', 15)} Backup & Restore</button>
+    <button class="${tab === 'info' ? 'on' : ''}" data-act="setTab" data-t="info">${ic('database', 15)} Info Skema Firestore</button>
+    <button class="${tab === 'backup' ? 'on' : ''}" data-act="setTab" data-t="backup">${ic('shield-check', 15)} Backup & Reset System</button>
   </div>`;
 
-  let body = '';
-  if (tab === 'tampilan') {
-    const swatches = ['#1D74F5', '#2563EB', '#4F46E5', '#0D9488', '#059669', '#E11D48', '#D97706'];
-    body = `<form class="card" data-form="settingsTampilan">
-      <h3>Identitas Aplikasi & Tampilan Halaman Masuk</h3>
-      <div class="fg">
-        <label class="f"><span>Judul Aplikasi (Sidebar & Header)</span><input class="inp" name="app_name" value="${esc(set.app_name)}"></label>
-        <label class="f"><span>Subjudul Aplikasi</span><input class="inp" name="app_subtitle" value="${esc(set.app_subtitle)}"></label>
-        <label class="f"><span>Judul Banner Login & Beranda</span><input class="inp" name="login_title" value="${esc(set.login_title)}"></label>
-        <label class="f"><span>Teks Tombol Utama Hero</span><input class="inp" name="hero_cta" value="${esc(set.hero_cta)}"></label>
-        <label class="f full"><span>Subjudul Halaman Login</span><textarea class="inp" name="login_subtitle" rows="2">${esc(set.login_subtitle)}</textarea></label>
-        <label class="f"><span>Sapaan Beranda <small style="color:var(--muted)">({waktu} = pagi/siang/sore/malam, {nama} = nama akun)</small></span><input class="inp" name="hero_greeting" value="${esc(set.hero_greeting)}"></label>
-        <label class="f"><span>Warna Aksen Utama</span>
-          <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-            <input type="color" id="themeColorInp" name="theme_color" value="${esc(set.theme_color || '#1D74F5')}" style="width:42px;height:42px;border:0;background:none;cursor:pointer">
-            ${swatches.map(c => `<button type="button" class="swatch" style="background:${c}" data-act="pickColor" data-c="${c}"></button>`).join('')}
-          </div>
-        </label>
-        <label class="f full"><span>Deskripsi Banner Beranda</span><textarea class="inp" name="hero_desc" rows="2">${esc(set.hero_desc)}</textarea></label>
-      </div>
-
-      <h3 style="margin-top:16px">Kustomisasi Ikon System, User & Admin</h3>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Pilih ikon dari daftar di bawah, ketik kode ikon secara langsung (mis. <code>scan-line</code>, <code>award</code>, <code>user-check</code>), atau tempelkan URL gambar/logo sekolah.</p>
-      <div class="ico-cfg-grid">
-        ${renderIconConfigCard('system', 'Ikon System', 'Logo sidebar & header halaman login')}
-        ${renderIconConfigCard('user', 'Ikon User (Guru)', 'Avatar profil & role login guru')}
-        ${renderIconConfigCard('admin', 'Ikon Admin', 'Avatar profil & role login admin')}
-      </div>
-
-      <div class="macts"><button class="btn">${ic('save', 15)}Simpan Pengaturan Tampilan</button></div>
-    </form>`;
-  } else if (tab === 'kop') {
-    const lines = S.ui.kopDraft;
-    const titleLines = S.ui.ljkTitleDraft;
-    const pgHdrLines = S.ui.pgHeaderDraft;
-
-    const prevHTML = lines.filter(l => l.show !== false && (l.text || '').trim() !== '').map(l =>
+  if (tab === 'kop') {
+    const kopLines = S.ui.kopDraft;
+    const kopPrevHTML = kopLines.filter(l => l.show !== false && (l.text || '').trim() !== '').map(l =>
       `<div style="font-size:${l.size}pt;font-weight:${l.bold ? 'bold' : 'normal'};font-style:${l.italic ? 'italic' : 'normal'};text-decoration:${l.underline ? 'underline' : 'none'};line-height:1.25">${esc(l.text)}</div>`
     ).join('');
 
-    body = `<form class="card" data-form="settingsKop">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px">
-        <h3 style="margin:0">Pengaturan Kop Surat, Teks LJK & Opsi Bagian Bawah</h3>
-        <button type="button" class="btn sm ghost" data-act="fillLjkExample">${ic('sparkles', 14)}Isi Contoh Standar LJK</button>
-      </div>
-
-      <div class="fg">
-        <label class="f"><span>URL Logo Kiri (Kabupaten / Instansi)</span><input class="inp" id="inpLogoKiri" name="logo_kiri" value="${esc(set.logo_kiri || '')}" placeholder="https://.../logo-kiri.png"></label>
-        <label class="f"><span>URL Logo Kanan (Logo Sekolah)</span><input class="inp" id="inpLogoKanan" name="logo_kanan" value="${esc(set.logo_kanan || '')}" placeholder="https://.../logo-sekolah.png"></label>
-      </div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;margin:8px 0 8px">
-        <b style="font-size:13px">1. Baris Teks Kop Surat (Dinamis)</b>
-        <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="kopDraft">${ic('plus', 14)}Tambah Baris Kop</button>
-      </div>
-      ${renderDynamicLinesEditor('kopDraft', lines, 'Teks baris kop surat…')}
-
-      <div style="margin:12px 0 18px;padding:14px;border:1.5px dashed var(--line);border-radius:16px;background:#fff;color:#000">
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px;font-weight:700">PRATINJAU KOP SURAT:</div>
-        <div style="display:grid;grid-template-columns:60px 1fr 60px;align-items:center;gap:10px;border-bottom:3px double #000;padding-bottom:8px">
-          <div style="text-align:center">${set.logo_kiri ? `<img src="${esc(set.logo_kiri)}" style="max-height:52px;max-width:52px;object-fit:contain">` : ''}</div>
-          <div style="text-align:center">${prevHTML}</div>
-          <div style="text-align:center">${set.logo_kanan ? `<img src="${esc(set.logo_kanan)}" style="max-height:52px;max-width:52px;object-fit:contain">` : ''}</div>
-        </div>
-      </div>
-
-      <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px">
-        <div>
-          <b style="font-size:13px;display:block">2. Keterangan Judul LJK (Multi-Baris)</b>
-          <small style="font-size:11.5px;color:var(--muted)">Contoh: Baris 1 "LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)" (11pt Bold), Baris 2 "TAHUN PELAJARAN 2026 / 2027" (9pt).</small>
-        </div>
-        <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="ljkTitleDraft">${ic('plus', 14)}Tambah Baris</button>
-      </div>
-      ${renderDynamicLinesEditor('ljkTitleDraft', titleLines, 'Contoh: LEMBAR JAWABAN SUMATIF AKHIR SEMESTER (LJK)')}
-
-      <div style="display:flex;justify-content:space-between;align-items:center;margin:14px 0 6px">
-        <div>
-          <b style="font-size:13px;display:block">3. Keterangan Area Jawaban Pilihan Ganda (Multi-Baris)</b>
-          <small style="font-size:11.5px;color:var(--muted)">Posisi otomatis terkunci di atas bulatan soal PG agar <b>100% tetap terbaca saat discan</b>.</small>
-        </div>
-        <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="pgHeaderDraft">${ic('plus', 14)}Tambah Baris</button>
-      </div>
-      ${renderDynamicLinesEditor('pgHeaderDraft', pgHdrLines, 'Contoh: AREA JAWABAN PILIHAN GANDA')}
-
-      <div style="background:var(--bg);border:1.5px solid var(--line);border-radius:16px;padding:14px 16px;margin:14px 0">
-        <b style="font-size:13px;display:block;margin-bottom:8px">4. Opsi Bagian Bawah Lembar LJK</b>
-        <div style="display:grid;gap:8px">
-          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-weight:600">
-            <input type="checkbox" name="show_ttd_siswa" ${set.show_ttd_siswa !== false ? 'checked' : ''} style="width:17px;height:17px">
-            Tampilkan Kotak Tanda Tangan Peserta Ujian (Siswa) di bagian bawah LJK
-          </label>
-          <label style="display:flex;align-items:center;gap:10px;cursor:pointer;font-size:13px;font-weight:600">
-            <input type="checkbox" name="show_nilai_guru" ${set.show_nilai_guru !== false ? 'checked' : ''} style="width:17px;height:17px">
-            Tampilkan Kotak Kolom Nilai Siswa (Diisi Manual oleh Guru: Nilai PG, Esai, Nilai Akhir & Paraf)
-          </label>
-        </div>
-      </div>
-
-      <h3 style="margin-top:16px">Penandatangan & KKM Default</h3>
-      <div class="fg3">
-        <label class="f"><span>Kota Tanda Tangan</span><input class="inp" name="kota" value="${esc(set.kota || '')}"></label>
-        <label class="f"><span>Nama Kepala Sekolah</span><input class="inp" name="kepala_sekolah" value="${esc(set.kepala_sekolah || '')}"></label>
-        <label class="f"><span>NIP Kepala Sekolah</span><input class="inp" name="nip_kepala" value="${esc(set.nip_kepala || '')}"></label>
-        <label class="f"><span>KKM Default</span><input class="inp" type="number" min="0" max="100" name="kkm_default" value="${set.kkm_default ?? 76}"></label>
-      </div>
-      <div class="macts">
-        <button type="button" class="btn ghost" data-act="studioOpen">${ic('printer', 15)}Pratinjau & Cetak LJK</button>
-        <button class="btn">${ic('save', 15)}Simpan Kop & LJK</button>
-      </div>
-    </form>`;
-  } else if (tab === 'firebase') {
-    body = `<div class="card" style="margin-bottom:16px">
-      <h3>Status Koneksi Backend</h3>
-      <p style="font-size:13px;color:var(--body);margin-bottom:10px">Mode aktif saat ini: <span class="bdg ${IS_PREVIEW ? 'a' : 'g'}">${IS_PREVIEW ? 'MODE PREVIEW (In-Memory Dummy)' : 'MODE PRODUKSI (Firebase Project: ' + esc(firebaseConfig.projectId) + ')'}</span></p>
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:12px">
-        <b style="font-size:13px">Firestore Security Rules (Salin ke Firebase Console → Firestore → Rules)</b>
-        <button type="button" class="btn sm ghost" data-act="copyRules">${ic('copy', 14)}Salin Rules</button>
-      </div>
-      <pre class="codebox" id="rulesBox">${esc(FIRESTORE_RULES_SNIPPET)}</pre>
-    </div>
-
-    <div class="card" style="margin-bottom:16px">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-        <div>
-          <h3 style="margin:0">Ringkasan Skema Koleksi Database Firestore</h3>
-          <small style="color:var(--muted);font-size:12px">Struktur lengkap 6 koleksi database beserta atribut dan tipe datanya</small>
-        </div>
-        <button type="button" class="btn sm" data-act="copySchema">${ic('copy', 14)}Salin Semua Skema Koleksi</button>
-      </div>
-      <pre class="codebox" id="schemaBox">${esc(FIRESTORE_SCHEMA_TEXT)}</pre>
-    </div>
-
-    <div class="card">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-        <h3 style="margin:0">Konfigurasi Firebase Project Aktif</h3>
-        <button type="button" class="btn sm ghost" data-act="copyCfg">${ic('copy', 14)}Salin Config</button>
-      </div>
-      <pre class="codebox" id="cfgBox">${esc(JSON.stringify(firebaseConfig, null, 2))}</pre>
-    </div>`;
-  } else {
-    const resetItems = [
-      { k: 'hasil', label: 'Hasil Koreksi & Nilai', col: 'hasil_koreksi', desc: 'Seluruh data skor hasil scan LJK maupun periksa manual', count: D().hasil.length },
-      { k: 'jadwal', label: 'Paket Ujian & Kunci Jawaban', col: 'ujian_sas', desc: 'Daftar paket soal ujian beserta kunci jawaban PG & bobot', count: D().jadwal.length },
-      { k: 'siswa', label: 'Peserta Ujian & Kelas', col: 'peserta_ujian', desc: 'Seluruh biodata siswa peserta ujian dan pengelompokan kelas', count: D().siswa.length },
-      { k: 'guru', label: 'Akun Guru / Korektor', col: 'users', desc: 'Daftar akun login guru / korektor ujian', count: D().guru.length },
-      { k: 'mapel', label: 'Mata Pelajaran & KKM', col: 'mata_pelajaran', desc: 'Daftar referensi mata pelajaran dan KKM default', count: D().mapel.length }
-    ];
-    const selectedCount = resetItems.filter(x => S.ui.resetSel[x.k]).reduce((s, x) => s + x.count, 0);
-
-    body = `<div class="card" style="margin-bottom:18px">
-      <h3>Backup & Restore Data Operasional (JSON)</h3>
-      <p style="color:var(--muted);font-size:13px;margin-bottom:14px">Cadangkan seluruh data guru, mata pelajaran, peserta ujian, paket soal, dan hasil koreksi. Proses restore hanya memulihkan data operasional tanpa menimpa pengaturan tampilan & kop surat.</p>
-      <div class="acts">
-        <button class="btn" data-act="backup">${ic('download', 16)}Unduh File Backup (.json)</button>
-        <label class="btn ghost">${ic('upload', 16)}Pulihkan dari Backup (.json)<input type="file" accept=".json" hidden data-bind="restore"></label>
-      </div>
-    </div>
-
-    <div class="card" style="border-color:#FECDD3">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
-        <h3 style="margin:0;color:#BE123C">${ic('alert-triangle', 18)} Reset System (Pembersihan Data Operasional)</h3>
-        <span class="bdg r">Auto-Backup Aktif</span>
-      </div>
-      <p style="color:var(--body);font-size:13px;margin-bottom:14px">
-        Pilih kategori data yang ingin dikosongkan menggunakan saklar di bawah. Sebelum proses reset dijalankan, sistem akan <b>secara otomatis mengunduh file backup (.json)</b> dan meminta <b>konfirmasi Password Admin</b>. Data pada menu <b>Pengaturan</b> tidak akan terhapus.
-      </p>
-
-      ${resetItems.map(it => {
-        const isOn = Boolean(S.ui.resetSel[it.k]);
-        return `<div class="sw-row ${isOn ? 'on' : ''}">
-          <div style="min-width:0;flex:1">
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
-              <b style="font-size:13.5px;color:var(--ink)">${esc(it.label)}</b>
-              <span class="bdg ${it.count > 0 ? (isOn ? 'r' : 'c') : ''}">${it.count} data</span>
-            </div>
-            <small style="display:block;font-size:12px;color:var(--muted)">${esc(it.desc)} (<code>${esc(it.col)}</code>)</small>
+    return head('Pengaturan Sistem', 'Kustomisasi kop surat sekolah, keterangan LJK multi-baris, dan footer lembar jawaban', '') + tabs +
+      `<form data-form="settingsKop">
+        <div class="card" style="margin-bottom:18px">
+          <div class="sec">
+            <h3>1. Kop Surat Instansi / Sekolah</h3>
+            <button type="button" class="btn sm ghost" data-act="dynAdd" data-dk="kopDraft">${ic('plus', 14)} Tambah Baris Kop</button>
           </div>
-          <label class="switch" title="Pilih data untuk direset">
-            <input type="checkbox" data-reset-k="${it.k}" ${isOn ? 'checked' : ''}>
-            <span class="slider"></span>
-          </label>
-        </div>`;
-      }).join('')}
+          <div class="fg">
+            <label class="f"><span>URL Logo Kiri (Kabupaten / Instansi)</span><input class="inp" name="logo_kiri" value="${esc(set.logo_kiri || '')}" placeholder="https://.../logo-pemda.png"></label>
+            <label class="f"><span>URL Logo Kanan (Logo Sekolah)</span><input class="inp" name="logo_kanan" value="${esc(set.logo_kanan || '')}" placeholder="https://.../logo-sekolah.png"></label>
+          </div>
+          ${renderDynamicLinesEditor('kopDraft', kopLines, 'Teks baris kop surat…')}
 
-      <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-        <span style="font-size:12.5px;color:var(--muted)">Total record terpilih untuk direset: <b style="color:#BE123C">${selectedCount} data</b></span>
-        <button type="button" class="btn danger" data-act="openResetModal">${ic('trash-2', 16)}Auto-Backup & Reset Data Terpilih</button>
-      </div>
-    </div>`;
+          <div style="margin-top:12px;background:#fff;border:1.5px dashed var(--line);border-radius:16px;padding:14px">
+            <small style="display:block;font-size:10.5px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase">Pratinjau Kop Surat</small>
+            <div style="display:grid;grid-template-columns:56px 1fr 56px;align-items:center;gap:10px;border-bottom:3px double #000;padding-bottom:8px;color:#000">
+              <div style="text-align:center">${set.logo_kiri ? `<img src="${esc(set.logo_kiri)}" style="max-height:48px;max-width:48px;object-fit:contain">` : ''}</div>
+              <div style="text-align:center">${kopPrevHTML}</div>
+              <div style="text-align:center">${set.logo_kanan ? `<img src="${esc(set.logo_kanan)}" style="max-height:48px;max-width:48px;object-fit:contain">` : ''}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:18px">
+          <div class="sec">
+            <h3>2. Keterangan Judul LJK & Area Pilihan Ganda (Multi-Baris)</h3>
+            <button type="button" class="btn sm ghost" data-act="fillLjkExample">${ic('sparkles', 14)} Isi Contoh Standar</button>
+          </div>
+          <div style="margin-bottom:14px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+              <b style="font-size:12.5px">Keterangan Judul LJK (Kotak Banner Atas)</b>
+              <button type="button" class="btn xs ghost" data-act="dynAdd" data-dk="ljkTitleDraft">+ Baris Judul</button>
+            </div>
+            ${renderDynamicLinesEditor('ljkTitleDraft', S.ui.ljkTitleDraft, 'Mis. LEMBAR JAWABAN SUMATIF AKHIR SEMESTER')}
+          </div>
+
+          <div>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">
+              <b style="font-size:12.5px">Keterangan Header Area Pilihan Ganda</b>
+              <button type="button" class="btn xs ghost" data-act="dynAdd" data-dk="pgHeaderDraft">+ Baris Keterangan PG</button>
+            </div>
+            ${renderDynamicLinesEditor('pgHeaderDraft', S.ui.pgHeaderDraft, 'Mis. Hitamkan bulatan A, B, C, D, atau E secara penuh')}
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>3. Opsi Bagian Bawah LJK & Pengesahan Rekap Nilai</h3>
+          <div class="fg" style="margin-bottom:10px">
+            <label class="sw-row" style="margin:0;cursor:pointer">
+              <div>
+                <b style="display:block;font-size:13px">Kotak Tanda Tangan Siswa</b>
+                <small style="color:var(--muted);font-size:11.5px">Tampilkan kolom tanda tangan peserta di bawah LJK</small>
+              </div>
+              <span class="switch"><input type="checkbox" name="show_ttd_siswa" ${set.show_ttd_siswa !== false ? 'checked' : ''}><span class="slider"></span></span>
+            </label>
+            <label class="sw-row" style="margin:0;cursor:pointer">
+              <div>
+                <b style="display:block;font-size:13px">Kotak Nilai Manual oleh Guru</b>
+                <small style="color:var(--muted);font-size:11.5px">Tampilkan kolom Nilai PG, Esai, Akhir & Paraf di bawah LJK</small>
+              </div>
+              <span class="switch"><input type="checkbox" name="show_nilai_guru" ${set.show_nilai_guru !== false ? 'checked' : ''}><span class="slider"></span></span>
+            </label>
+          </div>
+          <div class="fg">
+            <label class="f"><span>Kota / Kabupaten (Tanggal Cetak)</span><input class="inp" name="kota" value="${esc(set.kota || '')}"></label>
+            <label class="f"><span>KKM Default Sekolah</span><input class="inp" type="number" min="0" max="100" name="kkm_default" value="${set.kkm_default ?? 76}"></label>
+            <label class="f"><span>Nama Kepala Sekolah</span><input class="inp" name="kepala_sekolah" value="${esc(set.kepala_sekolah || '')}"></label>
+            <label class="f"><span>NIP Kepala Sekolah</span><input class="inp" name="nip_kepala" value="${esc(set.nip_kepala || '')}"></label>
+          </div>
+          <div class="macts">
+            <button type="submit" class="btn">${ic('save', 16)} Simpan Kop Surat & LJK</button>
+          </div>
+        </div>
+      </form>`;
   }
 
-  return head('Pengaturan Sistem', 'Konfigurasi tampilan, ikon, kop surat & LJK, info skema Firebase, serta reset data', '') + tabs + body;
+  if (tab === 'info') {
+    return head('Pengaturan Sistem', 'Informasi koneksi proyek Firebase, struktur koleksi Firestore, dan aturan keamanan', '') + tabs +
+      `<div class="card" style="margin-bottom:18px">
+        <div class="sec">
+          <h3>Status Koneksi Backend Firebase</h3>
+          <span class="bdg ${IS_PREVIEW ? 'a' : 'g'}">${IS_PREVIEW ? 'Mode Preview Lokal' : 'Terhubung ke Cloud Firestore'}</span>
+        </div>
+        <div class="fg3" style="margin-bottom:12px">
+          <div style="background:var(--bg);padding:12px 14px;border-radius:14px;border:1px solid var(--line)">
+            <small style="color:var(--muted);font-size:11px;display:block">Project ID</small>
+            <b>${esc(firebaseConfig.projectId)}</b>
+          </div>
+          <div style="background:var(--bg);padding:12px 14px;border-radius:14px;border:1px solid var(--line)">
+            <small style="color:var(--muted);font-size:11px;display:block">Auth Domain</small>
+            <b>${esc(firebaseConfig.authDomain)}</b>
+          </div>
+          <div style="background:var(--bg);padding:12px 14px;border-radius:14px;border:1px solid var(--line)">
+            <small style="color:var(--muted);font-size:11px;display:block">Total Rekaman Aktif</small>
+            <b>${D().siswa.length} Siswa • ${D().jadwal.length} Paket • ${D().hasil.length} Nilai</b>
+          </div>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin:10px 0 6px">
+          <b style="font-size:12.5px">Konfigurasi Firebase SDK</b>
+          <button type="button" class="btn xs ghost" data-act="copyCfg">${ic('copy', 12)} Salin Config</button>
+        </div>
+        <pre id="cfgBox" style="background:#0F172A;color:#E2E8F0;padding:12px 14px;border-radius:14px;font-size:11.5px;overflow-x:auto;margin:0">${esc(JSON.stringify(firebaseConfig, null, 2))}</pre>
+      </div>
+
+      <div class="card" style="margin-bottom:18px">
+        <div class="sec">
+          <h3>Skema Koleksi Database Firestore (6 Koleksi)</h3>
+          <button type="button" class="btn sm ghost" data-act="copySchema">${ic('copy', 14)} Salin Skema</button>
+        </div>
+        <pre id="schemaBox" style="background:var(--bg);border:1px solid var(--line);color:var(--ink);padding:14px;border-radius:14px;font-size:11.5px;line-height:1.55;overflow-x:auto;margin:0">${esc(FIRESTORE_SCHEMA_TEXT)}</pre>
+      </div>
+
+      <div class="card">
+        <div class="sec">
+          <h3>Rekomendasi Firestore Security Rules</h3>
+          <button type="button" class="btn sm ghost" data-act="copyRules">${ic('copy', 14)} Salin Rules</button>
+        </div>
+        <pre id="rulesBox" style="background:#0F172A;color:#A7F3D0;padding:14px;border-radius:14px;font-size:11.5px;line-height:1.55;overflow-x:auto;margin:0">${esc(FIRESTORE_RULES_SNIPPET)}</pre>
+      </div>`;
+  }
+
+  if (tab === 'backup') {
+    const rs = S.ui.resetSel;
+    const resetItems = [
+      { k: 'hasil', label: 'Hasil Koreksi & Nilai Siswa', desc: 'Menghapus seluruh hasil scan LJK dan nilai manual peserta', count: D().hasil.length },
+      { k: 'jadwal', label: 'Paket Soal & Kunci Jawaban', desc: 'Menghapus daftar paket ujian dan kunci jawaban PG', count: D().jadwal.length },
+      { k: 'siswa', label: 'Data Peserta Ujian & Kelas', desc: 'Menghapus seluruh master data siswa', count: D().siswa.length },
+      { k: 'guru', label: 'Akun Guru / Korektor', desc: 'Menghapus seluruh akun login guru', count: D().guru.length },
+      { k: 'mapel', label: 'Daftar Mata Pelajaran', desc: 'Menghapus master mata pelajaran & KKM', count: D().mapel.length }
+    ];
+    const anyResetSelected = Object.values(rs).some(Boolean);
+
+    return head('Pengaturan Sistem', 'Cadangkan data operasional (JSON), pulihkan data, atau reset koleksi database', '') + tabs +
+      `<div class="fg" style="margin-bottom:18px">
+        <div class="card">
+          <h3>Ekspor Cadangan Data (Backup)</h3>
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px">Unduh seluruh data guru, mapel, siswa, paket soal, dan hasil nilai ke dalam satu berkas <code>.json</code>.</p>
+          <button type="button" class="btn" data-act="backup">${ic('download', 16)} Unduh File Backup (.json)</button>
+        </div>
+        <div class="card">
+          <h3>Pulihkan Data (Restore)</h3>
+          <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px">Impor kembali berkas cadangan <code>.json</code> ke database. Pengaturan tampilan dan kop surat tidak akan tertimpa.</p>
+          <label class="btn ghost">${ic('upload', 16)} Pilih File Backup (.json)<input type="file" accept=".json,application/json" hidden data-bind="restore"></label>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:#FECDD3">
+        <div class="sec">
+          <div>
+            <h3 style="color:#BE123C;margin:0">Reset Data Operasional (Reset System)</h3>
+            <small style="color:var(--muted)">Pilih koleksi yang ingin dikosongkan. Koleksi <b>settings</b> (Pengaturan Tampilan & Kop) tetap aman dan tidak dihapus.</small>
+          </div>
+          <span class="bdg r">Memerlukan Password Admin</span>
+        </div>
+
+        ${resetItems.map(it => `
+          <label class="sw-row ${rs[it.k] ? 'on' : ''}" style="cursor:pointer">
+            <div>
+              <b style="display:block;font-size:13px">${esc(it.label)} <span class="bdg ${rs[it.k] ? 'r' : ''}" style="margin-left:6px">${it.count} data</span></b>
+              <small style="color:var(--muted);font-size:11.5px">${esc(it.desc)}</small>
+            </div>
+            <span class="switch"><input type="checkbox" data-reset-k="${it.k}" ${rs[it.k] ? 'checked' : ''}><span class="slider"></span></span>
+          </label>`).join('')}
+
+        <div class="macts">
+          <button type="button" class="btn danger" data-act="openResetModal" ${anyResetSelected ? '' : 'disabled'}>${ic('trash-2', 16)} Reset Data Terpilih…</button>
+        </div>
+      </div>`;
+  }
+
+  const palette = ['#1D74F5', '#0EA5E9', '#10B981', '#6366F1', '#8B5CF6', '#F43F5E', '#F59E0B', '#0F172A'];
+  return head('Pengaturan Sistem', 'Sesuaikan identitas aplikasi, ikon sistem/pengguna, palet warna, dan teks sapaan beranda', '') + tabs +
+    `<form data-form="settingsTampilan">
+      <div class="card" style="margin-bottom:18px">
+        <h3>1. Kustomisasi Ikon & Logo Peran</h3>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Pilih ikon bawaan atau masukkan tautan URL logo gambar (PNG/SVG) beserta warna ikon dan latar belakangnya.</p>
+        <div class="ico-cfg-grid">
+          ${renderIconConfigCard('system', 'Ikon Sistem / Aplikasi', 'Tampil di sidebar kiri & halaman login')}
+          ${renderIconConfigCard('user', 'Ikon Guru / Korektor', 'Tampil pada profil guru di sidebar')}
+          ${renderIconConfigCard('admin', 'Ikon Administrator', 'Tampil pada profil admin di sidebar')}
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>2. Identitas Aplikasi, Warna Tema & Sapaan Beranda</h3>
+        <div class="fg">
+          <label class="f"><span>Nama Aplikasi</span><input class="inp" name="app_name" value="${esc(set.app_name || '')}"></label>
+          <label class="f"><span>Subjudul Aplikasi</span><input class="inp" name="app_subtitle" value="${esc(set.app_subtitle || '')}"></label>
+          <label class="f"><span>Judul Halaman Masuk & Banner</span><input class="inp" name="login_title" value="${esc(set.login_title || '')}"></label>
+          <label class="f"><span>Teks Tombol Utama Beranda</span><input class="inp" name="hero_cta" value="${esc(set.hero_cta || '')}"></label>
+          <label class="f full"><span>Subjudul Halaman Masuk</span><input class="inp" name="login_subtitle" value="${esc(set.login_subtitle || '')}"></label>
+          <label class="f"><span>Template Sapaan Beranda <small style="color:var(--muted)">({waktu}, {nama})</small></span><input class="inp" name="hero_greeting" value="${esc(set.hero_greeting || '')}"></label>
+          <label class="f"><span>Warna Aksen Utama</span>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+              <input class="inp" id="themeColorInp" type="color" name="theme_color" value="${esc(set.theme_color || '#1D74F5')}" style="width:52px;padding:4px;cursor:pointer">
+              ${palette.map(c => `<button type="button" data-act="pickColor" data-c="${c}" style="width:26px;height:26px;border-radius:50%;background:${c};border:2px solid #fff;box-shadow:0 0 0 1px #CBD5E1" title="${c}"></button>`).join('')}
+            </div>
+          </label>
+          <label class="f full"><span>Deskripsi Banner Beranda</span><textarea class="inp" name="hero_desc" rows="2">${esc(set.hero_desc || '')}</textarea></label>
+        </div>
+        <div class="macts">
+          <button type="submit" class="btn">${ic('save', 16)} Simpan Tampilan & Ikon</button>
+        </div>
+      </div>
+    </form>`;
 }
 
 function openResetConfirmModal() {
-  const keys = Object.keys(S.ui.resetSel).filter(k => S.ui.resetSel[k]);
-  if (!keys.length) return toast('Pilih minimal satu kategori data menggunakan saklar terlebih dahulu.', 'err');
+  const rs = S.ui.resetSel;
   const labels = {
-    hasil: `Hasil Koreksi & Nilai (${D().hasil.length} data)`,
-    jadwal: `Paket Ujian & Kunci Jawaban (${D().jadwal.length} data)`,
-    siswa: `Peserta Ujian & Kelas (${D().siswa.length} data)`,
-    guru: `Akun Guru / Korektor (${D().guru.length} data)`,
-    mapel: `Mata Pelajaran & KKM (${D().mapel.length} data)`
+    hasil: `Hasil Koreksi (${D().hasil.length})`,
+    jadwal: `Paket & Kunci (${D().jadwal.length})`,
+    siswa: `Peserta & Kelas (${D().siswa.length})`,
+    guru: `Akun Guru (${D().guru.length})`,
+    mapel: `Mata Pelajaran (${D().mapel.length})`
   };
+  const chosen = Object.keys(rs).filter(k => rs[k]).map(k => labels[k]);
+  if (!chosen.length) return toast('Pilih minimal satu koleksi data untuk direset', 'err');
 
   openModal(`<div class="mh"><h3 style="margin:0;color:#BE123C">Konfirmasi Reset System</h3><button class="btn sm ghost ico-b" data-act="closeModal">${ic('x', 16)}</button></div>
-    <div class="warn" style="margin-bottom:12px">
-      <b>Perhatian:</b> Sistem akan mengunduh <b>Auto-Backup JSON</b> terlebih dahulu, kemudian menghapus permanen kategori data berikut:
-      <ul style="margin:6px 0 0 18px;padding:0">
-        ${keys.map(k => `<li><b>${esc(labels[k])}</b></li>`).join('')}
-      </ul>
+  <div class="warn"><b>Peringatan:</b> Sistem akan mengunduh cadangan otomatis (<code>.json</code>) terlebih dahulu sebelum menghapus permanen koleksi berikut:
+    <ul style="margin:6px 0 0 18px;padding:0">${chosen.map(c => `<li><b>${esc(c)}</b></li>`).join('')}</ul>
+  </div>
+  <form data-form="confirmReset">
+    <label class="f"><span>Masukkan Password Administrator untuk Melanjutkan *</span>
+      <input class="inp" type="password" name="admin_pass" required autocomplete="current-password" placeholder="Password Admin">
+    </label>
+    <div class="macts">
+      <button type="button" class="btn ghost" data-act="closeModal">Batal</button>
+      <button type="submit" class="btn danger">${ic('trash-2', 15)} Verifikasi & Reset Sekarang</button>
     </div>
-    <form data-form="confirmReset">
-      <label class="f">
-        <span>Masukkan Password Admin untuk Verifikasi *</span>
-        <div class="inp-ico-wrap">
-          <span class="lead-ico">${ic('key-round', 16)}</span>
-          <input class="inp" type="password" name="admin_pass" required autocomplete="current-password" placeholder="Masukkan password login Admin">
-        </div>
-      </label>
-      <div class="macts">
-        <button type="button" class="btn ghost" data-act="closeModal">Batal</button>
-        <button type="submit" class="btn danger">${ic('trash-2', 15)}Verifikasi, Unduh Backup & Reset</button>
-      </div>
-    </form>`);
+  </form>`, false, true);
 }
 
 async function executeResetSystem(adminPass) {
-  const keys = Object.keys(S.ui.resetSel).filter(k => S.ui.resetSel[k]);
+  const rs = S.ui.resetSel;
+  const keys = Object.keys(rs).filter(k => rs[k]);
   if (!keys.length) return;
 
   const ok = await guard(async () => {
     await verifyAdminPassword(adminPass);
-
-    const ts = new Date().toISOString().replace(/[:T]/g, '-').slice(0, 16);
-    const backupPayload = {
-      auto_backup_before_reset: true,
+    download('auto_backup_sebelum_reset_' + todayISO() + '.json', JSON.stringify({
       exported_at: new Date().toISOString(),
-      reset_categories: keys,
       users: D().guru,
       mata_pelajaran: D().mapel,
       peserta_ujian: D().siswa,
       ujian_sas: D().jadwal,
       hasil_koreksi: D().hasil
-    };
-    download(`auto_backup_sebelum_reset_${ts}.json`, JSON.stringify(backupPayload, null, 2), 'application/json');
+    }, null, 2), 'application/json');
 
     for (const k of keys) {
       await dbClearCollection(k);
     }
-
-    await reload(['guru', 'mapel', 'siswa', 'jadwal', 'hasil']);
+    await reload(keys);
     return true;
-  }, 'Memverifikasi Admin, membuat Auto-Backup & mereset data…');
+  }, 'Memverifikasi Admin & mereset data terpilih…');
 
   if (ok) {
-    S.scanR = null;
-    S.ui.dashJ = '';
-    S.ui.scanJ = '';
-    S.ui.manual.j = '';
-    S.ui.rekap.j = '';
-    clearDirty();
+    toast('Reset data selesai. Backup otomatis telah diunduh.');
     closeModal();
-    toast('Auto-backup terunduh dan data terpilih berhasil direset.');
     renderView();
   }
+}
+
+/* ===================== PORTAL KHUSUS SISWA ===================== */
+function getStudentExamRows(sw) {
+  const clsUp = String(sw.kelas || '').trim().toUpperCase();
+  const relevantExams = D().jadwal.filter(j =>
+    (j.kelas_list || []).some(k => String(k).trim().toUpperCase() === clsUp) ||
+    D().hasil.some(h => h.jadwal_id === j.id && h.siswa_id === sw.id)
+  ).sort((a, b) => (a.nama_ujian || '').localeCompare(b.nama_ujian || '', 'id', { numeric: true }));
+
+  return relevantExams
+    .filter(j => matchQ([j.nama_ujian, j.kode_paket]))
+    .map(j => {
+      const h = D().hasil.find(x => x.jadwal_id === j.id && x.siswa_id === sw.id) || null;
+      return { j, h, kkm: kkmOf(j) };
+    });
+}
+
+function stuDetailModal(jid) {
+  const sw = S.user;
+  if (!sw || sw.role !== 'siswa') return;
+  const j = D().jadwal.find(x => x.id === jid);
+  const h = D().hasil.find(x => x.jadwal_id === jid && x.siswa_id === sw.id);
+  if (!j || !h) return toast('Detail hasil koreksi belum tersedia untuk mata pelajaran ini', 'err');
+
+  const key = kunciOf(j.id);
+  const kkm = kkmOf(j);
+  const lulus = Number(h.nilai) >= kkm;
+  const hasEsai = (Number(j.jumlah_esai) || 0) > 0;
+  const maksArr = j.skor_maks_esai || [];
+  const totalMaksEsai = maksArr.reduce((a, b) => a + (Number(b) || 0), 0);
+  const totalSkorEsai = (h.skor_esai || []).reduce((a, b) => a + (Number(b) || 0), 0);
+
+  openModal(`<div class="mh">
+    <div>
+      <h3 style="margin:0">Detail Isian — ${esc(j.nama_ujian)}</h3>
+      <small style="color:var(--muted)">${esc(sw.nama)} (${esc(sw.nis)}) • Kelas ${esc(sw.kelas)} • KKM ${kkm}</small>
+    </div>
+    <button class="btn sm ghost ico-b" data-act="closeModal">${ic('x', 16)}</button>
+  </div>
+
+  <div class="wm-grid" style="grid-template-columns:repeat(${hasEsai ? 4 : 3},1fr);margin-top:10px">
+    <div class="wm-card" style="padding:11px 13px">
+      <small>PG (Benar / Salah / Kosong)</small>
+      <b style="font-size:16px"><span style="color:#047857">${h.benar}B</span> • <span style="color:#BE123C">${h.salah}S</span> • ${h.kosong}K</b>
+    </div>
+    <div class="wm-card" style="padding:11px 13px">
+      <small>Nilai Pilihan Ganda${hasEsai ? ` (${j.bobot_pg}%)` : ''}</small>
+      <b style="font-size:18px;color:var(--pri)">${num(h.nilai_pg ?? h.nilai)}</b>
+    </div>
+    ${hasEsai ? `<div class="wm-card" style="padding:11px 13px">
+      <small>Nilai Esai (${j.bobot_esai}%)</small>
+      <b style="font-size:18px;color:#6366F1">${num(h.nilai_esai)}</b>
+    </div>` : ''}
+    <div class="wm-card" style="padding:11px 13px;border-color:${lulus ? '#A7F3D0' : '#FECDD3'};background:${lulus ? '#ECFDF5' : '#FFF1F2'}">
+      <small>Nilai Akhir (${lulus ? 'Tuntas' : 'Remedial'})</small>
+      <b style="font-size:19px;color:${lulus ? '#047857' : '#BE123C'}">${num(h.nilai)}</b>
+    </div>
+  </div>
+
+  ${hasEsai ? `
+    <div style="background:#EEF2FF;border:1px solid #C7D2FE;border-radius:16px;padding:12px 14px;margin-bottom:12px">
+      <b style="display:block;font-size:12.5px;color:#3730A3;margin-bottom:6px">${ic('file-edit', 14)} Rincian Perolehan Skor Soal Esai / Uraian</b>
+      <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px">
+        ${Array.from({ length: j.jumlah_esai }, (_, i) => {
+          const scItem = Number(h.skor_esai?.[i]) || 0;
+          const mkItem = Number(maksArr[i]) || 0;
+          return `<span class="bdg" style="background:#fff;color:#1E1B4B;border:1px solid #C7D2FE">No. ${i + 1}: <b>${num(scItem)}</b> / ${num(mkItem)}</span>`;
+        }).join('')}
+      </div>
+      <div style="font-size:12px;color:#1E293B;line-height:1.5">
+        <b>Cara Perhitungan Nilai Akhir:</b><br>
+        • Nilai PG = (${h.benar} ÷ ${j.jumlah_soal}) × 100 = <b>${num(h.nilai_pg)}</b> (Bobot ${j.bobot_pg}%)<br>
+        • Nilai Esai = (${num(totalSkorEsai)} ÷ ${num(totalMaksEsai)}) × 100 = <b>${num(h.nilai_esai)}</b> (Bobot ${j.bobot_esai}%)<br>
+        • <b>Nilai Akhir</b> = (${num(h.nilai_pg)} × ${j.bobot_pg}%) + (${num(h.nilai_esai)} × ${j.bobot_esai}%) = <b style="color:var(--pri)">${num(h.nilai)}</b>
+      </div>
+    </div>
+  ` : ''}
+
+  <div style="display:flex;justify-content:space-between;align-items:center;margin:8px 0 4px;flex-wrap:wrap;gap:6px">
+    <b style="font-size:12.5px">Rincian Jawaban Pilihan Ganda (${j.jumlah_soal} Soal)</b>
+    <span style="font-size:11px;color:var(--muted)">Hijau = Benar • Merah = Salah • Kuning = Kosong</span>
+  </div>
+  <div class="vgrid">
+    ${Array.from({ length: j.jumlah_soal }, (_, q) => {
+      const a = (h.jawaban || [])[q] || '';
+      const kVal = key[q] || '';
+      const cls = !kVal ? '' : (a === '' ? 'em' : (a === kVal ? 'ok' : 'no'));
+      return `<div class="kq ${cls}">
+        <b>${q + 1}</b>
+        <span style="font-weight:800;padding:0 6px">${a === '*' ? 'Ganda' : (a || '–')}</span>
+        ${kVal ? `<small style="color:var(--muted);font-size:11px">K:${kVal}</small>` : ''}
+      </div>`;
+    }).join('')}
+  </div>
+  <div class="macts"><button type="button" class="btn" data-act="closeModal">Tutup</button></div>`, true);
+}
+
+function pgSiswaPortal() {
+  const sw = S.user;
+  const set = D().settings;
+  const rows = getStudentExamRows(sw);
+  const graded = rows.filter(x => x.h);
+  const hasEsaiExam = rows.some(x => (Number(x.j.jumlah_esai) || 0) > 0);
+  const sampleEsaiRow = rows.find(x => (Number(x.j.jumlah_esai) || 0) > 0 && x.h) || rows.find(x => (Number(x.j.jumlah_esai) || 0) > 0);
+
+  const avgAkhir = graded.length
+    ? graded.reduce((acc, x) => acc + Number(x.h.nilai || 0), 0) / graded.length
+    : null;
+  const maxAkhir = graded.length
+    ? Math.max(...graded.map(x => Number(x.h.nilai || 0)))
+    : null;
+  const tuntasCnt = graded.filter(x => Number(x.h.nilai) >= x.kkm).length;
+  const remedialCnt = graded.filter(x => Number(x.h.nilai) < x.kkm).length;
+
+  return `<div class="student-shell">
+    <header class="student-top">
+      <div style="display:flex;align-items:center;gap:10px">
+        ${renderConfiguredIcon('system', 'logo', 20)}
+        <div>
+          <b style="display:block;font-size:14px;line-height:1.2">${esc(set.app_name || 'Scan LJK Ujian')}</b>
+          <small style="display:block;font-size:11px;color:var(--muted)">Portal Hasil Ujian Peserta Didik</small>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <div class="search" style="width:240px;height:38px">
+          <span class="s-ico">${ic('search', 14)}</span>
+          <input id="globalSearchInp" placeholder="Cari mata pelajaran…" value="${esc(S.q)}" data-bind="q">
+          <button type="button" class="s-clear" id="clearSearchBtn" data-act="clearQ" style="display:${S.q ? 'grid' : 'none'}">${ic('x', 13)}</button>
+        </div>
+        <button class="logout-btn" style="padding:0 14px" data-act="logout">${ic('log-out', 16)}<span>Keluar</span></button>
+      </div>
+    </header>
+
+    <main class="student-container">
+      <div class="stu-active-card" style="margin-bottom:18px">
+        <div class="stu-cls-badge">${esc(sw.kelas || '-')}</div>
+        <div style="flex:1;min-width:0">
+          <div class="tag">BIODATA PESERTA AKTIF</div>
+          <b style="display:block;font-size:16.5px;color:var(--ink)">${esc(sw.nama)}</b>
+          <small style="display:block;color:var(--body);font-size:12.5px;margin-top:2px">
+            NIS: <b>${esc(sw.nis)}</b>
+            ${sw.nisn ? ` • NISN: <b>${esc(sw.nisn)}</b>` : ''}
+            • Kelas: <b>${esc(sw.kelas)}</b>
+            • Jenis Kelamin: <b>${sw.jenis_kelamin === 'P' ? 'Perempuan' : 'Laki-laki'}</b>
+          </small>
+        </div>
+        <span class="bdg g" style="font-size:11.5px;padding:5px 12px">${ic('user-check', 14)} Peserta Aktif</span>
+      </div>
+
+      <div class="wm-grid">
+        <div class="wm-card">
+          <small>Mata Pelajaran Dinilai</small>
+          <b>${graded.length} <span style="font-size:13px;color:var(--muted);font-weight:600">/ ${rows.length} Mapel</span></b>
+          <div class="wm-ico" style="color:var(--pri)">${ic('book-open', 58)}</div>
+        </div>
+        <div class="wm-card">
+          <small>Rata-rata Nilai Akhir</small>
+          <b style="color:var(--pri)">${num(avgAkhir)}</b>
+          <div class="wm-ico" style="color:var(--pri)">${ic('bar-chart-3', 58)}</div>
+        </div>
+        <div class="wm-card">
+          <small>Nilai Tertinggi</small>
+          <b style="color:#047857">${maxAkhir !== null ? num(maxAkhir) : '-'}</b>
+          <div class="wm-ico" style="color:#10B981">${ic('award', 58)}</div>
+        </div>
+        <div class="wm-card">
+          <small>Status Ketuntasan</small>
+          <b style="font-size:18px"><span style="color:#047857">${tuntasCnt} Tuntas</span> • <span style="color:#BE123C">${remedialCnt} Rem</span></b>
+          <div class="wm-ico" style="color:#F59E0B">${ic('check-circle', 58)}</div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:0;overflow:hidden;margin-bottom:18px">
+        <div style="padding:16px 20px;border-bottom:1px solid var(--line2);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <div>
+            <h3 style="margin:0">Daftar Hasil Penilaian Ujian</h3>
+            <small style="color:var(--muted)">Klik tombol <b>Detail</b> pada masing-masing mata pelajaran untuk melihat rincian jawaban Anda.</small>
+          </div>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span class="bdg g">Hijau = Tidak Remedial (Tuntas)</span>
+            <span class="bdg r">Merah = Remedial (&lt; KKM)</span>
+          </div>
+        </div>
+        <div class="tw" style="box-shadow:none;border:0;border-radius:0">
+          <table>
+            <thead>
+              <tr>
+                <th>No</th>
+                <th>Mata Pelajaran</th>
+                <th>PG (Benar / Salah)</th>
+                <th style="text-align:center">Nilai PG</th>
+                ${hasEsaiExam ? `<th style="text-align:center">Nilai Esai</th>` : ''}
+                <th style="text-align:center">Nilai Akhir</th>
+                <th style="text-align:right">Detail Isian</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${rows.map((x, idx) => {
+                const { j, h, kkm } = x;
+                const examHasEsai = (Number(j.jumlah_esai) || 0) > 0;
+                if (!h) {
+                  return `<tr>
+                    <td>${idx + 1}</td>
+                    <td>
+                      <b>${esc(j.nama_ujian)}</b>
+                      <div style="font-size:11px;color:var(--muted)">KKM ${kkm} • <span class="bdg a" style="padding:1px 7px;font-size:10px">Belum Dinilai</span></div>
+                    </td>
+                    <td style="color:var(--muted)">Menunggu koreksi</td>
+                    <td style="text-align:center">-</td>
+                    ${hasEsaiExam ? `<td style="text-align:center">-</td>` : ''}
+                    <td style="text-align:center">-</td>
+                    <td class="ac"><button class="btn sm ghost" disabled>${ic('eye', 14)}Detail</button></td>
+                  </tr>`;
+                }
+                const lulus = Number(h.nilai) >= kkm;
+                return `<tr style="background:${lulus ? 'rgba(236, 253, 245, 0.35)' : 'rgba(255, 241, 242, 0.45)'}">
+                  <td>${idx + 1}</td>
+                  <td>
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                      <b style="color:${lulus ? '#047857' : '#BE123C'};font-size:13.5px">${esc(j.nama_ujian)}</b>
+                      <span class="bdg ${lulus ? 'g' : 'r'}">${lulus ? 'Tidak Remedial' : 'Remedial'}</span>
+                    </div>
+                    <small style="color:var(--muted);font-size:11px">KKM ${kkm}${j.kode_paket ? ` • Paket ${esc(j.kode_paket)}` : ''}</small>
+                  </td>
+                  <td>
+                    <b style="color:#047857">${h.benar} Benar</b> • <b style="color:#BE123C">${h.salah} Salah</b>
+                    ${h.kosong > 0 ? `<span style="color:var(--muted);font-size:11.5px"> (${h.kosong} Kosong)</span>` : ''}
+                  </td>
+                  <td style="text-align:center"><b>${num(h.nilai_pg ?? h.nilai)}</b></td>
+                  ${hasEsaiExam ? `<td style="text-align:center">${examHasEsai ? `<b>${num(h.nilai_esai)}</b>` : '<span style="color:var(--subtle)">-</span>'}</td>` : ''}
+                  <td style="text-align:center">
+                    <span class="sc-pill ${lulus ? 'ok' : 'rem'}">${num(h.nilai)}</span>
+                  </td>
+                  <td class="ac">
+                    <button class="btn sm ${lulus ? 'emerald' : 'ghost'}" data-act="stuDetail" data-jid="${j.id}">${ic('eye', 14)}Detail</button>
+                  </td>
+                </tr>`;
+              }).join('')}
+            </tbody>
+          </table>
+          ${rows.length ? '' : empty('Belum ada jadwal atau hasil ujian untuk kelas Anda.')}
+        </div>
+      </div>
+
+      ${hasEsaiExam ? `
+      <div class="card" style="background:linear-gradient(135deg,#EFF6FF,#EEF2FF);border-color:#BFDBFE">
+        <div style="display:flex;align-items:flex-start;gap:12px">
+          <div style="width:40px;height:40px;border-radius:12px;background:var(--pri);color:#fff;display:grid;place-items:center;flex-shrink:0">${ic('sparkles', 20)}</div>
+          <div style="flex:1;min-width:0">
+            <h3 style="margin:0 0 6px;color:#1E3A8A">Informasi Cara Perhitungan Nilai Akhir (Soal Pilihan Ganda + Esai)</h3>
+            <p style="font-size:13px;color:#1E293B;margin-bottom:8px">
+              Pada mata pelajaran yang memiliki komponen soal <b>Pilihan Ganda (PG)</b> dan <b>Esai / Uraian</b>, Nilai Akhir dihitung menggunakan pembobotan proporsional:
+            </p>
+            <div style="background:#fff;border:1px solid #CBD5E1;border-radius:12px;padding:10px 14px;font-size:12.5px;color:var(--ink);line-height:1.6">
+              <div>1. <b>Nilai PG</b> = (Jumlah Jawaban Benar ÷ Total Soal PG) × 100</div>
+              <div>2. <b>Nilai Esai</b> = (Total Skor Perolehan Esai ÷ Skor Maksimal Esai) × 100</div>
+              <div>3. <b>Nilai Akhir</b> = (Nilai PG × Bobot PG%) + (Nilai Esai × Bobot Esai%)</div>
+              ${sampleEsaiRow ? `<div style="margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);color:var(--pri);font-weight:600">
+                Contoh pada ${esc(sampleEsaiRow.j.nama_ujian)} (Bobot ${sampleEsaiRow.j.bobot_pg}% PG + ${sampleEsaiRow.j.bobot_esai}% Esai):
+                ${sampleEsaiRow.h
+                  ? `(${num(sampleEsaiRow.h.nilai_pg)} × ${sampleEsaiRow.j.bobot_pg}%) + (${num(sampleEsaiRow.h.nilai_esai)} × ${sampleEsaiRow.j.bobot_esai}%) = <b>${num(sampleEsaiRow.h.nilai)}</b>`
+                  : `Nilai PG × ${sampleEsaiRow.j.bobot_pg}% + Nilai Esai × ${sampleEsaiRow.j.bobot_esai}%`}
+              </div>` : ''}
+            </div>
+          </div>
+        </div>
+      </div>` : ''}
+    </main>
+  </div>`;
 }
 
 /* ===================== HALAMAN MASUK (SPLIT-CARD LOGIN) ===================== */
 function loginView() {
   const r = S.ui.lrole;
   const set = D().settings;
+
+  const availClasses = kelasList();
+  if (r === 'siswa') {
+    if ((!S.ui.lkelas || !availClasses.includes(S.ui.lkelas)) && availClasses.length) {
+      S.ui.lkelas = availClasses[0];
+    }
+  }
+  const siswaInClass = r === 'siswa'
+    ? D().siswa
+        .filter(s => s.aktif !== false && (!S.ui.lkelas || s.kelas === S.ui.lkelas))
+        .sort((a, b) => (a.nama || '').localeCompare(b.nama || ''))
+    : [];
+  if (r === 'siswa') {
+    if ((!S.ui.lsiswa || !siswaInClass.some(s => s.id === S.ui.lsiswa)) && siswaInClass.length) {
+      S.ui.lsiswa = siswaInClass[0].id;
+    }
+  }
 
   return `<div class="login-bg">
     <div class="login-card-split">
@@ -4825,21 +5402,45 @@ function loginView() {
 
         <div class="login-left-foot">
           <span>${esc(set.app_name || 'Scan LJK Ujian')}</span>
-          <span>• Scan + Manual</span>
+          <span>• Scan + Manual + Siswa</span>
         </div>
       </div>
 
       <div class="login-right">
         <h2>Masuk ke Sistem</h2>
-        <p class="sub">Pilih peran akses Anda untuk memulai proses koreksi.</p>
+        <p class="sub">Pilih peran akses Anda untuk memulai atau melihat hasil ujian.</p>
 
         ${S.setupError ? `<div class="warn">${esc(S.setupError)}</div>` : ''}
 
         <div class="role-switch">
           <button type="button" class="${r === 'guru' ? 'on' : ''}" data-act="role" data-r="guru">${ic('user', 16)} Guru</button>
-          <button type="button" class="${r === 'admin' ? 'on' : ''}" data-act="role" data-r="admin">${ic('shield-check', 16)} Admin / Panitia</button>
+          <button type="button" class="${r === 'admin' ? 'on' : ''}" data-act="role" data-r="admin">${ic('shield-check', 16)} Admin</button>
+          <button type="button" class="${r === 'siswa' ? 'on' : ''}" data-act="role" data-r="siswa">${ic('users', 16)} Siswa</button>
         </div>
 
+        ${r === 'siswa' ? `
+        <form data-form="loginSiswa">
+          <label class="f">
+            <span>Pilih Kelas</span>
+            <select class="inp" name="kelas" data-bind="loginKelas" required>
+              ${availClasses.length
+                ? availClasses.map(k => `<option value="${esc(k)}" ${k === S.ui.lkelas ? 'selected' : ''}>Kelas ${esc(k)}</option>`).join('')
+                : '<option value="">Belum ada data kelas</option>'}
+            </select>
+          </label>
+
+          <label class="f">
+            <span>Pilih Nama Siswa</span>
+            <select class="inp" name="siswa_id" data-bind="loginSiswa" required>
+              ${siswaInClass.length
+                ? siswaInClass.map(s => `<option value="${s.id}" ${s.id === S.ui.lsiswa ? 'selected' : ''}>${esc(s.nis)} — ${esc(s.nama)}</option>`).join('')
+                : '<option value="">Tidak ada siswa pada kelas ini</option>'}
+            </select>
+          </label>
+
+          <button class="btn submit-btn" ${siswaInClass.length ? '' : 'disabled'}>${ic('arrow-right', 17)} Lihat Hasil Ujian Saya</button>
+        </form>
+        ` : `
         <form data-form="login">
           <label class="f">
             <span>${r === 'admin' ? 'Email Admin' : 'Username Guru'}</span>
@@ -4860,8 +5461,9 @@ function loginView() {
 
           <button class="btn submit-btn">${ic('arrow-right', 17)} Masuk Sekarang</button>
         </form>
+        `}
 
-        ${IS_PREVIEW ? `<div class="hint"><b>Mode Preview (Dummy Lokal):</b><br>Admin: <code>${esc(MEM.adminAuth.email)}</code> / <code>${esc(MEM.adminAuth.password)}</code><br>Guru: <code>guru</code> / <code>guru123</code></div>` : ''}
+        ${IS_PREVIEW ? `<div class="hint"><b>Mode Preview (Dummy Lokal):</b><br>Admin: <code>${esc(MEM.adminAuth.email)}</code> / <code>${esc(MEM.adminAuth.password)}</code><br>Guru: <code>guru</code> / <code>guru123</code> • Siswa: Pilih Kelas & Nama</div>` : ''}
       </div>
     </div>
   </div>`;
@@ -4885,6 +5487,10 @@ function viewHTML() {
 }
 
 function renderView() {
+  if (S.user?.role === 'siswa') {
+    $('#root').innerHTML = pgSiswaPortal();
+    return;
+  }
   if (S.page !== 'scan') stopCam();
   const c = $('#view');
   if (!c) return;
@@ -4902,6 +5508,10 @@ function renderView() {
 function render() {
   if (!S.user) {
     $('#root').innerHTML = loginView();
+    return;
+  }
+  if (S.user.role === 'siswa') {
+    $('#root').innerHTML = pgSiswaPortal();
     return;
   }
   const m = myMenu();
@@ -4978,7 +5588,13 @@ $('#ljkApp').addEventListener('click', async e => {
   if (!b) return;
   const { act } = b.dataset;
 
-  if (act === 'role') { S.ui.lrole = b.dataset.r; render(); }
+  if (act === 'role') {
+    S.ui.lrole = b.dataset.r;
+    if (S.ui.lrole === 'siswa' && !IS_PREVIEW && D().siswa.length === 0) {
+      await guard(() => reload(['settings', 'siswa', 'jadwal', 'hasil', 'mapel']), 'Memuat daftar kelas & siswa…');
+    }
+    render();
+  }
   else if (act === 'toggleLoginPw') {
     S.ui.showLoginPw = !S.ui.showLoginPw;
     const inp = $('#loginPwInp');
@@ -5180,6 +5796,12 @@ $('#ljkApp').addEventListener('click', async e => {
     S.ui.rekap.mode = b.dataset.m;
     renderView();
   }
+  else if (act === 'rkResetKkm') {
+    S.ui.rekap.kkmCustom = '';
+    renderView();
+  }
+  else if (act === 'rkAkhirXlsx') await rkExportAkhirXlsx();
+  else if (act === 'stuDetail') stuDetailModal(b.dataset.jid);
   else if (act === 'rkDetail') rkDetail(b.dataset.id);
   else if (act === 'rkXlsx') await rkExport('xlsx');
   else if (act === 'rkPrint') await rkExport('print');
@@ -5319,7 +5941,9 @@ $('#ljkApp').addEventListener('change', async e => {
     markDirty();
   }
   if (!b) return;
-  if (b === 'dashJ') { S.ui.dashJ = el.value; renderView(); }
+  if (b === 'loginKelas') { S.ui.lkelas = el.value; S.ui.lsiswa = ''; render(); }
+  else if (b === 'loginSiswa') { S.ui.lsiswa = el.value; }
+  else if (b === 'dashJ') { S.ui.dashJ = el.value; renderView(); }
   else if (b === 'kelasF') { S.ui.kelasF = el.value; S.ui.pg.siswa = 1; renderView(); }
   else if (b === 'pgSize') { S.ui.pgSize[el.dataset.k] = +el.value; S.ui.pg[el.dataset.k] = 1; renderView(); }
   else if (b === 'scanJ') {
@@ -5435,6 +6059,14 @@ $('#ljkApp').addEventListener('input', e => {
     if (cBtn) cBtn.style.display = S.q ? 'grid' : 'none';
     renderView();
   }
+  else if (el.id === 'rkKkmInput') {
+    const rawVal = el.value;
+    S.ui.rekap.kkmCustom = rawVal === '' ? '' : Math.max(0, Math.min(100, Number(rawVal) || 0));
+    S.ui.pg.rekapAkhir = 1;
+    renderView();
+    const kInp = $('#rkKkmInput');
+    if (kInp) { kInp.focus(); const len = String(kInp.value).length; try { kInp.setSelectionRange(len, len); } catch (err) { } }
+  }
   else if (el.id === 'pasteKey' && S.ui.jd) {
     const j = D().jadwal.find(x => x.id === S.ui.jd.id);
     const raw = el.value.toUpperCase();
@@ -5482,6 +6114,13 @@ $('#ljkApp').addEventListener('submit', async e => {
       return true;
     }, 'Memeriksa kredensial & memuat data…');
     if (ok) { clearDirty(); render(); }
+  }
+  else if (kind === 'loginSiswa') {
+    const ok = await guard(async () => {
+      await loginSiswa(v.siswa_id || S.ui.lsiswa);
+      return true;
+    }, 'Memuat hasil ujian siswa…');
+    if (ok) { S.q = ''; clearDirty(); render(); }
   }
   else if (kind === 'guru') {
     const row = { nip: v.nip.trim(), nama: v.nama.trim(), username: v.username.trim(), password: v.password, aktif: !!v.aktif };
@@ -5639,7 +6278,7 @@ async function boot() {
     app = initializeApp(firebaseConfig);
     auth = getAuth(app);
     db = getFirestore(app);
-    try { await reload(['settings']); } catch (e) { }
+    try { await reload(['settings', 'siswa', 'jadwal', 'hasil', 'mapel']); } catch (e) { }
     onAuthStateChanged(auth, async u => {
       if (u && (!S.user || S.user.role === 'admin')) {
         S.user = { role: 'admin', id: u.uid, nama: formatAdminName(u.email), email: u.email };
