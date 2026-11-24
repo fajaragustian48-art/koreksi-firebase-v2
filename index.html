@@ -1,7 +1,7 @@
 <!-- ============================================================
   SCAN LJK UJIAN — Aplikasi Satu File (HTML + CSS + JS Module)
   Backend: Firebase (Firestore + Authentication) | PWA 1 File
-  Project: koreksi-v2
+  Project: koreksi-v2-5b4bc
   ============================================================ -->
 <!DOCTYPE html>
 <html lang="id">
@@ -1668,16 +1668,16 @@ import {
 } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 // KONFIGURASI APLIKASI
-const IS_PREVIEW = false; // Ubah menjadi false SAAT DEPLOY / PUBLISH agar terhubung murni ke Firebase tanpa data dummy
+const IS_PREVIEW = false; // false = terhubung murni ke Cloud Firestore
 
-// PASTE FIREBASE CONFIG ANDA DI SINI
+// FIREBASE CONFIG
 const firebaseConfig = {
-  apiKey: "AIzaSyDN47nnvxbBsYvl7sq3xLQ_udubrHuYRsk",
-  authDomain: "koreksi-ljk-firebase-1.firebaseapp.com",
-  projectId: "koreksi-ljk-firebase-1",
-  storageBucket: "koreksi-ljk-firebase-1.firebasestorage.app",
-  messagingSenderId: "1098844619757",
-  appId: "1:1098844619757:web:416d0c8acb048603b01de4"
+  apiKey: "AIzaSyCthyZ9WWA3KvfMBTul_-uAEMWRywz3LbE",
+  authDomain: "koreksi-v2-5b4bc.firebaseapp.com",
+  projectId: "koreksi-v2-5b4bc",
+  storageBucket: "koreksi-v2-5b4bc.firebasestorage.app",
+  messagingSenderId: "288908706616",
+  appId: "1:288908706616:web:a27e956c593e19c6fc37cd"
 };
 
 /* ===================== UTILITAS DOM, FORMAT & UI ===================== */
@@ -4642,8 +4642,8 @@ service cloud.firestore {
   }
 }`;
 
-const FIRESTORE_SCHEMA_TEXT = `RINGKASAN SKEMA KOLEKSI DATABASE FIRESTORE (PROJECT: koreksi-v2)
-====================================================================
+const FIRESTORE_SCHEMA_TEXT = `RINGKASAN SKEMA KOLEKSI DATABASE FIRESTORE (PROJECT: koreksi-v2-5b4bc)
+==========================================================================
 
 1. Koleksi: settings (Dokumen utama: settings/default)
    - app_name (string)               : Judul aplikasi
